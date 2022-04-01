@@ -1,0 +1,471 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Create VPC Resource
+Parameters:
+  WorkshopVPC:
+    Description: Workshop VPC
+    Type: AWS::EC2::VPC::Id
+  PublicSubnet1:
+    Description: The public subnet1
+    Type: AWS::EC2::Subnet::Id
+  PublicSubnet2:
+    Description: The public subnet2
+    Type: AWS::EC2::Subnet::Id
+  PrivateApplicationSubnet1:
+    Description: The private subnet for applications deployment
+    Type: AWS::EC2::Subnet::Id
+  PrivateApplicationSubnet2:
+    Description: The private subnet for applications deployment
+    Type: AWS::EC2::Subnet::Id
+  PrivateDatabaseSubnet1:
+    Description: The private subnet for database deployment
+    Type: AWS::EC2::Subnet::Id
+  PrivateDatabaseSubnet2:
+    Description: The private subnet for database deployment
+    Type: AWS::EC2::Subnet::Id
+  DatabaseAdminUser:
+    Description: The WordPress database admin account username
+    Type: String
+    MinLength: '1'
+    MaxLength: '16'
+    AllowedPattern: "[a-zA-Z][a-zA-Z0-9]*"
+    ConstraintDescription: must begin with a letter and contain only alphanumeric
+      characters.
+  DatabaseAdminPassword:
+    NoEcho: 'true'
+    Description: The WordPress database admin account password
+    Type: String
+    MinLength: '8'
+    MaxLength: '41'
+    AllowedPattern: "[a-zA-Z0-9_\\-]*"
+    ConstraintDescription: must contain only alphanumeric characters.
+  KeyPairName:
+    Description: Name of SSH KeyPair
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    ConstraintDescription: Provide the name of an existing SSH key pair
+
+Resources:
+
+
+  WebServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable access to the WebServer
+      VpcId: !Ref WorkshopVPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          SourceSecurityGroupId: !GetAtt ALBSecurityGroup.GroupId
+          Description: Allow http service
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          SourceSecurityGroupId: !GetAtt ALBSecurityGroup.GroupId
+          Description: Allow https service
+
+  InstanceNetworkInterface1:
+    Type: AWS::EC2::NetworkInterface
+    Properties:
+      Description: ENI
+      SubnetId: !Ref PrivateApplicationSubnet1
+      GroupSet: 
+        - !Ref WebServerSecurityGroup
+      Tags:
+        - Key: Name
+          Value: WebServer1ENI
+
+  ApplicationEC2Instance1:
+    DependsOn:
+    - DatabaseCluster
+    - DatabasePrimaryInstance
+    - DatabaseReplicaInstance
+    - ApplicationLB
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t3.large
+      ImageId: ami-0992fc94ca0f1415a
+      KeyName: !Ref KeyPairName
+      NetworkInterfaces:
+        - NetworkInterfaceId: !Ref InstanceNetworkInterface1
+          DeviceIndex: 0
+      SourceDestCheck: true
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeType: gp2
+            VolumeSize: 20
+            DeleteOnTermination: true
+      Tags:
+        - Key: Name
+          Value: WordpressServer1
+      UserData: 
+        Fn::Base64: !Sub 
+          - |
+            #!/bin/bash
+            yum update -y
+            yum install httpd -y
+            yum install mysql -y
+            yum install -y amazon-linux-extras
+            amazon-linux-extras enable php7.4
+            yum clean metadata
+            yum install -y php-cli php-pdo php-fpm php-json php-mysqlnd
+            mkdir /usr/wp
+            wget -P /usr/wp https://github.com/liangfb/assets/raw/master/projects/secworkshop/deployapps/wpa.zip
+            wget -P /usr/wp https://raw.githubusercontent.com/liangfb/assets/master/projects/secworkshop/deployapps/initial.sh
+            wget -P /usr/wp https://raw.githubusercontent.com/liangfb/assets/master/projects/secworkshop/deployapps/wordpressdb.sql
+            cd /usr/wp
+            unzip -q -d /var/www/html/ wpa.zip
+            systemctl start httpd
+            systemctl enable httpd
+            chmod 755 /usr/wp/initial.sh
+            /usr/wp/initial.sh ${dbhost} ${username} ${password} ${webhost}
+          - dbhost: !GetAtt DatabaseCluster.Endpoint.Address
+            username: !Ref DatabaseAdminUser
+            password: !Ref DatabaseAdminPassword
+#            webhost: !GetAtt ApplicationLB.DNSName
+            webhost: !GetAtt CDN.DomainName
+  
+
+  InstanceNetworkInterface2:
+    Type: AWS::EC2::NetworkInterface
+    Properties:
+      Description: ENI
+      SubnetId: !Ref PrivateApplicationSubnet2
+      GroupSet: 
+        - !Ref WebServerSecurityGroup
+      Tags:
+        - Key: Name
+          Value: WebServer1ENI
+
+  ApplicationEC2Instance2:
+    DependsOn:
+    - DatabaseCluster
+    - DatabasePrimaryInstance
+    - DatabaseReplicaInstance
+    - ApplicationLB
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t3.large
+      ImageId: ami-0992fc94ca0f1415a
+      KeyName: !Ref KeyPairName
+      NetworkInterfaces:
+        - NetworkInterfaceId: !Ref InstanceNetworkInterface2
+          DeviceIndex: 0
+      SourceDestCheck: true
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeType: gp2
+            VolumeSize: 20
+            DeleteOnTermination: true
+      Tags:
+        - Key: Name
+          Value: WordpressServer2
+      UserData: 
+        Fn::Base64: !Sub 
+          - |
+            #!/bin/bash
+            yum update -y
+            yum install httpd -y
+            yum install mysql -y
+            yum install -y amazon-linux-extras
+            amazon-linux-extras enable php7.4
+            yum clean metadata
+            yum install -y php-cli php-pdo php-fpm php-json php-mysqlnd
+            mkdir /usr/wp
+            wget -P /usr/wp https://github.com/liangfb/assets/raw/master/projects/secworkshop/deployapps/wpa.zip
+            wget -P /usr/wp https://raw.githubusercontent.com/liangfb/assets/master/projects/secworkshop/deployapps/initial.sh
+            wget -P /usr/wp https://raw.githubusercontent.com/liangfb/assets/master/projects/secworkshop/deployapps/wordpressdb.sql
+            cd /usr/wp
+            unzip -q -d /var/www/html/ wpa.zip
+            systemctl start httpd
+            systemctl enable httpd
+            chmod 755 /usr/wp/initial.sh
+            /usr/wp/initial.sh ${dbhost} ${username} ${password} ${webhost}
+          - dbhost: !GetAtt DatabaseCluster.Endpoint.Address
+            username: !Ref DatabaseAdminUser
+            password: !Ref DatabaseAdminPassword
+#            webhost:  !GetAtt ApplicationLB.DNSName
+            webhost: !GetAtt CDN.DomainName
+# RDS
+
+  MySQLSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: SG_MySQLDatabases
+      GroupDescription: Security Group for MySQL Database
+      VpcId: !Ref WorkshopVPC
+      Tags:
+        - Key: Name
+          Value: SecurityGroup For Database Login
+  MySQLSecurityGroupIngress1:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref MySQLSecurityGroup
+      SourceSecurityGroupId: !GetAtt WebServerSecurityGroup.GroupId
+      Description: MySQL Connection
+      FromPort: 3306
+      IpProtocol: TCP
+      ToPort: 3306
+  MySQLSecurityGroupIngress2:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref MySQLSecurityGroup
+      SourceSecurityGroupId: !Ref MySQLSecurityGroup
+      Description: Self Connection
+      FromPort: 3306
+      IpProtocol: TCP
+      ToPort: 3306
+
+
+  DBParameterGroup:
+    Type: AWS::RDS::DBClusterParameterGroup
+    Properties:
+      Description: DBParameterGroup for wordpress
+      Family: aurora-mysql5.7
+      Parameters:
+        character_set_client: utf8mb4
+        character_set_connection: utf8mb4
+        character_set_database: utf8mb4
+        character_set_filesystem: utf8mb4
+        character_set_results: utf8mb4
+        character_set_server: utf8mb4
+        collation_connection: utf8mb4_general_ci
+        collation_server: utf8mb4_general_ci
+        lower_case_table_names: 1
+        time_zone: Asia/Shanghai
+  DBSubnetGroup:
+    Type: AWS::RDS::DBSubnetGroup
+    Properties:
+      DBSubnetGroupDescription: wordpress db subnet group
+      SubnetIds:
+        - !Ref PrivateDatabaseSubnet1
+        - !Ref PrivateDatabaseSubnet2
+
+  DatabaseCluster:
+    Type: AWS::RDS::DBCluster
+    DeletionPolicy: Delete
+    Properties: 
+      DBClusterIdentifier: wordpress-cluster
+      DBClusterParameterGroupName: !Ref DBParameterGroup
+      DBSubnetGroupName: !Ref DBSubnetGroup
+      DeletionProtection: False
+      Engine: aurora-mysql
+      MasterUsername: !Ref DatabaseAdminUser
+      MasterUserPassword: !Ref DatabaseAdminPassword
+      VpcSecurityGroupIds: 
+        - !Ref MySQLSecurityGroup        
+
+  DatabasePrimaryInstance:
+    Type: AWS::RDS::DBInstance
+    DeletionPolicy: Delete
+    Properties:
+      Engine: aurora-mysql
+      DBClusterIdentifier: !Ref DatabaseCluster
+      DBInstanceClass: db.r5.large
+      DBSubnetGroupName: !Ref DBSubnetGroup
+
+  DatabaseReplicaInstance:
+    Type: AWS::RDS::DBInstance
+    DeletionPolicy: Delete
+    Properties:
+      Engine: aurora-mysql
+      DBClusterIdentifier: !Ref DatabaseCluster
+      DBInstanceClass: db.r5.large
+      DBSubnetGroupName: !Ref DBSubnetGroup   
+
+  ALBSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: The security group for the load balancer
+      VpcId: !Ref WorkshopVPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+          Description: Allow http service
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+          Description: Allow https service
+  ApplicationLB:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties: 
+      Name: wordpress-alb
+      Scheme: internet-facing
+      SecurityGroups: 
+        - !Ref ALBSecurityGroup
+      Subnets: 
+        - !Ref PublicSubnet1
+        - !Ref PublicSubnet2
+      Tags: 
+        - Key: Name
+          Value: wordpress-alb
+      Type: application
+
+  ALBTargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties: 
+      HealthCheckEnabled: True
+      HealthCheckIntervalSeconds: 30
+      HealthCheckPath: /wp-login.php
+      HealthCheckPort: 80
+      HealthCheckProtocol: HTTP
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 5
+      Name: wp-target
+      Port: 80
+      Protocol: HTTP
+      Tags: 
+        - Key: Name
+          Value: wp-target
+      Targets: 
+        - Id: !Ref ApplicationEC2Instance1
+          Port: 80
+        - Id: !Ref ApplicationEC2Instance2
+          Port: 80        
+      TargetType: instance
+      UnhealthyThresholdCount: 5
+      VpcId: !Ref WorkshopVPC
+
+  LoadBalancerListener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Properties:
+      LoadBalancerArn: !Ref ApplicationLB
+      Port: 80
+      Protocol: HTTP
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref ALBTargetGroup
+
+  CDN:
+    Type: AWS::CloudFront::Distribution
+    DependsOn:
+      - ApplicationLB
+    Properties:
+      DistributionConfig: 
+        Enabled: True
+        Comment: Cloudfront-for-WP
+        Origins:
+          - DomainName: !GetAtt ApplicationLB.DNSName
+            Id: WPOriginonALB
+            CustomOriginConfig:
+              OriginProtocolPolicy: http-only
+        DefaultCacheBehavior:
+          Compress: True
+          TargetOriginId: WPOriginonALB
+          ViewerProtocolPolicy: allow-all
+          AllowedMethods:
+            - DELETE
+            - GET
+            - HEAD
+            - OPTIONS
+            - PATCH
+            - POST
+            - PUT
+          DefaultTTL: 86400
+          MinTTL: 0
+          MaxTTL: 31536000
+          ForwardedValues:
+            Cookies:
+              Forward: whitelist
+              WhitelistedNames:
+                - comment_author_*
+                - comment_author_email_*
+                - comment_author_url_*
+                - wordpress_logged_in_*
+                - wordpress_test_cookie
+                - wp-settings-*
+            Headers:
+              - Host
+              - Options
+              - Origin
+            QueryString: True
+        CacheBehaviors:
+          - Compress: True
+            TargetOriginId: WPOriginonALB
+            ViewerProtocolPolicy: allow-all
+            PathPattern: /wp-login.php
+            AllowedMethods:
+              - DELETE
+              - GET
+              - HEAD
+              - OPTIONS
+              - PATCH
+              - POST
+              - PUT
+            DefaultTTL: 0
+            MinTTL: 0
+            MaxTTL: 0
+            ForwardedValues:
+              Cookies:
+                Forward: whitelist
+                WhitelistedNames:
+                  - comment_author_*
+                  - comment_author_email_*
+                  - comment_author_url_*
+                  - wordpress_logged_in_*
+                  - wordpress_test_cookie
+                  - wp-settings-*
+                  - wordpress*
+              Headers:
+                - Host
+                - Options
+                - Origin
+              QueryString: True
+            
+          - Compress: True
+            TargetOriginId: WPOriginonALB
+            ViewerProtocolPolicy: allow-all
+            PathPattern: /wp-admin/*
+            AllowedMethods:
+              - DELETE
+              - GET
+              - HEAD
+              - OPTIONS
+              - PATCH
+              - POST
+              - PUT            
+            DefaultTTL: 0
+            MinTTL: 0
+            MaxTTL: 0
+            ForwardedValues:
+              Cookies:
+                Forward: whitelist
+                WhitelistedNames:
+                  - comment_author_*
+                  - comment_author_email_*
+                  - comment_author_url_*
+                  - wordpress_logged_in_*
+                  - wordpress_test_cookie
+                  - wp-settings-*
+                  - wordpress*
+              Headers:
+                - Host
+                - Options
+                - Origin
+              QueryString: True            
+            
+
+Outputs:
+  WordpressApplicationURL:
+    Description: The URL of the Wordpress Application
+    Value: !GetAtt CDN.DomainName
+
+  LoadBalancerUrl:
+    Description: The URL of the origin site
+    Value: !GetAtt ApplicationLB.DNSName
+  
+  AuroraEndpoint:
+    Description: The endpoint of the RDS Aurora
+    Value: !GetAtt DatabaseCluster.Endpoint.Address
+  
+  DatabaseMasterUsername:
+    Description: The user name of the database instance
+    Value: !Ref DatabaseAdminUser
+
+  DatabaseMasterUserPassword:
+    Description: The user's password of the database instance
+    Value: !Ref DatabaseAdminPassword

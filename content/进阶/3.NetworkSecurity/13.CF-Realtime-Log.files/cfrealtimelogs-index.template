@@ -1,0 +1,12 @@
+PUT _template/cf-realtime-logs-template
+{
+  "index_patterns": ["cf-realtime-logs-*"],
+    "mappings": {
+      "properties": {
+        "timestamp": {
+          "type": "date",
+          "format": "yyyy-MM-dd HH:mm:ss"
+        }
+      }
+    }
+}

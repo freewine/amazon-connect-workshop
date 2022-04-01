@@ -1,0 +1,513 @@
+Resources:
+  serverlessWordpressVPCE212FBEB:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsHostnames: true
+      EnableDnsSupport: true
+      InstanceTenancy: default
+      Tags:
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/Resource
+  serverlessWordpressVPCpublicSubnet1Subnet8A32F799:
+    Type: AWS::EC2::Subnet
+    Properties:
+      CidrBlock: 10.0.0.0/24
+      VpcId:
+        Ref: serverlessWordpressVPCE212FBEB
+      AvailabilityZone:
+        Fn::Select:
+          - 0
+          - Fn::GetAZs: ""
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: aws-cdk:subnet-name
+          Value: public
+        - Key: aws-cdk:subnet-type
+          Value: Public
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet1
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet1/Subnet
+  serverlessWordpressVPCpublicSubnet1RouteTable5D918F5C:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: serverlessWordpressVPCE212FBEB
+      Tags:
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet1
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet1/RouteTable
+  serverlessWordpressVPCpublicSubnet1RouteTableAssociation1E6EAB4A:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId:
+        Ref: serverlessWordpressVPCpublicSubnet1RouteTable5D918F5C
+      SubnetId:
+        Ref: serverlessWordpressVPCpublicSubnet1Subnet8A32F799
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet1/RouteTableAssociation
+  serverlessWordpressVPCpublicSubnet1DefaultRouteE21DC9BD:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId:
+        Ref: serverlessWordpressVPCpublicSubnet1RouteTable5D918F5C
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId:
+        Ref: serverlessWordpressVPCIGWA5B4F222
+    DependsOn:
+      - serverlessWordpressVPCVPCGWFD3A1A06
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet1/DefaultRoute
+  serverlessWordpressVPCpublicSubnet1EIP9E860855:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+      Tags:
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet1
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet1/EIP
+  serverlessWordpressVPCpublicSubnet1NATGatewayEB4595FE:
+    Type: AWS::EC2::NatGateway
+    Properties:
+      AllocationId:
+        Fn::GetAtt:
+          - serverlessWordpressVPCpublicSubnet1EIP9E860855
+          - AllocationId
+      SubnetId:
+        Ref: serverlessWordpressVPCpublicSubnet1Subnet8A32F799
+      Tags:
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet1
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet1/NATGateway
+  serverlessWordpressVPCpublicSubnet2Subnet6190876F:
+    Type: AWS::EC2::Subnet
+    Properties:
+      CidrBlock: 10.0.1.0/24
+      VpcId:
+        Ref: serverlessWordpressVPCE212FBEB
+      AvailabilityZone:
+        Fn::Select:
+          - 1
+          - Fn::GetAZs: ""
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: aws-cdk:subnet-name
+          Value: public
+        - Key: aws-cdk:subnet-type
+          Value: Public
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet2
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet2/Subnet
+  serverlessWordpressVPCpublicSubnet2RouteTable5ED74127:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: serverlessWordpressVPCE212FBEB
+      Tags:
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet2
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet2/RouteTable
+  serverlessWordpressVPCpublicSubnet2RouteTableAssociation3685463A:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId:
+        Ref: serverlessWordpressVPCpublicSubnet2RouteTable5ED74127
+      SubnetId:
+        Ref: serverlessWordpressVPCpublicSubnet2Subnet6190876F
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet2/RouteTableAssociation
+  serverlessWordpressVPCpublicSubnet2DefaultRoute883A66CF:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId:
+        Ref: serverlessWordpressVPCpublicSubnet2RouteTable5ED74127
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId:
+        Ref: serverlessWordpressVPCIGWA5B4F222
+    DependsOn:
+      - serverlessWordpressVPCVPCGWFD3A1A06
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet2/DefaultRoute
+  serverlessWordpressVPCpublicSubnet2EIP679A1A4D:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+      Tags:
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet2
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet2/EIP
+  serverlessWordpressVPCpublicSubnet2NATGatewayF388D0FD:
+    Type: AWS::EC2::NatGateway
+    Properties:
+      AllocationId:
+        Fn::GetAtt:
+          - serverlessWordpressVPCpublicSubnet2EIP679A1A4D
+          - AllocationId
+      SubnetId:
+        Ref: serverlessWordpressVPCpublicSubnet2Subnet6190876F
+      Tags:
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet2
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/publicSubnet2/NATGateway
+  serverlessWordpressVPCprivateSubnet1SubnetD30380E2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      CidrBlock: 10.0.2.0/24
+      VpcId:
+        Ref: serverlessWordpressVPCE212FBEB
+      AvailabilityZone:
+        Fn::Select:
+          - 0
+          - Fn::GetAZs: ""
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: aws-cdk:subnet-name
+          Value: private
+        - Key: aws-cdk:subnet-type
+          Value: Private
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC/privateSubnet1
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/privateSubnet1/Subnet
+  serverlessWordpressVPCprivateSubnet1RouteTableD051F698:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: serverlessWordpressVPCE212FBEB
+      Tags:
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC/privateSubnet1
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/privateSubnet1/RouteTable
+  serverlessWordpressVPCprivateSubnet1RouteTableAssociation7754B07B:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId:
+        Ref: serverlessWordpressVPCprivateSubnet1RouteTableD051F698
+      SubnetId:
+        Ref: serverlessWordpressVPCprivateSubnet1SubnetD30380E2
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/privateSubnet1/RouteTableAssociation
+  serverlessWordpressVPCprivateSubnet1DefaultRouteC39FAE04:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId:
+        Ref: serverlessWordpressVPCprivateSubnet1RouteTableD051F698
+      DestinationCidrBlock: 0.0.0.0/0
+      NatGatewayId:
+        Ref: serverlessWordpressVPCpublicSubnet1NATGatewayEB4595FE
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/privateSubnet1/DefaultRoute
+  serverlessWordpressVPCprivateSubnet2Subnet61EA0B6B:
+    Type: AWS::EC2::Subnet
+    Properties:
+      CidrBlock: 10.0.3.0/24
+      VpcId:
+        Ref: serverlessWordpressVPCE212FBEB
+      AvailabilityZone:
+        Fn::Select:
+          - 1
+          - Fn::GetAZs: ""
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: aws-cdk:subnet-name
+          Value: private
+        - Key: aws-cdk:subnet-type
+          Value: Private
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC/privateSubnet2
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/privateSubnet2/Subnet
+  serverlessWordpressVPCprivateSubnet2RouteTable35A5528E:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:
+        Ref: serverlessWordpressVPCE212FBEB
+      Tags:
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC/privateSubnet2
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/privateSubnet2/RouteTable
+  serverlessWordpressVPCprivateSubnet2RouteTableAssociation82E1E4DD:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId:
+        Ref: serverlessWordpressVPCprivateSubnet2RouteTable35A5528E
+      SubnetId:
+        Ref: serverlessWordpressVPCprivateSubnet2Subnet61EA0B6B
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/privateSubnet2/RouteTableAssociation
+  serverlessWordpressVPCprivateSubnet2DefaultRoute57911420:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId:
+        Ref: serverlessWordpressVPCprivateSubnet2RouteTable35A5528E
+      DestinationCidrBlock: 0.0.0.0/0
+      NatGatewayId:
+        Ref: serverlessWordpressVPCpublicSubnet2NATGatewayF388D0FD
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/privateSubnet2/DefaultRoute
+  serverlessWordpressVPCIGWA5B4F222:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: SessionManagerEc2Stack/serverlessWordpressVPC
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/IGW
+  serverlessWordpressVPCVPCGWFD3A1A06:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId:
+        Ref: serverlessWordpressVPCE212FBEB
+      InternetGatewayId:
+        Ref: serverlessWordpressVPCIGWA5B4F222
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/serverlessWordpressVPC/VPCGW
+  basicSecurityGroup54383077:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: allow 22,80,443 inbound for ec2
+      SecurityGroupEgress:
+        - CidrIp: 0.0.0.0/0
+          Description: Allow all outbound traffic by default
+          IpProtocol: "-1"
+      SecurityGroupIngress:
+        - CidrIp: 0.0.0.0/0
+          Description: allow 22,80,443 inbound for ec2
+          FromPort: 22
+          IpProtocol: tcp
+          ToPort: 22
+        - CidrIp: 0.0.0.0/0
+          Description: allow 22,80,443 inbound for ec2
+          FromPort: 80
+          IpProtocol: tcp
+          ToPort: 80
+        - CidrIp: 0.0.0.0/0
+          Description: allow 22,80,443 inbound for ec2
+          FromPort: 2443
+          IpProtocol: tcp
+          ToPort: 2443
+      VpcId:
+        Ref: serverlessWordpressVPCE212FBEB
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/basicSecurity Group/Resource
+  mySSMPolicy1735F1E1:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - ssm:DescribeAssociation
+              - ssm:GetDeployablePatchSnapshotForInstance
+              - ssm:GetDocument
+              - ssm:DescribeDocument
+              - ssm:GetManifest
+              - ssm:GetParameter
+              - ssm:GetParameters
+              - ssm:ListAssociations
+              - ssm:ListInstanceAssociations
+              - ssm:PutInventory
+              - ssm:PutComplianceItems
+              - ssm:PutConfigurePackageResult
+              - ssm:UpdateAssociationStatus
+              - ssm:UpdateInstanceAssociationStatus
+              - ssm:UpdateInstanceInformation
+            Effect: Allow
+            Resource: "*"
+          - Action:
+              - ssmmessages:CreateControlChannel
+              - ssmmessages:CreateDataChannel
+              - ssmmessages:OpenControlChannel
+              - ssmmessages:OpenDataChannel
+            Effect: Allow
+            Resource: "*"
+          - Action:
+              - ec2messages:AcknowledgeMessage
+              - ec2messages:DeleteMessage
+              - ec2messages:FailMessage
+              - ec2messages:GetEndpoint
+              - ec2messages:GetMessages
+              - ec2messages:SendReply
+            Effect: Allow
+            Resource: "*"
+        Version: "2012-10-17"
+      Description: ""
+      Path: /
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/mySSMPolicy/Resource
+  ec2SSMRoleB7652060:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service:
+                Fn::Join:
+                  - ""
+                  - - ec2.
+                    - Ref: AWS::URLSuffix
+        Version: "2012-10-17"
+      Policies:
+        - PolicyDocument:
+            Statement:
+              - Action:
+                  - ssm:DescribeAssociation
+                  - ssm:GetDeployablePatchSnapshotForInstance
+                  - ssm:GetDocument
+                  - ssm:DescribeDocument
+                  - ssm:GetManifest
+                  - ssm:GetParameter
+                  - ssm:GetParameters
+                  - ssm:ListAssociations
+                  - ssm:ListInstanceAssociations
+                  - ssm:PutInventory
+                  - ssm:PutComplianceItems
+                  - ssm:PutConfigurePackageResult
+                  - ssm:UpdateAssociationStatus
+                  - ssm:UpdateInstanceAssociationStatus
+                  - ssm:UpdateInstanceInformation
+                Effect: Allow
+                Resource: "*"
+              - Action:
+                  - ssmmessages:CreateControlChannel
+                  - ssmmessages:CreateDataChannel
+                  - ssmmessages:OpenControlChannel
+                  - ssmmessages:OpenDataChannel
+                Effect: Allow
+                Resource: "*"
+              - Action:
+                  - ec2messages:AcknowledgeMessage
+                  - ec2messages:DeleteMessage
+                  - ec2messages:FailMessage
+                  - ec2messages:GetEndpoint
+                  - ec2messages:GetMessages
+                  - ec2messages:SendReply
+                Effect: Allow
+                Resource: "*"
+            Version: "2012-10-17"
+          PolicyName: mySSMPolicy
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/ec2SSMRole/Resource
+  efsInstanceInstanceProfile0316DB05:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - Ref: ec2SSMRoleB7652060
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/efsInstance/InstanceProfile
+  efsInstance69FDCEE3:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone:
+        Fn::Select:
+          - 0
+          - Fn::GetAZs: ""
+      IamInstanceProfile:
+        Ref: efsInstanceInstanceProfile0316DB05
+      ImageId:
+        Ref: SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter
+      InstanceType: t2.micro
+      SecurityGroupIds:
+        - Fn::GetAtt:
+            - basicSecurityGroup54383077
+            - GroupId
+      SubnetId:
+        Ref: serverlessWordpressVPCprivateSubnet1SubnetD30380E2
+      Tags:
+        - Key: Name
+          Value: SessionManagerEc2Stack/efsInstance
+      UserData:
+        Fn::Base64: "#!/bin/bash"
+    DependsOn:
+      - ec2SSMRoleB7652060
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/efsInstance/Resource
+  CDKMetadata:
+    Type: AWS::CDK::Metadata
+    Properties:
+      Modules: aws-cdk=1.82.0,@aws-cdk/assets=1.84.0,@aws-cdk/aws-cloudwatch=1.84.0,@aws-cdk/aws-ec2=1.84.0,@aws-cdk/aws-events=1.84.0,@aws-cdk/aws-iam=1.84.0,@aws-cdk/aws-kms=1.84.0,@aws-cdk/aws-logs=1.84.0,@aws-cdk/aws-s3=1.84.0,@aws-cdk/aws-s3-assets=1.84.0,@aws-cdk/aws-ssm=1.84.0,@aws-cdk/cloud-assembly-schema=1.84.0,@aws-cdk/core=1.84.0,@aws-cdk/cx-api=1.84.0,@aws-cdk/region-info=1.84.0,jsii-runtime=node.js/v14.15.3
+    Metadata:
+      aws:cdk:path: SessionManagerEc2Stack/CDKMetadata/Default
+    Condition: CDKMetadataAvailable
+Parameters:
+  SsmParameterValueawsserviceamiamazonlinuxlatestamznamihvmx8664gp2C96584B6F00A464EAD1953AFF4B05118Parameter:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/amzn-ami-hvm-x86_64-gp2
+Conditions:
+  CDKMetadataAvailable:
+    Fn::Or:
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-northeast-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-northeast-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-southeast-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ap-southeast-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - ca-central-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - cn-north-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - cn-northwest-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-central-1
+      - Fn::Or:
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-north-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - eu-west-3
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - me-south-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - sa-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-east-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-east-2
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-west-1
+          - Fn::Equals:
+              - Ref: AWS::Region
+              - us-west-2
