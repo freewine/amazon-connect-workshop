@@ -1,8 +1,0 @@
-def header_name;
-for(int i=0; i<params._source.httpRequest.headers.length; i++) { 
-    header_name = params._source.httpRequest.headers[i].name;
-    if (header_name == "user-agent") {
-        return params._source.httpRequest.headers[i].value
-        
-    }
-}

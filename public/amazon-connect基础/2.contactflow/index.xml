@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2. 创建联系流 on Amazon Connect Workshop</title>
+    <link>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/</link>
+    <description>Recent content in 2. 创建联系流 on Amazon Connect Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2.1 介绍联系流库和示例/默认联系流</title>
+      <link>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/1.contactflow_basic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/1.contactflow_basic/</guid>
+      <description>什么时Contact Flow（联系流）? 联系流定义了从开始到结束的联络中心的客户体验。 Amazon Connect 包含一组默认联系流，因此您可以快速设置和运行联络中心。 但是，您可能希望为您的特定场景创建自定义联系流。
+ 选择 路由选择 -&amp;gt; 联系流 访问联系流库. 可以使用屏幕顶部的搜索选项过滤列表   过滤器从头开始匹配，而不是流中的任何匹配文本 过滤器不区分大小写  您可以扩展每页的行数 当没有定义其他联系流时，默认联系流在给定条件下生效。 示例：如果呼叫被路由到队列，并且没有客户队列流，则将调用默认客户队列流。 在进行故障排除时，了解这一点很重要； 如果你没有专门编程体验，它最像一个默认生效的流程。 示例流程是向您展示如何使用特定功能的基本示例。 它们不打算按原样投入生产，也不一定从错误处理的角度展示最佳实践。  查看不同的联系流类型 Amazon Connect 包括一组九种联系流类型。每种类型只能使用特定场景的联系块。例如，用于转移到队列的联系流类型仅包含该类型流的适当联系块。需要注意的是，当您创建联系流时，您需要为您的场景选择正确的类型，否则您需要的块可能不可用。此外，一旦您将联系流创建为特定类型，就无法更改该类型。
+可以使用的联系流类型如下：
+Inbound contact flow（入站联系流）
+这是在您选择创建联系流按钮时创建的通用联系流类型，不要使用下拉箭头选择类型。它创建一个入站联系流。此联系流适用于语音、聊天和任务。
+Customer queue flow（客户队列流程）
+用于管理客户在加入代理的之前排队时的体验。客户队列流是可中断的，并且利用转移到队列块，可以包括诸如为延迟道歉的音频剪辑和提供接收回拨的选项。此联系流适用于语音、聊天和任务。
+Customer hold flow（客户保持流程）
+用于在客户处于等待状态时管理客户体验。通过此流程，可以在等待时使用循环提示块向客户播放一个或多个音频提示。此联系流适用于语音。
+Customer whisper flow（客户私密消息）
+用于管理客户在加入座席之前作为入站呼叫的一部分的体验。代理和客户的私密消息播放完毕，然后将两者加入。此联系流适用于语音和聊天。
+Outbound whisper flow（出站私密消息）
+用于在与代理联系之前管理客户在出站呼叫中的体验。在此流程中，将客户的私密消息播放完成，然后将两者加入。例如，此流程可用于通过设置录音行为块启用出站呼叫的呼叫录音。此联系流适用于语音和聊天。
+Agent hold flow（代理保持流程）
+用于管理代理在等待客户时的体验。通过此流程，可以在客户处于等待状态时使用循环提示块向代理播放一个或多个音频提示。此联系流适用于语音。
+Agent whisper flow（代理私密消息）
+用于管理代理在加入客户之前作为入站呼叫的一部分所体验的内容。代理和客户的私密消息播放完毕，然后将两者加入。此联系流适用于语音、聊天和任务。
+Transfer to agent flow（转移到代理流）
+用于管理代理在转移到另一个代理时的体验。这种类型的流与转移到代理Quick Connect（快速连接）相关联，并且经常播放消息，然后使用转移到代理块完成转移。此联系流适用于语音、聊天和任务。
+Transfer to queue flow（转移到队列流）</description>
+    </item>
+    
+    <item>
+      <title>2.2 新建入站联系流</title>
+      <link>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/2.createbasicinboundflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/2.createbasicinboundflow/</guid>
+      <description>新建一个空的入站联系流 现在，我们已经理解了不同的联系流类型，接下来，我们就开始创建一个基础的联系流。 下图是我们即将在后续步骤创建的联系流的概览。
+记住，我们使用创建联系流按钮来创建一个入站联系流。
+ 选择 路由选择 -&amp;gt; 联系流 访问联系流库。 选择创建联系流 为联系流制定一个名字,比如 Intro Flow 1 点击显示其他流信息来展开流信息，并且添加描述信息. 在查看流的不同版本时，该描述可能很有用。 点击保存   </description>
+    </item>
+    
+    <item>
+      <title>2.3 查看常用的联系快</title>
+      <link>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/3.reviewcontactblock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/3.reviewcontactblock/</guid>
+      <description>在左侧面板中查看常用的联系块（点击可以展开） 使用联系流设计工具，无需编程经验，你可以方便地使用拖拽的方式编写连流流。您需要做的就是在画布上通过组合联系块（Contact Block）创建你需要的联系流。 常见的联系块如下：
+交互 这部分包含直接处理客户交互的块，例如播放消息或从客户那里收集信息。
+播放提示
+播放可中断的音频提示、提供文本转语音消息或提供聊天响应。
+ 对于文本转语音 (TTS)，使用的是Amazon Polly服务 支持 SSML  获取客户输入
+基于客户意愿设置的分支。播放音频提示并根据 DTMF 或 Amazon Lex 意图进行分支。使用 DTMF 时音频提示可中断。
+ 可以是 DTMF 或语音 如果启用了语音，则它使用的是 Amazon Lex服务。 Amazon Lex 是一项使用语音和文本在任何应用程序中构建对话界面的服务。 如果启用语音，如果配置得当，它仍然可以识别 DTMF  存储客户输入
+将数字输入存储到联系人属性。 这里只能是数字。 如果他们想要文本，例如姓名或日期，他们需要在 Get Customer 输入块中使用 Lex。 请注意，这是写入名为 Stored Customer Input 的临时属性，该属性将被下一个 Store customer input 块覆盖。
+设置 这部分提供在联系流中设置条件或属性的块
+设置工作队列
+指定调用传输到队列时要使用的队列。 还可以设置默认队列以进行比较，例如检查人员配备或检查营业时间块。
+设置联系人属性
+将键值对存储为联系人属性。 这些属性可作为联系人的永久部分使用，除非该值被专门覆盖（无法删除）。
+设置日志记录行为
+为此联系人启用联系流日志记录。 日志将写入 AWS CloudWatch Logs。
+设置录音和分析行为
+设置用于录制和/或监控（收听）语音和聊天对话的选项。 还提供了 Contact Lens for Amazon Connect 的功能。</description>
+    </item>
+    
+    <item>
+      <title>2.4 编写一个完整的入站联系流</title>
+      <link>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/4.writedemocontactflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/4.writedemocontactflow/</guid>
+      <description>使用联系流编辑器编辑入站联系流 在之前的步骤中，我们已经创建了一个空的入站联系流，并且已经理解了不同的联系流类型，接下来，我们就开始编写一个完整的联系流。 我们即将创建的联系流如下图。该联系流定了客户来电时的处理步骤，以及将客户转接到代理队列。
+ 首先，创建一个新的操作小时数，用于后续的联系流。   选择 路由选择 -&amp;gt; 操作小时数 点击[添加小时数] 在打开的页面中，设置名称和描述为“Work Hours” 将时区设置为“Asia/Shanghai” 删除周六、周日，保留周一至周五做为工作时间。 点击[保存]。    下载联系流文件到本地电脑。 下载链接:Demo inbound flow.json(4 ko)  选择之前创建的“Demo inbound flow”联系流，此时联系流为空白状态。
+  点击保存按钮右边的下拉箭头，点击[导入流(beta)]   此时，会看到一个完整的联系流，解析来我们来编辑它。
+  点击[设置录音和分析行为]块，打开代理和客户的通话录音，然后点击保存。   点击[设置语音]块设置与客户交互的声音，将语言设置为中文（普通话），然后点击保存。   点击[检查操作小时数]块，将指定小时数设置为Work Hours，然后点击保存。   点击右上角的[发布]按钮，发布联系流。
+  </description>
+    </item>
+    
+    <item>
+      <title>2.5 测试入站联系流</title>
+      <link>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/5.testdemocontactflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/5.testdemocontactflow/</guid>
+      <description>测试入站联系流 在前边的步骤中，我们已经创建了一个入站联系流，接下来我们将对这个联系流进行测试。
+ 首先我们需要将此联系流绑定到之前申请的电话号码。   选择 路由 -&amp;gt; 电话号码 选择已经创建的电话号码 点击联系流/IVR的下拉框，选择“Demo inbound flow”。 点击保存。   等待大约2分钟让设置生效。 点击右上角的电话图标，打开联系控制面板(CCP)。 将代理设置为Available状态。  拨打Amazon Connect实例的电话号码，你会听到提示音，并且将您路由到对应的客服。 测试完成。  在进行电话测试的时候，你可以申请两个电话号码进行相互拨打，避免产生您自己的手机通讯费。
+</description>
+    </item>
+    
+  </channel>
+</rss>

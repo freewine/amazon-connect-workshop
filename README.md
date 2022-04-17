@@ -1,1 +1,1 @@
-# Security Worskhop
+# Amazon Connect Workshop

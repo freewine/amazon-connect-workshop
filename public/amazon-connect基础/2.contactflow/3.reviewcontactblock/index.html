@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="description" content="Amazon Connect Workshop">
+<meta name="author" content="AWS FSI DNB&lt;freewine@amazon.com&gt;">
+
+    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../../../images/favicon.ico" type="image/x-icon" />
+
+    <title>2.3 查看常用的联系快 :: Amazon Connect Workshop</title>
+
+    
+    <link href="../../../css/nucleus.css?1650205263" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1650205263" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1650205263" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1650205263" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1650205263" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1650205263" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1650205263" rel="stylesheet">
+    <link href="../../../css/theme.css?1650205263" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1650205263" rel="stylesheet">
+    
+      <link href="../../../css/theme-mine.css?1650205263" rel="stylesheet">
+    
+
+    <script src="../../../js/jquery-3.3.1.min.js?1650205263"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="../../../amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/3.reviewcontactblock/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="../../../" title="Go home"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 40" width="40%" style="padding:5px 0px;"><defs><style>.cls-1{fill:#fff;}  .cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg></a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+<span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../../js/lunr.min.js?1650205263"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1650205263"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/gotoaws.cloudguru.run\/";
+    
+</script>
+<script type="text/javascript" src="../../../js/search.js?1650205263"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/1.introduction/" title="Workshop整体介绍" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../1.introduction/">
+          Workshop整体介绍
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect%E5%9F%BA%E7%A1%80/" title="Amazon Connect基础" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../../../amazon-connect%E5%9F%BA%E7%A1%80/">
+          Amazon Connect基础
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect%E5%9F%BA%E7%A1%80/1.deploy/" title="1. 部署Amazon Connect" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../amazon-connect%E5%9F%BA%E7%A1%80/1.deploy/">
+          1. 部署Amazon Connect
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E5%9F%BA%E7%A1%80/1.deploy/1.deployconnect/" title="1.1 创建Amazon Connect实例" class="dd-item ">
+        <a href="../../../amazon-connect%E5%9F%BA%E7%A1%80/1.deploy/1.deployconnect/">
+        1.1 创建Amazon Connect实例
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E5%9F%BA%E7%A1%80/1.deploy/2.claimnumber/" title="1.2 申请电话号码并进行验证" class="dd-item ">
+        <a href="../../../amazon-connect%E5%9F%BA%E7%A1%80/1.deploy/2.claimnumber/">
+        1.2 申请电话号码并进行验证
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/" title="2. 创建联系流" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../../../amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/">
+          2. 创建联系流
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/1.contactflow_basic/" title="2.1 介绍联系流库和示例/默认联系流" class="dd-item ">
+        <a href="../../../amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/1.contactflow_basic/">
+        2.1 介绍联系流库和示例/默认联系流
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/2.createbasicinboundflow/" title="2.2 新建入站联系流" class="dd-item ">
+        <a href="../../../amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/2.createbasicinboundflow/">
+        2.2 新建入站联系流
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/3.reviewcontactblock/" title="2.3 查看常用的联系快" class="dd-item active">
+        <a href="../../../amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/3.reviewcontactblock/">
+        2.3 查看常用的联系快
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/4.writedemocontactflow/" title="2.4 编写一个完整的入站联系流" class="dd-item ">
+        <a href="../../../amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/4.writedemocontactflow/">
+        2.4 编写一个完整的入站联系流
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/5.testdemocontactflow/" title="2.5 测试入站联系流" class="dd-item ">
+        <a href="../../../amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/5.testdemocontactflow/">
+        2.5 测试入站联系流
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect%E5%9F%BA%E7%A1%80/3.metrics/" title="3. 查看指标和报告" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../amazon-connect%E5%9F%BA%E7%A1%80/3.metrics/">
+          3. 查看指标和报告
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E5%9F%BA%E7%A1%80/3.metrics/1.realtimemetrics/" title="3.1 查看实时指标" class="dd-item ">
+        <a href="../../../amazon-connect%E5%9F%BA%E7%A1%80/3.metrics/1.realtimemetrics/">
+        3.1 查看实时指标
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect%E8%BF%9B%E9%98%B6/" title="Amazon Connect进阶" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../amazon-connect%E8%BF%9B%E9%98%B6/">
+          Amazon Connect进阶
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/" title="1. 通过Lambda实现挂机评价" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/">
+          1. 通过Lambda实现挂机评价
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/1.createiamrole/" title="创建IAM策略和角色" class="dd-item ">
+        <a href="../../../amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/1.createiamrole/">
+        创建IAM策略和角色
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/2.createdynamodb/" title="创建DynamoDB" class="dd-item ">
+        <a href="../../../amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/2.createdynamodb/">
+        创建DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/3.createlambda/" title="创建Lambda函数" class="dd-item ">
+        <a href="../../../amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/3.createlambda/">
+        创建Lambda函数
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/4.integratelambda/" title="将Lambda集成到Amazon Connect" class="dd-item ">
+        <a href="../../../amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/4.integratelambda/">
+        将Lambda集成到Amazon Connect
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/5.testlambda/" title="测试Lambda挂机评价" class="dd-item ">
+        <a href="../../../amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/5.testlambda/">
+        测试Lambda挂机评价
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect%E8%BF%9B%E9%98%B6/2.lexbot/" title="2. 使用Lex创建智能聊天机器人" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../amazon-connect%E8%BF%9B%E9%98%B6/2.lexbot/">
+          2. 使用Lex创建智能聊天机器人
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect%E8%BF%9B%E9%98%B6/2.lexbot/1.-introlex/" title="2.1 Lex介绍" class="dd-item ">
+        <a href="../../../amazon-connect%E8%BF%9B%E9%98%B6/2.lexbot/1.-introlex/">
+        2.1 Lex介绍
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/freewine/amazon-connect-workshop"><i class='fab fa-github'></i> GitHub Project</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/freewine/amazon-connect-workshop/issues"><i class='fas fa-envelope'></i> Have questions?</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <left>
+    Built with <i class="fas fa-heart"></i> by AWS China East&Central SA Team
+
+</left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/sun-biao/secworkshop/edit/master/content/Amazon%20Connect%e5%9f%ba%e7%a1%80/2.ContactFlow/3.ReviewContactBlock.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='../../../'>Amazon Connect Workshop</a> > <a href='../../../amazon-connect%E5%9F%BA%E7%A1%80/'>Amazon Connect基础</a> > <a href='../../../amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/'>2. 创建联系流</a> > 2.3 查看常用的联系快
+          
+         
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#在左侧面板中查看常用的联系块点击可以展开">在左侧面板中查看常用的联系块（点击可以展开）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+<div class="tags">
+
+  <a class="tag-link" href="../../../tags/beginner">beginner</a>
+
+</div>
+
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              2.3 查看常用的联系快
+            </h1>
+          
+
+        
+
+
+
+<h3 id="在左侧面板中查看常用的联系块点击可以展开">在左侧面板中查看常用的联系块（点击可以展开）</h3>
+<p>使用联系流设计工具，无需编程经验，你可以方便地使用拖拽的方式编写连流流。您需要做的就是在画布上通过组合联系块（Contact Block）创建你需要的联系流。
+常见的联系块如下：</p>
+<h4 id="交互">交互</h4>
+<p>这部分包含直接处理客户交互的块，例如播放消息或从客户那里收集信息。</p>
+<p><strong>播放提示</strong></p>
+<p>播放可中断的音频提示、提供文本转语音消息或提供聊天响应。</p>
+<ul>
+<li>对于文本转语音 (TTS)，使用的是Amazon Polly服务</li>
+<li>支持 SSML</li>
+</ul>
+<p><strong>获取客户输入</strong></p>
+<p>基于客户意愿设置的分支。播放音频提示并根据 DTMF 或 Amazon Lex 意图进行分支。使用 DTMF 时音频提示可中断。</p>
+<ul>
+<li>可以是 DTMF 或语音</li>
+<li>如果启用了语音，则它使用的是 Amazon Lex服务。 Amazon Lex 是一项使用语音和文本在任何应用程序中构建对话界面的服务。</li>
+<li>如果启用语音，如果配置得当，它仍然可以识别 DTMF</li>
+</ul>
+<p><strong>存储客户输入</strong></p>
+<p>将数字输入存储到联系人属性。 这里只能是数字。 如果他们想要文本，例如姓名或日期，他们需要在 Get Customer 输入块中使用 Lex。 请注意，这是写入名为 Stored Customer Input 的临时属性，该属性将被下一个 Store customer input 块覆盖。</p>
+<h4 id="设置">设置</h4>
+<p>这部分提供在联系流中设置条件或属性的块</p>
+<p><strong>设置工作队列</strong></p>
+<p>指定调用传输到队列时要使用的队列。 还可以设置默认队列以进行比较，例如检查人员配备或检查营业时间块。</p>
+<p><strong>设置联系人属性</strong></p>
+<p>将键值对存储为联系人属性。 这些属性可作为联系人的永久部分使用，除非该值被专门覆盖（无法删除）。</p>
+<p><strong>设置日志记录行为</strong></p>
+<p>为此联系人启用联系流日志记录。 日志将写入 AWS CloudWatch Logs。</p>
+<p><strong>设置录音和分析行为</strong></p>
+<p>设置用于录制和/或监控（收听）语音和聊天对话的选项。 还提供了 Contact Lens for Amazon Connect 的功能。</p>
+<h4 id="分支">分支</h4>
+<p>提供根据特定标准对联系流进行分支的能力</p>
+<p><strong>检查队列状态</strong></p>
+<p>根据结果检查队列和分支的状态。 您可以在队列或队列容量中进行分支（队列中的呼叫）</p>
+<p><strong>检查营业时间</strong></p>
+<p>检查联系是发生在为队列定义的工作时间之内还是之外。</p>
+<p><strong>检查联系人属性</strong></p>
+<p>基于与联系人属性值的比较的分支。 支持的比较包括：等于、大于、小于、开始于、包含。</p>
+<p><strong>循环</strong></p>
+<p>提供基本的循环功能。 循环完成后，将遵循完整的分支。 通常与获取客户输入或调用 AWS Lambda 块一起使用。</p>
+<h4 id="集成">集成</h4>
+<p>允许通过调用 AWS Lambda 函数与外部数据源或服务进行集成</p>
+<ul>
+<li>向 AWS Lambda 函数发送事件</li>
+<li>事件包含有关当前联系的所有信息</li>
+<li>允许发送附加参数</li>
+<li>最长运行时间为 8 秒</li>
+<li>期望一个单层的 JSON 响应</li>
+</ul>
+<h4 id="终止转接">终止/转接</h4>
+<p>提供转移或终止呼叫的机制。 还提供终止某些联系流类型中的联系流处理的能力。</p>
+<p><strong>断开</strong></p>
+<p>结束交互</p>
+<p><strong>转移到队列</strong></p>
+<p>结束当前联系流并将联系转移到队列</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+        
+            <a class="nav nav-prev" href="../../../amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/2.createbasicinboundflow/" title="2.2 新建入站联系流"> <i class="fas fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="../../../amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/4.writedemocontactflow/" title="2.4 编写一个完整的入站联系流" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../../js/clipboard.min.js?1650205263"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1650205263"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1650205263"></script>
+    <script src="../../../js/jquery.sticky.js?1650205263"></script>
+    <script src="../../../js/featherlight.min.js?1650205263"></script>
+    <script src="../../../js/highlight.pack.js?1650205263"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1650205263"></script>
+    <script src="../../../js/learn.js?1650205263"></script>
+    <script src="../../../js/hugo-learn.js?1650205263"></script>
+
+    <link href="../../../mermaid/mermaid.css?1650205263" type="text/css" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.min.js?1650205263"></script>
+    <script>
+	var config = {
+        startOnLoad:true,
+        flowchart:{
+	    curve:'basis'
+        }
+      };
+        mermaid.initialize(config);
+    </script>
+    
+
+  </body>
+</html>
+

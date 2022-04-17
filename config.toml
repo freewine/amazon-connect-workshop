@@ -2,7 +2,7 @@ baseURL = "http://gotoaws.cloudguru.run/"
 ignoreFiles = [ "\\.files/README.md$",  ]
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = "Security Practice on AWS workshop"
+title = "Amazon Connect Workshop"
 theme = "hugo-theme-learn"
 uglyurls = false
 sectionPagesMenu = "main"
@@ -15,8 +15,8 @@ relativeURLs = true
   editURL = "https://github.com/sun-biao/secworkshop/edit/master/content/"
   themeVariant = "mine"
   showVisitedLinks = false
-  author = "AWS FSI DNB<sijie@amazon.com>"
-  description = "��δӰ�����Ǩ�Ƶ�AWS��"
+  author = "AWS FSI DNB<freewine@amazon.com>"
+  description = "Amazon Connect Workshop"
   disableSearch = false
   disableAssetsBusting = false
   disableShortcutsTitle = true
@@ -30,12 +30,12 @@ relativeURLs = true
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-github'></i> GitHub Project"
-url = "https://github.com/sun-biao/secworkshop"
+url = "https://github.com/freewine/amazon-connect-workshop"
 weight = 30
 
 [[menu.shortcuts]]
 name = "<i class='fas fa-envelope'></i> Have questions?"
-url = "https://github.com/sun-biao/secworkshop/issues"
+url = "https://github.com/freewine/amazon-connect-workshop/issues"
 weight = 40
 
 [outputs]
