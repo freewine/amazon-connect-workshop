@@ -39,7 +39,7 @@
 	"title": "2. 使用Lex创建智能聊天机器人",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "使用Amazon Connect 与 Amazon Lex创建交互式体验的智能聊天机器人 在这个模块，我们创建一个基于Amazon Connect 与 Amazon Lex的交互式体验的智能聊天机器人用来智能客服场景，该机器人具备一下功能：\n 通过 Amazon Connect Chat UI集成到客户端，并使聊天机器人具备智能对答与人工客服的功能 Amazon Connect Chat UI与Amazon Lex集成过程中，具备交互式体验能力 使用Amazon Connect CCP，集成到客户系统后台，使其具备后台集成能力  本次实验包括：\n 介绍什么是Lex？ 创建可交互式体验的Lex聊天机器人 与Amazon Connect进行集成 集成Amazon Connect CCP  本次实验使用到的AWS服务：\n Amazon Connect Amazon Lex CloudFormation API Gateway CloudFront S3 Lambda DynamoDB  "
+	"content": "使用Amazon Connect 与 Amazon Lex创建交互式体验的智能聊天机器人 在这个模块，我们创建一个基于Amazon Connect 与 Amazon Lex的交互式体验的智能聊天机器人用来智能客服场景，该机器人具备一下功能：\n 通过 Amazon Connect Chat UI集成到客户端，并使聊天机器人具备智能对答与人工客服的功能 Amazon Connect Chat UI与Amazon Lex集成过程中，具备交互式体验能力 使用Amazon Connect CCP，集成到客户系统后台，使其具备后台集成能力  什么是交互式消息的 Amazon Connect Chat 交互式消息是指在一些客户场景下，对用户交互过程提供选项式的交互体验，用户无需手动输入，而是点击选项即可，Amazon Connect提供了与Lex集成的方式，可以通过Connect的Contact Flow进行路由后到Lex，Lex通过对交互过程使用定制的Lambda进行消息处理后，将选项显示给Connect后显示给客户用于交互；\n在此过程中Connect Chat提供了3种类型的交互式模版以供Lex进行集成： 本次实验包括：  介绍什么是Lex？ 创建可交互式体验的Lex聊天机器人 与Amazon Connect进行集成 集成Amazon Connect CCP  本次实验使用到的AWS服务：  Amazon Connect Amazon Lex CloudFormation API Gateway CloudFront S3 Lambda DynamoDB  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/",
@@ -70,8 +70,15 @@
 	"content": "一、申请电话号码  （接上一部分）点击“开始使用”进入到Amazon Connect的管理界面。 在欢迎使用 Amazon Connect页面，点击“开始”。(如果浏览器弹出申请麦克风权限的提示，选择“允许”。)  在申请电话号码页面，进行如下操作：  在“国家/地区”列表中选择对应的国家 在类型列表中选择“DID（直接内部拨号）” 在电话号码列表中选择您想要的电话号码。 点击下一步。 在“申请电话号码”页面，点击“Continue”。     在某些国家/地区，无法直接申请电话号码，需要提Support Case申请。详见：https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html\n 申请电话号码成功后，会进入控制面板页面，点击“查看电话号码”，即可看到申请的电话号码。  点击新创建的电话号码，即可进入到“编辑电话号码页面”。可以看到，电话号码会自动跟Sample inbound flow (first contact experience)进行关联，然后就可以拨打这个电话进行测试。具体联系流的作用，后边的试验再进行介绍。   以上步骤均使用应急账号进行Connect的配置。在正常情况下，应该使用“账户概览”页面的Access URL进行访问，并使用创建Amazon Connect实例时设置的管理员账号进行登录。  二、验证电话和Chat联络 通过前边的步骤，我们已经完成了Amazon Connect云联络中心的创建和配置。接下来就可以进行验证，验证分为两部分：电话验证和Chat验证。\n1. 验证电话联络  点击Connect管理界面右上角的电话按钮， 弹出CCP面板(呼叫控制面板)，将状态设置为“Available”状态。  使用手机拨打新申请的DID号码（您也可以申请第二个DID号码并创建新的客服用户进行测试）。您会听到一段英语欢迎语，然后依次按照以下步骤操作（通话流程在Sample inbound flow中定义）：   按1进入客服队列。 按1移动到队列头部。 按1进入队列，等待客服进行接听。  在CCP面板会接收到来电时，点击接听。 进行通话测试，测试结束后挂断电话。 点击“结束联系人”重新进入到“Available”状态。  2. 验证Chat联络   在Amazon Connect后台“控制面板”， 点击“测试聊天”，进入“测试聊天”页。\n  点击“激活联系人控制面板”，点击   点击测试设置，将联系流设置为“Sample inbound flow (first contact experience)”。   点击左侧模拟网站上的聊天图标开始以客户身份发起聊天。稍等片刻就可以收到欢迎信息，然后等待客服进行接听.\n  在右侧的CCP面板上，客服点击“接受聊天”。\n  在客户侧和客服侧输入信息进行聊天.\n  结束聊天。\n  恭喜！ 您已经申请了电话号码，并成功进行了电话和聊天测试。\n"
 },
 {
-	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/",
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/",
 	"title": "2.2 部署交互式体验机器人",
+	"tags": ["advanced"],
+	"description": "",
+	"content": "实验目的 本实验构建交互式体验的机器人，使用与Lambda集合的Lex机器人，可在Lex的Bot中构建Intent及Slot交互流程，配合Connect需要的Request和Respone，完成Connect对Lex的调用组合。\n本次实验使用到以下AWS服务：\n Amazon Lex Lambda  "
+},
+{
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployconnectchatui/",
+	"title": "2.3 部署Connect Chat UI",
 	"tags": ["advanced"],
 	"description": "",
 	"content": "实验目的 本实验构建交互式体验的机器人，使用与Lambda集合的Lex机器人，可在Lex的Bot中构建Intent及Slot交互流程，配合Connect需要的Request和Respone，完成Connect对Lex的调用组合。\n本次实验使用到以下AWS服务：\n Amazon Lex Lambda  "
@@ -168,18 +175,46 @@
 	"content": "在Amazon Connect上查看实时指标 "
 },
 {
-	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/",
-	"title": "导入可交互式机器人",
-	"tags": ["advanced"],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/",
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/1.createinteractivelambda/",
 	"title": "创建交互式消息Lambda",
 	"tags": ["advanced"],
 	"description": "",
-	"content": ""
+	"content": "部署交互式消息的 AWS Lambda 在 Lex 中如果需要对消息使用Lambda进行处理后，再传递给Connect展示给用户，该部分消息处理的过程需要Lex结合Lambda完成。该部分创建了一个交互式访问的Lambda，供后续创建Lex Bot使用。\n Note：\n在本步骤中需要创建Lambda，请下载   interactive_message_lexv2_function   interactive-messaging-node-lexv2.zip  (5 ko)    Lambda function文件，以便在步骤3中使用；\n   在 AWS Console 中打开 AWS Lambda，选择 Create function。\n  在 Create Function 页面中，选择 Author from scratch 并输入需要的信息后点击 Create function 按钮。\n Function name: 输入 interactive_message_lexv2_function. Runtime: 选择 Node.js 14.x Architecture: 选择 x86_64    在 Function overview 页面， 选择 Code 并在右侧的 Upload from 中选在.zip 文件。\n  在 Upload a .zip file 页面，选择 Upload 并将下载的 Lambda function zip文件，并点击 Save 按钮。\n  检查并确认Lambda创建后源码中包含的文件是否正确。\n  "
+},
+{
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/2.importlexbot/",
+	"title": "导入可交互式机器人并与Lambda绑定",
+	"tags": ["advanced"],
+	"description": "",
+	"content": "导入交互式机器人 该步骤中，我们将要导入Lex机器人；\n Note：\n在本步骤中需要导入Lex Bot，请下载   Lex Bot   interactive-message-bot_v2.zip  (6 ko)    文件，以便在步骤3中使用；\n   在 AWS Console 中打开 Amazon Lex，点击 Get Start, 在 Actions 菜单中选择 Import\n 确保你打开的 Amazon Lex Console 是 V2 版本.\n   在 Import bot 页面中点击 Browse file并选中在上述步骤中下载的.zip文件，在下述设置中进行设置，并点击 Import 按钮\n Bot name：输入 InteractiveMessageBot_v2 IAM permissions: 选择 Create a role with basic Amazon Lex permissions. Children\u0026rsquo;s Online Privacy Protection Act (COPPA): 选择 No.  其他选项可保持默认。\n  检查导入状态，确保导入成功。\n  在 Bots 列表中点击创建的 InteractiveMessageBot，并点击 Intents 列表中的 InteractiveMessageIntent\n  在 InteractiveMessageIntent 编辑页面，在 Code hooks - optional 设置中，勾选 Use a Lambda function for initialization and validation 并点击 Save Intent\n  点击左上角 Back to intents list 回到Bot编辑页面，并进入 Aliases 菜单\n  点击 TestBotAlias 链接进入编辑页面，并点击 Language 中的 English(US) 进行编辑 在 Lambda function - optional 设置中，选择在之前步骤中创建的 Lambda Function，点击 Save保存设置。   "
+},
+{
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/3.buildandtestlexbot/",
+	"title": "Build,测试和发布 Lex Bot",
+	"tags": ["advanced"],
+	"description": "",
+	"content": "构建，测试和发布 Lex Bot 该步骤中，我们将导入的Bot进行构建，测试并将其发布；\n  在 Amazon Lex Console 页面中， 点击 InteractiveMessageBot 中的语言版本 English(US)，点击下方的 Build 按钮。\n  确保 Build 成功后，点击 Test 进入测试页面。 一般情况下构建需要花费一些时间。   在测试窗口，下方的输入框中输入 help 查看 Bot 的返回结果，返回结果应该是一个JSON字符串。\n  "
+},
+{
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/4.createconnectinstance/",
+	"title": "创建Amazon Connect实例",
+	"tags": ["advanced"],
+	"description": "",
+	"content": "创建Amazon Connect实例 该步骤中，我们将创建一个Amazon Connect实例，在后续的步骤中，我们将使用该实例对其进行配置；\n  在 AWS Console 中打开 Amazon Connect，点击 Create instance 进行创建。 设置一下配置并点击 Next 进入下一页\n Identity management： 选择 Store users in Amazon Connect AccessUrl: 输入：servicecenter-workshop-20220505 这里需要是唯一标识。    在 Step 2 中，添加一个Administrator，点击 Next 进入下一步。\n  在 Step 3 中，保持默认，点击 Next 进入下一步。\n  在 Step 4 中，保持默认设置，点击 Next 进入下一步。\n  Review and create 保存设置。 创建过程将花费大约3分钟，创建成功后，点击创建成功的Connect实例。\n Note: 这里点击实例链接进入实例详情页面。\n   在实例详情页面点击 Contact flows 页面，并在 Amazon Lex 部分和 AWS Lambda 部分进行设置。\n 在 Amazon Lex 部分选择之前步骤导入的Bot实例：InteractiveMessageBot_v2 并选择创建的 Alias：TestBotAlias 点击 Add Amazon Lex Bot 保存设置。 在 AWS Lambda 部分选择之前创建的Lambda方法：interactive_message_lexv2_function 并点击 Add Lambda Function 保存设置。    "
+},
+{
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/5.importcontactflow/",
+	"title": "在Amazon Connect中导入并配置Contact Flow",
+	"tags": ["advanced"],
+	"description": "",
+	"content": "在Amazon Connect中导入并配置Contact Flow 该步骤中，我们将在创建好的Amazon Connect实例管理界面中导入并配置Contact Flow。\n Note：\n在本步骤中需要导入Contact Flow，请下载   Contact Flow   InteractiveMessaging_Flow.json  (4 ko)    文件，以便在步骤4中使用；\n   在 AWS Console 中打开 Amazon Connect，在实例列表中点击 Access Url 进入登陆页面。\n使用之前创建Connect实例时设置的Administrator用户名及密码进行登陆。\n  登陆完成后，进入Connect实例管控页面，从左侧的菜单栏中选择 Routing 选择 Contact flows 进入 Contact flows列表页面。\n  点击 Create contact flow 进入编辑页面，点击 Import flow(beta) 进入 Import 页面。\n  在 Import 页面选择下载的 InteractiveMessaging文件点击 Save 保存设置。\n  导入成功后，在导入的Contact flow页面中，点击 Get customer input 模块进行编辑，在Lex bot部分，重新选择之前导入的Lex bot，并选择对应的Alias，设置完成后点击 Save 保存设置。\n  完成设置后，点击 Publish 按钮发布 Contact flow。\n  "
+},
+{
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/6.testchatbot/",
+	"title": "测试你的Chat Bot",
+	"tags": ["advanced"],
+	"description": "",
+	"content": "在Amazon Connect中导入并配置Contact Flow 该步骤中，我们将在创建好的Amazon Connect实例管理界面中导入并配置Contact Flow。\n  进入 Amazon Connect 实例的控制面板, 点击 Test chat 进入测试页面。\n  点击 Test Settings 页面进入测试设置页面，选择之前创建的Contact Flow：InteractiveMessaging，点击 Apply 保存设置。\n  应用成功后，在Chat UI中初始化机器人，在输入框中按照提示输入help，查看机器人反馈信息是否显示选项。\n  如果显示选项正确，则表明该部分完成，后续可以按照机器人返回选项，进行点击选择，查看机器人逻辑。\n  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/tags/advanced/",

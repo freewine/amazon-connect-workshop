@@ -10,23 +10,23 @@
     <link rel="shortcut icon" href="../../../../images/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="../../../../images/favicon.ico" type="image/x-icon" />
 
-    <title>创建交互式消息Lambda :: Amazon Connect Workshop</title>
+    <title>在Amazon Connect中导入并配置Contact Flow :: Amazon Connect Workshop</title>
 
     
-    <link href="../../../../css/nucleus.css?1651822047" rel="stylesheet">
-    <link href="../../../../css/fontawesome-all.min.css?1651822047" rel="stylesheet">
-    <link href="../../../../css/hybrid.css?1651822047" rel="stylesheet">
-    <link href="../../../../css/featherlight.min.css?1651822047" rel="stylesheet">
-    <link href="../../../../css/perfect-scrollbar.min.css?1651822047" rel="stylesheet">
-    <link href="../../../../css/auto-complete.css?1651822047" rel="stylesheet">
-    <link href="../../../../css/atom-one-dark-reasonable.css?1651822047" rel="stylesheet">
-    <link href="../../../../css/theme.css?1651822047" rel="stylesheet">
-    <link href="../../../../css/hugo-theme.css?1651822047" rel="stylesheet">
+    <link href="../../../../css/nucleus.css?1651853897" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1651853897" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1651853897" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1651853897" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1651853897" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1651853897" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1651853897" rel="stylesheet">
+    <link href="../../../../css/theme.css?1651853897" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1651853897" rel="stylesheet">
     
-      <link href="../../../../css/theme-mine.css?1651822047" rel="stylesheet">
+      <link href="../../../../css/theme-mine.css?1651853897" rel="stylesheet">
     
 
-    <script src="../../../../js/jquery-3.3.1.min.js?1651822047"></script>
+    <script src="../../../../js/jquery-3.3.1.min.js?1651853897"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="../../../../amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/">
+  <body class="" data-url="../../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/5.importcontactflow/">
     <nav id="sidebar" class="">
 
 
@@ -53,14 +53,14 @@
 <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../../js/lunr.min.js?1651822047"></script>
-<script type="text/javascript" src="../../../../js/auto-complete.js?1651822047"></script>
+<script type="text/javascript" src="../../../../js/lunr.min.js?1651853897"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1651853897"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/gotoaws.cloudguru.run\/";
     
 </script>
-<script type="text/javascript" src="../../../../js/search.js?1651822047"></script>
+<script type="text/javascript" src="../../../../js/search.js?1651853897"></script>
 
     
   </div>
@@ -588,12 +588,12 @@
  
   
     
-    <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/" title="2.2 部署交互式体验机器人" class="dd-item 
+    <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/" title="2.2 部署交互式体验机器人" class="dd-item 
         parent
         
         
         ">
-      <a href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivelexbot/">
+      <a href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/">
           2.2 部署交互式体验机器人
           
       </a>
@@ -613,9 +613,9 @@
  
   
     
-      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/" title="导入可交互式机器人" class="dd-item ">
-        <a href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/">
-        导入可交互式机器人
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/1.createinteractivelambda/" title="创建交互式消息Lambda" class="dd-item ">
+        <a href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/1.createinteractivelambda/">
+        创建交互式消息Lambda
         
         </a>
     </li>
@@ -632,9 +632,85 @@
  
   
     
-      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/" title="创建交互式消息Lambda" class="dd-item active">
-        <a href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/">
-        创建交互式消息Lambda
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/2.importlexbot/" title="导入可交互式机器人并与Lambda绑定" class="dd-item ">
+        <a href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/2.importlexbot/">
+        导入可交互式机器人并与Lambda绑定
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/3.buildandtestlexbot/" title="Build,测试和发布 Lex Bot" class="dd-item ">
+        <a href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/3.buildandtestlexbot/">
+        Build,测试和发布 Lex Bot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/4.createconnectinstance/" title="创建Amazon Connect实例" class="dd-item ">
+        <a href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/4.createconnectinstance/">
+        创建Amazon Connect实例
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/5.importcontactflow/" title="在Amazon Connect中导入并配置Contact Flow" class="dd-item active">
+        <a href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/5.importcontactflow/">
+        在Amazon Connect中导入并配置Contact Flow
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/6.testchatbot/" title="测试你的Chat Bot" class="dd-item ">
+        <a href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/6.testchatbot/">
+        测试你的Chat Bot
         
         </a>
     </li>
@@ -646,6 +722,30 @@
           
         
         </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployconnectchatui/" title="2.3 部署Connect Chat UI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../../amazon-connect-advanced/2.lexbot/deployconnectchatui/">
+          2.3 部署Connect Chat UI
+          
+      </a>
+      
               
     </li>
   
@@ -719,7 +819,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/sun-biao/secworkshop/edit/master/content/Amazon%20Connect%20Advanced/2.LexBot/DeployInteractiveLexBot/2.CreateInteractiveMessageLambda.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/sun-biao/secworkshop/edit/master/content/Amazon%20Connect%20Advanced/2.LexBot/DeployInteractiveChatBot/5.ImportContactFlow.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -758,7 +858,7 @@
             
           
           
-            <a href='../../../../'>Amazon Connect Workshop</a> > <a href='../../../../amazon-connect-advanced/'>Amazon Connect进阶</a> > <a href='../../../../amazon-connect-advanced/2.lexbot/'>2. 使用Lex创建智能聊天机器人</a> > <a href='../../../../amazon-connect-advanced/2.lexbot/deployinteractivelexbot/'>2.2 部署交互式体验机器人</a> > 创建交互式消息Lambda
+            <a href='../../../../'>Amazon Connect Workshop</a> > <a href='../../../../amazon-connect-advanced/'>Amazon Connect进阶</a> > <a href='../../../../amazon-connect-advanced/2.lexbot/'>2. 使用Lex创建智能聊天机器人</a> > <a href='../../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/'>2.2 部署交互式体验机器人</a> > 在Amazon Connect中导入并配置Contact Flow
           
          
           
@@ -775,7 +875,11 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#在amazon-connect中导入并配置contact-flow">在Amazon Connect中导入并配置Contact Flow</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -797,7 +901,7 @@
           
             <h1>
               
-              创建交互式消息Lambda
+              在Amazon Connect中导入并配置Contact Flow
             </h1>
           
 
@@ -805,6 +909,66 @@
 
 
 
+<h2 id="在amazon-connect中导入并配置contact-flow">在Amazon Connect中导入并配置Contact Flow</h2>
+<p>该步骤中，我们将在创建好的Amazon Connect实例管理界面中导入并配置Contact Flow。</p>
+<blockquote>
+<p>Note：</p>
+<p>在本步骤中需要导入Contact Flow，请下载
+<section class="attachments ">
+	<label>
+		<i class="fas fa-paperclip" aria-hidden="true"></i>
+		Contact Flow
+	</label>
+	
+		
+	
+	<div class="attachments-files">
+	
+		
+		
+			
+				<li>
+					<a href="../../../../Amazon%20Connect%20Advanced/2.LexBot/DeployInteractiveChatBot/5.ImportContactFlow.files/InteractiveMessaging_Flow.json" >
+						InteractiveMessaging_Flow.json
+					</a>
+					(4 ko)
+				</li>
+			
+		
+	
+	<div>
+	
+</section>
+
+ 文件，以便在步骤4中使用；</p>
+</blockquote>
+<ol>
+<li>
+<p>在 AWS Console 中打开 <strong>Amazon Connect</strong>，在实例列表中点击 <strong>Access Url</strong> 进入登陆页面。</p>
+<p>使用之前创建Connect实例时设置的Administrator用户名及密码进行登陆。</p>
+<p><img src="../../../../images/chatbot/importcontactflow_1.jpg?width=400px" alt=""></p>
+</li>
+<li>
+<p>登陆完成后，进入Connect实例管控页面，从左侧的菜单栏中选择 <strong>Routing</strong> 选择 <strong>Contact flows</strong> 进入 Contact flows列表页面。</p>
+<p><img src="../../../../images/chatbot/importcontactflow_2.jpg?width=1000px" alt=""></p>
+</li>
+<li>
+<p>点击 <strong>Create contact flow</strong> 进入编辑页面，点击 <strong>Import flow(beta)</strong> 进入 Import 页面。</p>
+<p><img src="../../../../images/chatbot/importcontactflow_3.jpg?width=1000px" alt=""></p>
+</li>
+<li>
+<p>在 Import 页面选择下载的 InteractiveMessaging文件点击 <strong>Save</strong> 保存设置。</p>
+<p><img src="../../../../images/chatbot/importcontactflow_4.jpg?width=500px" alt=""></p>
+</li>
+<li>
+<p>导入成功后，在导入的Contact flow页面中，点击 <strong>Get customer input</strong> 模块进行编辑，在Lex bot部分，重新选择之前导入的Lex bot，并选择对应的Alias，设置完成后点击 <strong>Save</strong> 保存设置。</p>
+<p><img src="../../../../images/chatbot/importcontactflow_5.jpg?width=1000px" alt=""></p>
+</li>
+<li>
+<p>完成设置后，点击 <strong>Publish</strong> 按钮发布 Contact flow。</p>
+<p><img src="../../../../images/chatbot/importcontactflow_6.jpg?width=1000px" alt=""></p>
+</li>
+</ol>
 
 
 <footer class=" footline" >
@@ -1239,6 +1403,92 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1259,18 +1509,15 @@
                     
             
         
-                    
-            
-        
 
         
 
 
         
-            <a class="nav nav-prev" href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/" title="导入可交互式机器人"> <i class="fas fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/4.createconnectinstance/" title="创建Amazon Connect实例"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/" title="导入可交互式机器人" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="../../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/6.testchatbot/" title="测试你的Chat Bot" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
@@ -1279,19 +1526,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../../js/clipboard.min.js?1651822047"></script>
-    <script src="../../../../js/perfect-scrollbar.min.js?1651822047"></script>
-    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1651822047"></script>
-    <script src="../../../../js/jquery.sticky.js?1651822047"></script>
-    <script src="../../../../js/featherlight.min.js?1651822047"></script>
-    <script src="../../../../js/highlight.pack.js?1651822047"></script>
+    <script src="../../../../js/clipboard.min.js?1651853897"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1651853897"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1651853897"></script>
+    <script src="../../../../js/jquery.sticky.js?1651853897"></script>
+    <script src="../../../../js/featherlight.min.js?1651853897"></script>
+    <script src="../../../../js/highlight.pack.js?1651853897"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../../js/modernizr.custom-3.6.0.js?1651822047"></script>
-    <script src="../../../../js/learn.js?1651822047"></script>
-    <script src="../../../../js/hugo-learn.js?1651822047"></script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1651853897"></script>
+    <script src="../../../../js/learn.js?1651853897"></script>
+    <script src="../../../../js/hugo-learn.js?1651853897"></script>
 
-    <link href="../../../../mermaid/mermaid.css?1651822047" type="text/css" rel="stylesheet" />
-    <script src="../../../../mermaid/mermaid.min.js?1651822047"></script>
+    <link href="../../../../mermaid/mermaid.css?1651853897" type="text/css" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.min.js?1651853897"></script>
     <script>
 	var config = {
         startOnLoad:true,
