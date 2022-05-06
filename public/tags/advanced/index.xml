@@ -8,19 +8,19 @@
     <language>en-us</language><atom:link href="http://gotoaws.cloudguru.run/tags/advanced/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>导入可交互式机器人</title>
-      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/1.importlexbot/</link>
+      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/1.importlexbot/</guid>
+      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>创建交互式消息Lambda</title>
-      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/2.createinteractivemessagelambda/</link>
+      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/2.createinteractivemessagelambda/</guid>
+      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/</guid>
       <description></description>
     </item>
     
@@ -70,10 +70,10 @@
     
     <item>
       <title>2.2 部署交互式体验机器人</title>
-      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
+      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid>
+      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/</guid>
       <description>实验目的 本实验构建交互式体验的机器人，使用与Lambda集合的Lex机器人，可在Lex的Bot中构建Intent及Slot交互流程，配合Connect需要的Request和Respone，完成Connect对Lex的调用组合。
 本次实验使用到以下AWS服务：
  Amazon Lex Lambda  </description>

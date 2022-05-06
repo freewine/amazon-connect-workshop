@@ -14,14 +14,14 @@
 	"content": "在这一系列实验中，我们将使用 Amazon Connect 服务构建基于云的联络中心，并探索与其他 AWS 服务（如 Amazon DynamoDB、Amazon Lex 和 AWS Lambda）的集成，以构建现代且强大的联络中心。\n本Workshop旨在介绍 Amazon Connect，旨在帮助以前不了解 AWS 或 Amazon Connect 的用户。\n本实验涉及到的服务部分可以免费使用， 但是也有多项服务可能会产生一些使用费用。 请参阅定价页面以查看AWS Lambda、DynamoDB、Amazon Lex 和 Amazon Connect 中使用的服务的免费套餐使用情况和成本。\n本次Workshop分为两部分：\n Amazon Connect基础：这部分从技术上来说，您可以了解以下技术内容：   部署Amazon Connect实例 申请电话号码并设置Contact Flow 了解和编写Contact Flow 进行Voice/Chat测试 查看日志、统计数据和报告  请先完成基础部分的实验。\n  Amazon Connect进阶：这部分从技术上来说，您可以了解以下技术内容：   通过Contact Flow的设计以及Lambda的集成实现挂机后评价 Amazon Connect与Lex集成实现智能客服  这部分需要在完成基础内容以后进行操作。\n 如果您对基础部分都比较熟悉，而打算直接做进阶部分的话，则必须完成以下的基础部分（进阶部分会依赖以下的部分）：\n 申请电话号码 编写联系流  "
 },
 {
-	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/1.importlexbot/",
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/",
 	"title": "导入可交互式机器人",
 	"tags": ["advanced"],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/2.createinteractivemessagelambda/",
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/",
 	"title": "创建交互式消息Lambda",
 	"tags": ["advanced"],
 	"description": "",
@@ -84,7 +84,7 @@
 	"content": "一、申请电话号码  （接上一部分）点击“开始使用”进入到Amazon Connect的管理界面。 在欢迎使用 Amazon Connect页面，点击“开始”。(如果浏览器弹出申请麦克风权限的提示，选择“允许”。)  在申请电话号码页面，进行如下操作：  在“国家/地区”列表中选择对应的国家 在类型列表中选择“DID（直接内部拨号）” 在电话号码列表中选择您想要的电话号码。 点击下一步。 在“申请电话号码”页面，点击“Continue”。     在某些国家/地区，无法直接申请电话号码，需要提Support Case申请。详见：https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html\n 申请电话号码成功后，会进入控制面板页面，点击“查看电话号码”，即可看到申请的电话号码。  点击新创建的电话号码，即可进入到“编辑电话号码页面”。可以看到，电话号码会自动跟Sample inbound flow (first contact experience)进行关联，然后就可以拨打这个电话进行测试。具体联系流的作用，后边的试验再进行介绍。   以上步骤均使用应急账号进行Connect的配置。在正常情况下，应该使用“账户概览”页面的Access URL进行访问，并使用创建Amazon Connect实例时设置的管理员账号进行登录。  二、验证电话和Chat联络 通过前边的步骤，我们已经完成了Amazon Connect云联络中心的创建和配置。接下来就可以进行验证，验证分为两部分：电话验证和Chat验证。\n1. 验证电话联络  点击Connect管理界面右上角的电话按钮， 弹出CCP面板(呼叫控制面板)，将状态设置为“Available”状态。  使用手机拨打新申请的DID号码（您也可以申请第二个DID号码并创建新的客服用户进行测试）。您会听到一段英语欢迎语，然后依次按照以下步骤操作（通话流程在Sample inbound flow中定义）：   按1进入客服队列。 按1移动到队列头部。 按1进入队列，等待客服进行接听。  在CCP面板会接收到来电时，点击接听。 进行通话测试，测试结束后挂断电话。 点击“结束联系人”重新进入到“Available”状态。  2. 验证Chat联络   在Amazon Connect后台“控制面板”， 点击“测试聊天”，进入“测试聊天”页。\n  点击“激活联系人控制面板”，点击   点击测试设置，将联系流设置为“Sample inbound flow (first contact experience)”。   点击左侧模拟网站上的聊天图标开始以客户身份发起聊天。稍等片刻就可以收到欢迎信息，然后等待客服进行接听.\n  在右侧的CCP面板上，客服点击“接受聊天”。\n  在客户侧和客服侧输入信息进行聊天.\n  结束聊天。\n  恭喜！ 您已经申请了电话号码，并成功进行了电话和聊天测试。\n"
 },
 {
-	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/",
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/",
 	"title": "2.2 部署交互式体验机器人",
 	"tags": ["advanced"],
 	"description": "",

@@ -6,9 +6,9 @@
   </url><url>
     <loc>http://gotoaws.cloudguru.run/1.introduction/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/1.importlexbot/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/2.createinteractivemessagelambda/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/</loc>
   </url><url>
     <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/</loc>
   </url><url>
@@ -26,7 +26,7 @@
   </url><url>
     <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/2.claimnumber/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/</loc>
   </url><url>
     <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/1.createiamrole/</loc>
   </url><url>
