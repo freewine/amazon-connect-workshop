@@ -6,10 +6,6 @@
   </url><url>
     <loc>http://gotoaws.cloudguru.run/1.introduction/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/</loc>
-  </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/</loc>
-  </url><url>
     <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/</loc>
   </url><url>
     <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/</loc>
@@ -53,6 +49,10 @@
     <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/3.metrics/</loc>
   </url><url>
     <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/3.metrics/1.realtimemetrics/</loc>
+  </url><url>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/</loc>
+  </url><url>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/</loc>
   </url><url>
     <loc>http://gotoaws.cloudguru.run/tags/advanced/</loc>
   </url><url>

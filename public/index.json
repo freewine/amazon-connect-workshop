@@ -14,20 +14,6 @@
 	"content": "在这一系列实验中，我们将使用 Amazon Connect 服务构建基于云的联络中心，并探索与其他 AWS 服务（如 Amazon DynamoDB、Amazon Lex 和 AWS Lambda）的集成，以构建现代且强大的联络中心。\n本Workshop旨在介绍 Amazon Connect，旨在帮助以前不了解 AWS 或 Amazon Connect 的用户。\n本实验涉及到的服务部分可以免费使用， 但是也有多项服务可能会产生一些使用费用。 请参阅定价页面以查看AWS Lambda、DynamoDB、Amazon Lex 和 Amazon Connect 中使用的服务的免费套餐使用情况和成本。\n本次Workshop分为两部分：\n Amazon Connect基础：这部分从技术上来说，您可以了解以下技术内容：   部署Amazon Connect实例 申请电话号码并设置Contact Flow 了解和编写Contact Flow 进行Voice/Chat测试 查看日志、统计数据和报告  请先完成基础部分的实验。\n  Amazon Connect进阶：这部分从技术上来说，您可以了解以下技术内容：   通过Contact Flow的设计以及Lambda的集成实现挂机后评价 Amazon Connect与Lex集成实现智能客服  这部分需要在完成基础内容以后进行操作。\n 如果您对基础部分都比较熟悉，而打算直接做进阶部分的话，则必须完成以下的基础部分（进阶部分会依赖以下的部分）：\n 申请电话号码 编写联系流  "
 },
 {
-	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/",
-	"title": "导入可交互式机器人",
-	"tags": ["advanced"],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/",
-	"title": "创建交互式消息Lambda",
-	"tags": ["advanced"],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/",
 	"title": "Amazon Connect基础",
 	"tags": ["beginner"],
@@ -180,6 +166,20 @@
 	"tags": [],
 	"description": "",
 	"content": "在Amazon Connect上查看实时指标 "
+},
+{
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/",
+	"title": "导入可交互式机器人",
+	"tags": ["advanced"],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/",
+	"title": "创建交互式消息Lambda",
+	"tags": ["advanced"],
+	"description": "",
+	"content": ""
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/tags/advanced/",

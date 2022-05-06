@@ -7,24 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="http://gotoaws.cloudguru.run/tags/advanced/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>导入可交互式机器人</title>
-      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>创建交互式消息Lambda</title>
-      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>1. 通过Lambda实现挂机评价</title>
       <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -128,6 +110,24 @@
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/5.testlambda/</guid>
       <description>试验说明 TODO：</description>
+    </item>
+    
+    <item>
+      <title>导入可交互式机器人</title>
+      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/1.importlexbot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>创建交互式消息Lambda</title>
+      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivelexbot/2.createinteractivemessagelambda/</guid>
+      <description></description>
     </item>
     
   </channel>
