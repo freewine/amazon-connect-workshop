@@ -1,7 +1,7 @@
 ---
 title: "2.2 部署交互式体验机器人"
 chapter: false
-weight: 20
+weight: 22
 tags:
 - advanced
 ---
