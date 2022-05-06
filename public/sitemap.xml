@@ -6,47 +6,53 @@
   </url><url>
     <loc>http://gotoaws.cloudguru.run/1.introduction/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/1.importlexbot/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/2.createinteractivemessagelambda/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/1.deploy/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E8%BF%9B%E9%98%B6/2.lexbot/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E8%BF%9B%E9%98%B6/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/1.deploy/1.deployconnect/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/1.deploy/2.claimnumber/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E8%BF%9B%E9%98%B6/2.lexbot/1.-introlex/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/1.deployconnect/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/1.createiamrole/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/1.-introlex/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/2.createdynamodb/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/2.claimnumber/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/3.createlambda/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/4.integratelambda/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/1.createiamrole/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E8%BF%9B%E9%98%B6/1.lambda/5.testlambda/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/2.createdynamodb/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/3.createlambda/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/1.contactflow_basic/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/4.integratelambda/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/2.createbasicinboundflow/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/5.testlambda/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/3.reviewcontactblock/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/4.writedemocontactflow/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/1.contactflow_basic/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/2.contactflow/5.testdemocontactflow/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/2.createbasicinboundflow/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/3.metrics/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/3.reviewcontactblock/</loc>
   </url><url>
-    <loc>http://gotoaws.cloudguru.run/amazon-connect%E5%9F%BA%E7%A1%80/3.metrics/1.realtimemetrics/</loc>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/4.writedemocontactflow/</loc>
+  </url><url>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/5.testdemocontactflow/</loc>
+  </url><url>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/3.metrics/</loc>
+  </url><url>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/3.metrics/1.realtimemetrics/</loc>
   </url><url>
     <loc>http://gotoaws.cloudguru.run/tags/advanced/</loc>
   </url><url>

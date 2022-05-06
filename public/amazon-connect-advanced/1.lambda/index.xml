@@ -1,84 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>advanced on Amazon Connect Workshop</title>
-    <link>http://gotoaws.cloudguru.run/tags/advanced/</link>
-    <description>Recent content in advanced on Amazon Connect Workshop</description>
+    <title>1. 通过Lambda实现挂机评价 on Amazon Connect Workshop</title>
+    <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/</link>
+    <description>Recent content in 1. 通过Lambda实现挂机评价 on Amazon Connect Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://gotoaws.cloudguru.run/tags/advanced/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>导入可交互式机器人</title>
-      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/1.importlexbot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/1.importlexbot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>创建交互式消息Lambda</title>
-      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/2.createinteractivemessagelambda/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/2.createinteractivemessagelambda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>1. 通过Lambda实现挂机评价</title>
-      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/</guid>
-      <description>实验目的 本实验在客服通话结束后邀请客户对本次服务进行评价，通过集成Lambda将客户的评价写入DynamoDB，最后使用Glue和Athena进行数据处理和查询。
-本次实验使用到以下AWS服务：
- Amazon Connect Lambda DynamoDB Glue Athena  </description>
-    </item>
-    
-    <item>
-      <title>2. 使用Lex创建智能聊天机器人</title>
-      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/</guid>
-      <description>使用Amazon Connect 与 Amazon Lex创建交互式体验的智能聊天机器人 在这个模块，我们创建一个基于Amazon Connect 与 Amazon Lex的交互式体验的智能聊天机器人用来智能客服场景，该机器人具备一下功能：
- 通过 Amazon Connect Chat UI集成到客户端，并使聊天机器人具备智能对答与人工客服的功能 Amazon Connect Chat UI与Amazon Lex集成过程中，具备交互式体验能力 使用Amazon Connect CCP，集成到客户系统后台，使其具备后台集成能力  本次实验包括：
- 介绍什么是Lex？ 创建可交互式体验的Lex聊天机器人 与Amazon Connect进行集成 集成Amazon Connect CCP  本次实验使用到的AWS服务：
- Amazon Connect Amazon Lex CloudFormation API Gateway CloudFront S3 Lambda DynamoDB  </description>
-    </item>
-    
-    <item>
-      <title>Amazon Connect进阶</title>
-      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/</guid>
-      <description>在完成了基础部分以后，可以根据自己的业务系统的实际情况，有选择的对进阶部分进行了解。 如果您对基础部分都比较熟悉，而打算直接做进阶部分的话，则必须完成以下的基础部分（进阶部分会依赖以下的部分）：
- 部署Amazon Connect 部署云端基础架构  通过这部分的实验内容，您可以了解以下技术内容：
- 通过与Lex的集成实现智能聊天客服 通过Lambda实现挂机评价  这部分需要在完成基础内容以后进行操作，大概需要4-6小时。
- </description>
-    </item>
-    
-    <item>
-      <title>2.1 Lex介绍</title>
-      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/1.-introlex/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/1.-introlex/</guid>
-      <description>Lex是什么 Amazon Lex 是 AWS 提供的用于构建会话界面的服务。 构建的界面可用于基于文本和基于语音的聊天。 Lex 使用与 Alexa 相同的会话引擎。 Amazon Lex 自动程序由自动语音识别 (ASR) 和自然语言理解 (NLU) 功能提供支持。</description>
-    </item>
-    
-    <item>
-      <title>2.2 部署交互式体验机器人</title>
-      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid>
-      <description>实验目的 本实验构建交互式体验的机器人，使用与Lambda集合的Lex机器人，可在Lex的Bot中构建Intent及Slot交互流程，配合Connect需要的Request和Respone，完成Connect对Lex的调用组合。
-本次实验使用到以下AWS服务：
- Amazon Lex Lambda  </description>
-    </item>
-    
+    <language>en-us</language><atom:link href="http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>创建IAM策略和角色</title>
       <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/1.createiamrole/</link>

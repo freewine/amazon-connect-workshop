@@ -36,8 +36,8 @@ weight: 1
 {{% /notice  %}}
 
 如果您对基础部分都比较熟悉，而打算直接做进阶部分的话，则必须完成以下的基础部分（进阶部分会依赖以下的部分）：
-1. [申请电话号码]({{< ref "Amazon Connect基础/1.Deploy/2.ClaimNumber.md" >}})
-2. [编写联系流]({{< ref "Amazon Connect基础/2.ContactFlow/4.WriteDemoContactFlow.md" >}})
+1. [申请电话号码]({{< ref "Amazon Connect Basic/1.Deploy/2.ClaimNumber.md" >}})
+2. [编写联系流]({{< ref "Amazon Connect Basic/2.ContactFlow/4.WriteDemoContactFlow.md" >}})
 
 
 

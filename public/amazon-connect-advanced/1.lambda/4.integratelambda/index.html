@@ -7,26 +7,26 @@
     <meta name="description" content="Amazon Connect Workshop">
 <meta name="author" content="AWS FSI DNB&lt;freewine@amazon.com&gt;">
 
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
-<link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../../../images/favicon.ico" type="image/x-icon" />
 
-    <title>Workshop整体介绍 :: Amazon Connect Workshop</title>
+    <title>将Lambda集成到Amazon Connect :: Amazon Connect Workshop</title>
 
     
-    <link href="../css/nucleus.css?1651820372" rel="stylesheet">
-    <link href="../css/fontawesome-all.min.css?1651820372" rel="stylesheet">
-    <link href="../css/hybrid.css?1651820372" rel="stylesheet">
-    <link href="../css/featherlight.min.css?1651820372" rel="stylesheet">
-    <link href="../css/perfect-scrollbar.min.css?1651820372" rel="stylesheet">
-    <link href="../css/auto-complete.css?1651820372" rel="stylesheet">
-    <link href="../css/atom-one-dark-reasonable.css?1651820372" rel="stylesheet">
-    <link href="../css/theme.css?1651820372" rel="stylesheet">
-    <link href="../css/hugo-theme.css?1651820372" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1651820372" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1651820372" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1651820372" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1651820372" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1651820372" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1651820372" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1651820372" rel="stylesheet">
+    <link href="../../../css/theme.css?1651820372" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1651820372" rel="stylesheet">
     
-      <link href="../css/theme-mine.css?1651820372" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1651820372" rel="stylesheet">
     
 
-    <script src="../js/jquery-3.3.1.min.js?1651820372"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1651820372"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,14 +36,14 @@
     </style>
     
   </head>
-  <body class="" data-url="../1.introduction/">
+  <body class="" data-url="../../../amazon-connect-advanced/1.lambda/4.integratelambda/">
     <nav id="sidebar" class="">
 
 
 
   <div id="header-wrapper">
     <div id="header">
-      <a href="../" title="Go home"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 40" width="40%" style="padding:5px 0px;"><defs><style>.cls-1{fill:#fff;}  .cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg></a>
+      <a href="../../../" title="Go home"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 40" width="40%" style="padding:5px 0px;"><defs><style>.cls-1{fill:#fff;}  .cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg></a>
 
     </div>
     
@@ -53,14 +53,14 @@
 <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../js/lunr.min.js?1651820372"></script>
-<script type="text/javascript" src="../js/auto-complete.js?1651820372"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1651820372"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1651820372"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/gotoaws.cloudguru.run\/";
     
 </script>
-<script type="text/javascript" src="../js/search.js?1651820372"></script>
+<script type="text/javascript" src="../../../js/search.js?1651820372"></script>
 
     
   </div>
@@ -77,11 +77,11 @@
   
     
     <li data-nav-id="/1.introduction/" title="Workshop整体介绍" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
-      <a href="../1.introduction/">
+      <a href="../../../1.introduction/">
           Workshop整体介绍
           
       </a>
@@ -103,7 +103,7 @@
         
         
         ">
-      <a href="../amazon-connect-basic/">
+      <a href="../../../amazon-connect-basic/">
           Amazon Connect基础
           
       </a>
@@ -130,7 +130,7 @@
         
         
         ">
-      <a href="../amazon-connect-basic/1.deploy/">
+      <a href="../../../amazon-connect-basic/1.deploy/">
           1. 部署Amazon Connect
           
       </a>
@@ -151,7 +151,7 @@
   
     
       <li data-nav-id="/amazon-connect-basic/1.deploy/1.deployconnect/" title="1.1 创建Amazon Connect实例" class="dd-item ">
-        <a href="../amazon-connect-basic/1.deploy/1.deployconnect/">
+        <a href="../../../amazon-connect-basic/1.deploy/1.deployconnect/">
         1.1 创建Amazon Connect实例
         
         </a>
@@ -170,7 +170,7 @@
   
     
       <li data-nav-id="/amazon-connect-basic/1.deploy/2.claimnumber/" title="1.2 申请电话号码并进行验证" class="dd-item ">
-        <a href="../amazon-connect-basic/1.deploy/2.claimnumber/">
+        <a href="../../../amazon-connect-basic/1.deploy/2.claimnumber/">
         1.2 申请电话号码并进行验证
         
         </a>
@@ -202,7 +202,7 @@
         
         
         ">
-      <a href="../amazon-connect-basic/2.contactflow/">
+      <a href="../../../amazon-connect-basic/2.contactflow/">
           2. 创建联系流
           
       </a>
@@ -223,7 +223,7 @@
   
     
       <li data-nav-id="/amazon-connect-basic/2.contactflow/1.contactflow_basic/" title="2.1 介绍联系流库和示例/默认联系流" class="dd-item ">
-        <a href="../amazon-connect-basic/2.contactflow/1.contactflow_basic/">
+        <a href="../../../amazon-connect-basic/2.contactflow/1.contactflow_basic/">
         2.1 介绍联系流库和示例/默认联系流
         
         </a>
@@ -242,7 +242,7 @@
   
     
       <li data-nav-id="/amazon-connect-basic/2.contactflow/2.createbasicinboundflow/" title="2.2 新建入站联系流" class="dd-item ">
-        <a href="../amazon-connect-basic/2.contactflow/2.createbasicinboundflow/">
+        <a href="../../../amazon-connect-basic/2.contactflow/2.createbasicinboundflow/">
         2.2 新建入站联系流
         
         </a>
@@ -261,7 +261,7 @@
   
     
       <li data-nav-id="/amazon-connect-basic/2.contactflow/3.reviewcontactblock/" title="2.3 查看常用的联系快" class="dd-item ">
-        <a href="../amazon-connect-basic/2.contactflow/3.reviewcontactblock/">
+        <a href="../../../amazon-connect-basic/2.contactflow/3.reviewcontactblock/">
         2.3 查看常用的联系快
         
         </a>
@@ -280,7 +280,7 @@
   
     
       <li data-nav-id="/amazon-connect-basic/2.contactflow/4.writedemocontactflow/" title="2.4 编写一个完整的入站联系流" class="dd-item ">
-        <a href="../amazon-connect-basic/2.contactflow/4.writedemocontactflow/">
+        <a href="../../../amazon-connect-basic/2.contactflow/4.writedemocontactflow/">
         2.4 编写一个完整的入站联系流
         
         </a>
@@ -299,7 +299,7 @@
   
     
       <li data-nav-id="/amazon-connect-basic/2.contactflow/5.testdemocontactflow/" title="2.5 测试入站联系流" class="dd-item ">
-        <a href="../amazon-connect-basic/2.contactflow/5.testdemocontactflow/">
+        <a href="../../../amazon-connect-basic/2.contactflow/5.testdemocontactflow/">
         2.5 测试入站联系流
         
         </a>
@@ -331,7 +331,7 @@
         
         
         ">
-      <a href="../amazon-connect-basic/3.metrics/">
+      <a href="../../../amazon-connect-basic/3.metrics/">
           3. 查看指标和报告
           
       </a>
@@ -352,7 +352,7 @@
   
     
       <li data-nav-id="/amazon-connect-basic/3.metrics/1.realtimemetrics/" title="3.1 查看实时指标" class="dd-item ">
-        <a href="../amazon-connect-basic/3.metrics/1.realtimemetrics/">
+        <a href="../../../amazon-connect-basic/3.metrics/1.realtimemetrics/">
         3.1 查看实时指标
         
         </a>
@@ -387,11 +387,11 @@
   
     
     <li data-nav-id="/amazon-connect-advanced/" title="Amazon Connect进阶" class="dd-item 
-        
+        parent
         
         
         ">
-      <a href="../amazon-connect-advanced/">
+      <a href="../../../amazon-connect-advanced/">
           Amazon Connect进阶
           
       </a>
@@ -414,11 +414,11 @@
   
     
     <li data-nav-id="/amazon-connect-advanced/1.lambda/" title="1. 通过Lambda实现挂机评价" class="dd-item 
-        
+        parent
         
         
         ">
-      <a href="../amazon-connect-advanced/1.lambda/">
+      <a href="../../../amazon-connect-advanced/1.lambda/">
           1. 通过Lambda实现挂机评价
           
       </a>
@@ -439,7 +439,7 @@
   
     
       <li data-nav-id="/amazon-connect-advanced/1.lambda/1.createiamrole/" title="创建IAM策略和角色" class="dd-item ">
-        <a href="../amazon-connect-advanced/1.lambda/1.createiamrole/">
+        <a href="../../../amazon-connect-advanced/1.lambda/1.createiamrole/">
         创建IAM策略和角色
         
         </a>
@@ -458,7 +458,7 @@
   
     
       <li data-nav-id="/amazon-connect-advanced/1.lambda/2.createdynamodb/" title="创建DynamoDB" class="dd-item ">
-        <a href="../amazon-connect-advanced/1.lambda/2.createdynamodb/">
+        <a href="../../../amazon-connect-advanced/1.lambda/2.createdynamodb/">
         创建DynamoDB
         
         </a>
@@ -477,7 +477,7 @@
   
     
       <li data-nav-id="/amazon-connect-advanced/1.lambda/3.createlambda/" title="创建Lambda函数" class="dd-item ">
-        <a href="../amazon-connect-advanced/1.lambda/3.createlambda/">
+        <a href="../../../amazon-connect-advanced/1.lambda/3.createlambda/">
         创建Lambda函数
         
         </a>
@@ -495,8 +495,8 @@
  
   
     
-      <li data-nav-id="/amazon-connect-advanced/1.lambda/4.integratelambda/" title="将Lambda集成到Amazon Connect" class="dd-item ">
-        <a href="../amazon-connect-advanced/1.lambda/4.integratelambda/">
+      <li data-nav-id="/amazon-connect-advanced/1.lambda/4.integratelambda/" title="将Lambda集成到Amazon Connect" class="dd-item active">
+        <a href="../../../amazon-connect-advanced/1.lambda/4.integratelambda/">
         将Lambda集成到Amazon Connect
         
         </a>
@@ -515,7 +515,7 @@
   
     
       <li data-nav-id="/amazon-connect-advanced/1.lambda/5.testlambda/" title="测试Lambda挂机评价" class="dd-item ">
-        <a href="../amazon-connect-advanced/1.lambda/5.testlambda/">
+        <a href="../../../amazon-connect-advanced/1.lambda/5.testlambda/">
         测试Lambda挂机评价
         
         </a>
@@ -547,7 +547,7 @@
         
         
         ">
-      <a href="../amazon-connect-advanced/2.lexbot/">
+      <a href="../../../amazon-connect-advanced/2.lexbot/">
           2. 使用Lex创建智能聊天机器人
           
       </a>
@@ -570,7 +570,7 @@
   
     
       <li data-nav-id="/amazon-connect-advanced/2.lexbot/1.-introlex/" title="2.1 Lex介绍" class="dd-item ">
-        <a href="../amazon-connect-advanced/2.lexbot/1.-introlex/">
+        <a href="../../../amazon-connect-advanced/2.lexbot/1.-introlex/">
         2.1 Lex介绍
         
         </a>
@@ -593,7 +593,7 @@
         
         
         ">
-      <a href="../amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/">
+      <a href="../../../amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/">
           2.2 部署交互式体验机器人
           
       </a>
@@ -614,7 +614,7 @@
   
     
       <li data-nav-id="/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/1.importlexbot/" title="导入可交互式机器人" class="dd-item ">
-        <a href="../amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/1.importlexbot/">
+        <a href="../../../amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/1.importlexbot/">
         导入可交互式机器人
         
         </a>
@@ -633,7 +633,7 @@
   
     
       <li data-nav-id="/amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/2.createinteractivemessagelambda/" title="创建交互式消息Lambda" class="dd-item ">
-        <a href="../amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/2.createinteractivemessagelambda/">
+        <a href="../../../amazon-connect-advanced/2.lexbot/%E9%83%A8%E7%BD%B2%E4%BA%A4%E4%BA%92%E5%BC%8F%E4%BD%93%E9%AA%8C%E6%9C%BA%E5%99%A8%E4%BA%BA/2.createinteractivemessagelambda/">
         创建交互式消息Lambda
         
         </a>
@@ -719,7 +719,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/sun-biao/secworkshop/edit/master/content/1.Introduction/_index.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://github.com/sun-biao/secworkshop/edit/master/content/Amazon%20Connect%20Advanced/1.Lambda/4.IntegrateLambda.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -746,7 +746,19 @@
             
           
           
-            <a href='../'>Amazon Connect Workshop</a> > Workshop整体介绍
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='../../../'>Amazon Connect Workshop</a> > <a href='../../../amazon-connect-advanced/'>Amazon Connect进阶</a> > <a href='../../../amazon-connect-advanced/1.lambda/'>1. 通过Lambda实现挂机评价</a> > 将Lambda集成到Amazon Connect
+          
+         
+          
+         
           
          
           
@@ -757,7 +769,12 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#试验说明">试验说明</a></li>
+    <li><a href="#一授权amazon-connect访问lambda">一、授权Amazon Connect访问Lambda</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -767,13 +784,19 @@
             
         <div id="head-tags">
         
+<div class="tags">
+
+  <a class="tag-link" href="../../../tags/advanced">advanced</a>
+
+</div>
+
         </div>
         
         <div id="body-inner">
           
             <h1>
               
-              Workshop整体介绍
+              将Lambda集成到Amazon Connect
             </h1>
           
 
@@ -781,49 +804,23 @@
 
 
 
-
-	<p>在这一系列实验中，我们将使用 Amazon Connect 服务构建基于云的联络中心，并探索与其他 AWS 服务（如 Amazon DynamoDB、Amazon Lex 和 AWS Lambda）的集成，以构建现代且强大的联络中心。</p>
-<p>本Workshop旨在介绍 Amazon Connect，旨在帮助以前不了解 AWS 或 Amazon Connect 的用户。</p>
-<p>本实验涉及到的服务部分可以免费使用， 但是也有多项服务可能会产生一些使用费用。 请参阅定价页面以查看AWS Lambda、DynamoDB、Amazon Lex 和 Amazon Connect 中使用的服务的免费套餐使用情况和成本。</p>
-<p>本次Workshop分为两部分：</p>
-<ul>
-<li>Amazon Connect基础：这部分从技术上来说，您可以了解以下技术内容：</li>
-</ul>
+<h2 id="试验说明">试验说明</h2>
+<p>此步骤通过在Amazon Connect中注册之前创建的Lambda函数，并在联系流中调用Lambda以完成挂机后评价功能。</p>
+<h2 id="一授权amazon-connect访问lambda">一、授权Amazon Connect访问Lambda</h2>
 <ol>
-<li>部署Amazon Connect实例</li>
-<li>申请电话号码并设置Contact Flow</li>
-<li>了解和编写Contact Flow</li>
-<li>进行Voice/Chat测试</li>
-<li>查看日志、统计数据和报告</li>
+<li>在AWS控制台，打开Amazon Connect。</li>
+<li>点击实例名进入账户概览。</li>
+<li>在左侧的导航栏选择“Contact Flow”</li>
+<li>滑动到AWS Lambda部分，选择创建的Lambda函数“AmazonConnectSurveyLambda”</li>
+<li>点击“添加Lambda函数”
+<img src="../../../images/2.1.Survey/Integrate-Lambda.png" alt=""></li>
 </ol>
-
-<div class="notices info" ><p>请先完成基础部分的实验。</p>
-</div>
-
-<ul>
-<li>Amazon Connect进阶：这部分从技术上来说，您可以了解以下技术内容：</li>
-</ul>
-<ol>
-<li>通过Contact Flow的设计以及Lambda的集成实现挂机后评价</li>
-<li>Amazon Connect与Lex集成实现智能客服</li>
-</ol>
-
-<div class="notices info" ><p>这部分需要在完成基础内容以后进行操作。</p>
-</div>
-
-<p>如果您对基础部分都比较熟悉，而打算直接做进阶部分的话，则必须完成以下的基础部分（进阶部分会依赖以下的部分）：</p>
-<ol>
-<li><a href="../amazon-connect-basic/1.deploy/2.claimnumber/">申请电话号码</a></li>
-<li><a href="../amazon-connect-basic/2.contactflow/4.writedemocontactflow/">编写联系流</a></li>
-</ol>
-
-
-
 
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div>
@@ -856,53 +853,8 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
                         
                         
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -925,14 +877,10 @@
 
                     
                     
+                        
+                    
                     
 
-                    
-            
-        
-                    
-            
-        
                     
                         
             
@@ -979,106 +927,8 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
                     
                         
             
@@ -1186,6 +1036,161 @@
 
                     
                     
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
                         
                     
                     
@@ -1268,10 +1273,10 @@
 
 
         
-            <a class="nav nav-prev" href="../" title="Amazon Connect Workshop"> <i class="fas fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="../../../amazon-connect-advanced/1.lambda/3.createlambda/" title="创建Lambda函数"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="../amazon-connect-basic/" title="Amazon Connect基础" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="../../../amazon-connect-advanced/1.lambda/5.testlambda/" title="测试Lambda挂机评价" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
@@ -1280,19 +1285,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../js/clipboard.min.js?1651820372"></script>
-    <script src="../js/perfect-scrollbar.min.js?1651820372"></script>
-    <script src="../js/perfect-scrollbar.jquery.min.js?1651820372"></script>
-    <script src="../js/jquery.sticky.js?1651820372"></script>
-    <script src="../js/featherlight.min.js?1651820372"></script>
-    <script src="../js/highlight.pack.js?1651820372"></script>
+    <script src="../../../js/clipboard.min.js?1651820372"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1651820372"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1651820372"></script>
+    <script src="../../../js/jquery.sticky.js?1651820372"></script>
+    <script src="../../../js/featherlight.min.js?1651820372"></script>
+    <script src="../../../js/highlight.pack.js?1651820372"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../js/modernizr.custom-3.6.0.js?1651820372"></script>
-    <script src="../js/learn.js?1651820372"></script>
-    <script src="../js/hugo-learn.js?1651820372"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1651820372"></script>
+    <script src="../../../js/learn.js?1651820372"></script>
+    <script src="../../../js/hugo-learn.js?1651820372"></script>
 
-    <link href="../mermaid/mermaid.css?1651820372" type="text/css" rel="stylesheet" />
-    <script src="../mermaid/mermaid.min.js?1651820372"></script>
+    <link href="../../../mermaid/mermaid.css?1651820372" type="text/css" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.min.js?1651820372"></script>
     <script>
 	var config = {
         startOnLoad:true,
@@ -1306,3 +1311,4 @@
 
   </body>
 </html>
+
