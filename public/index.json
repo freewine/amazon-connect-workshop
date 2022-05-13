@@ -36,7 +36,7 @@
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/",
-	"title": "2. 使用Lex创建智能聊天机器人",
+	"title": "2. 使用Amazon Connect 与Amazon Lex创建智能聊天机器人",
 	"tags": ["advanced"],
 	"description": "",
 	"content": "使用Amazon Connect 与 Amazon Lex创建交互式体验的智能聊天机器人 在这个模块，我们创建一个基于Amazon Connect 与 Amazon Lex的交互式体验的智能聊天机器人用来智能客服场景，该机器人具备一下功能：\n 通过 Amazon Connect Chat UI集成到客户端，并使聊天机器人具备智能对答与人工客服的功能 Amazon Connect Chat UI与Amazon Lex集成过程中，具备交互式体验能力 使用Amazon Connect CCP，集成到客户系统后台，使其具备后台集成能力  什么是交互式消息的 Amazon Connect Chat 交互式消息是指在一些客户场景下，对用户交互过程提供选项式的交互体验，用户无需手动输入，而是点击选项即可，Amazon Connect提供了与Lex集成的方式，可以通过Connect的Contact Flow进行路由后到Lex，Lex通过对交互过程使用定制的Lambda进行消息处理后，将选项显示给Connect后显示给客户用于交互；\n在此过程中Connect Chat提供了3种类型的交互式模版以供Lex进行集成： 本次实验包括：  介绍什么是Lex？ 创建可交互式体验的Lex聊天机器人 与Amazon Connect进行集成 集成Amazon Connect CCP  本次实验使用到的AWS服务：  Amazon Connect Amazon Lex CloudFormation API Gateway CloudFront S3 Lambda DynamoDB  "
@@ -57,10 +57,10 @@
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/1.-introlex/",
-	"title": "2.1 Lex介绍",
+	"title": "2.1 在Amazon Connect中添加Amazon Lex机器人",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "Lex是什么 Amazon Lex 是 AWS 提供的用于构建会话界面的服务。 构建的界面可用于基于文本和基于语音的聊天。 Lex 使用与 Alexa 相同的会话引擎。 Amazon Lex 自动程序由自动语音识别 (ASR) 和自然语言理解 (NLU) 功能提供支持。\n"
+	"content": "Lex是什么 Amazon Lex 是 AWS 提供的用于构建会话界面的服务。 构建的界面可用于基于文本和基于语音的聊天。 Lex 使用与 Alexa 相同的会话引擎。 Amazon Lex 自动程序由自动语音识别 (ASR) 和自然语言理解 (NLU) 功能提供支持。\n添加 Amazon Lex 机器人 在后续步骤中，我们将完成两部分搭建，第一部分是构建Amazon Connect与Lex机器人的交互式消息，第二部分是使用Amazon Connect ChatUI将交互页面与客户端集成；\n借助Amazon Lex，可以构建让客户感到自然的对话互动，Amazon Lex与Amazon Connect的集成可以通过补货客户侧的输入，经过Contact flow的流程编排，满足对关键信息输入及获取的需求。\n"
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/2.claimnumber/",
@@ -81,7 +81,7 @@
 	"title": "2.3 部署Connect Chat UI",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "实验目的 本实验构建交互式体验的机器人，使用与Lambda集合的Lex机器人，可在Lex的Bot中构建Intent及Slot交互流程，配合Connect需要的Request和Respone，完成Connect对Lex的调用组合。\n本次实验使用到以下AWS服务：\n Amazon Lex Lambda  "
+	"content": "实验目的  前置条件\n 该部分依赖步骤2.2中，部署完成的Amazon Connect实例以及导入的Contact Flow和配置完成的Amazon Lex。如果上述步骤未完成，建议先完成步骤2.2。   该部分实验使用Amazon Chat UI与客户端进行集成，该部分中分为两个模块：\n 模块一：Chat UI集成 模块二：CCP集成后台  本次实验使用到以下AWS服务：\n Amazon Connect Amazon Lex CloudFormation API Gateway CloudFront S3 Lambda DynamoDB  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/1.createiamrole/",
@@ -186,7 +186,7 @@
 	"title": "导入可交互式机器人并与Lambda绑定",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "导入交互式机器人 该步骤中，我们将要导入Lex机器人；\n Note：\n在本步骤中需要导入Lex Bot，请下载   Lex Bot   interactive-message-bot_v2.zip  (6 ko)    文件，以便在步骤3中使用；\n   在 AWS Console 中打开 Amazon Lex，点击 Get Start, 在 Actions 菜单中选择 Import\n 确保你打开的 Amazon Lex Console 是 V2 版本.\n   在 Import bot 页面中点击 Browse file并选中在上述步骤中下载的.zip文件，在下述设置中进行设置，并点击 Import 按钮\n Bot name：输入 InteractiveMessageBot_v2 IAM permissions: 选择 Create a role with basic Amazon Lex permissions. Children\u0026rsquo;s Online Privacy Protection Act (COPPA): 选择 No.  其他选项可保持默认。\n  检查导入状态，确保导入成功。\n  在 Bots 列表中点击创建的 InteractiveMessageBot，并点击 Intents 列表中的 InteractiveMessageIntent\n  在 InteractiveMessageIntent 编辑页面，在 Code hooks - optional 设置中，勾选 Use a Lambda function for initialization and validation 并点击 Save Intent\n  点击左上角 Back to intents list 回到Bot编辑页面，并进入 Aliases 菜单\n  点击 TestBotAlias 链接进入编辑页面，并点击 Language 中的 English(US) 进行编辑 在 Lambda function - optional 设置中，选择在之前步骤中创建的 Lambda Function，点击 Save保存设置。   "
+	"content": "导入交互式机器人 该步骤中，我们将要导入Lex机器人；\n Note：\n在本步骤中需要导入Lex Bot，请下载   Lex Bot   interactive-message-bot_v2.zip  (26 ko)    文件，以便在步骤3中使用；\n   在 AWS Console 中打开 Amazon Lex，点击 Get Start, 在 Actions 菜单中选择 Import\n 确保你打开的 Amazon Lex Console 是 V2 版本.\n   在 Import bot 页面中点击 Browse file并选中在上述步骤中下载的.zip文件，在下述设置中进行设置，并点击 Import 按钮\n Bot name：输入 InteractiveMessageBot_v2 IAM permissions: 选择 Create a role with basic Amazon Lex permissions. Children\u0026rsquo;s Online Privacy Protection Act (COPPA): 选择 No.  其他选项可保持默认。\n  检查导入状态，确保导入成功。\n  在 Bots 列表中点击创建的 InteractiveMessageBot，并点击 Intents 列表中的 InteractiveMessageIntent\n  在 InteractiveMessageIntent 编辑页面，在 Code hooks - optional 设置中，勾选 Use a Lambda function for initialization and validation 并点击 Save Intent\n  点击左上角 Back to intents list 回到Bot编辑页面，并进入 Aliases 菜单\n  点击 TestBotAlias 链接进入编辑页面，并点击 Language 中的 English(US) 进行编辑 在 Lambda function - optional 设置中，选择在之前步骤中创建的 Lambda Function，点击 Save保存设置。   "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/3.buildandtestlexbot/",
@@ -215,6 +215,20 @@
 	"tags": ["advanced"],
 	"description": "",
 	"content": "在Amazon Connect中导入并配置Contact Flow 该步骤中，我们将在创建好的Amazon Connect实例管理界面中导入并配置Contact Flow。\n  进入 Amazon Connect 实例的控制面板, 点击 Test chat 进入测试页面。\n  点击 Test Settings 页面进入测试设置页面，选择之前创建的Contact Flow：InteractiveMessaging，点击 Apply 保存设置。\n  应用成功后，在Chat UI中初始化机器人，在输入框中按照提示输入help，查看机器人反馈信息是否显示选项。\n  如果显示选项正确，则表明该部分完成，后续可以按照机器人返回选项，进行点击选择，查看机器人逻辑。\n  "
+},
+{
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployconnectchatui/1.deploycloudformation/",
+	"title": "部署asyncCustomerChatUX",
+	"tags": ["advanced"],
+	"description": "",
+	"content": "部署asyncCustomerChatUX 该步骤中，我们将使用 Amazon Connect git 中提供的 asycCustomerChatUI 进行部署。该ui example提供了了基于 Amazon Connect Chat JS 的UI交互集成。该实验完成后，可以使用Chat JS进行与客户端的集成，本实验中主要是Web端的集成，也可以以H5的方式与手机端进行集成。\nDeploy CloudFormation   在部署CloudFormation之前，首先需要准备参数：\n AmazonConnectS3BucketName: 该S3 Bucket是指Amazon Connect实例中配置的Connect 聊天记录的保持地址，在Data Storage中的Chat transcript中的设置，如amazon-connect-xxx/connect/servicecenter-workshop/ChatTranscripts, 则需要输入amazon-connect-xxx。 WebsiteS3BucketName: 该S3为创建一个静态website的S3 Bucket，可以是任意值，该S3 Bucket将存储website的资源文件，如html，js，css等。 contactFlowId: 该值为导入Amazon Connect的 Contact Flow的Id，通过Amazon Connect的实例，使用Access URL进入实例管控月面，点击Routing -\u0026gt; Contact flows -\u0026gt; 点击导入的ContactFlow，如InteractiveMessaging，点击** Show additional flow information**，将ARN值中的contact-flow后的Id获得，如arn:aws:connect:ap-southeast-2:xxxxxx:instance/12345678-1234-1234-1234-123456789012/contact-flow/12345678-1234-1234-1234-123456789012 instanceId: 该值为Amazon Connect的实例Id，如上，在ARN值部分，将instance后的值获得。 transcriptPath: 该路径是指Amazon Connect实例中配置的Connect 聊天记录的路径，在Data Storage中的Chat transcript中的设置，如amazon-connect-xxx/connect/servicecenter-workshop/ChatTranscripts, 则需要输入connect/servicecenter-workshop/ChatTranscripts。    在以下区域列表中选择并部署CloudFormation：\n   Region Launch Button     us-east-1 (N. Virginia)    us-west-2 (Oregon)    ap-southeast-2 (Sydney)    ap-northeast-1 (Tokyo)    eu-central-1 (Frankfurt)    eu-west-2 (London)    ap-southeast-1 (Singapore)    ca-central-1 (Canada)       验证CloudFormation部署 待CloudFormation部署完成后，在CloudFormation中的Output中查到到 cloudFrontDistribution 中的 Cloud Front地址进行访问 访问到一下页面说明Website部署成功： "
+},
+{
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployconnectchatui/2.testchatbotwithchatui/",
+	"title": "测试部署成功的ChatBot",
+	"tags": ["advanced"],
+	"description": "",
+	"content": "测试部署成功的ChatBot 经过步骤1后，基于ChatJS的ChatBot UI已经部署完成，下面我们将对部署成功的ChatBot进行测试；\n在输入框中按照提示输入First Name, UserName后，点击 Start Chat 按钮开始机器人对答。\n按照菜单选项可以进行与机器人的交互。\n启动人工对答 在这里，将模拟两个角色，一个是作为用户，使用ChatUI；另一个是后台客服人员，当有用户转到Talk to an agent以后，将接入人工客服队列，作为客服人员登陆到Connect 后台后，可以与用户进行人工对答；\n通过Access URL登陆到Amazon Connect的实例管控后台，在Access URL地址后面访问： /ccp-v2\n在左上角状态切换为 Available后，在Chat UI中点击 Talk to an agent 按钮进行接入。接入后，即可通过两个角色在不同的交互页面进行文字交互。\n"
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/tags/advanced/",

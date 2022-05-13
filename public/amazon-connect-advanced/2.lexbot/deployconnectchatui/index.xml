@@ -6,5 +6,31 @@
     <description>Recent content in 2.3 部署Connect Chat UI on Amazon Connect Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployconnectchatui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>部署asyncCustomerChatUX</title>
+      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployconnectchatui/1.deploycloudformation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployconnectchatui/1.deploycloudformation/</guid>
+      <description>部署asyncCustomerChatUX 该步骤中，我们将使用 Amazon Connect git 中提供的 asycCustomerChatUI 进行部署。该ui example提供了了基于 Amazon Connect Chat JS 的UI交互集成。该实验完成后，可以使用Chat JS进行与客户端的集成，本实验中主要是Web端的集成，也可以以H5的方式与手机端进行集成。
+Deploy CloudFormation   在部署CloudFormation之前，首先需要准备参数：
+ AmazonConnectS3BucketName: 该S3 Bucket是指Amazon Connect实例中配置的Connect 聊天记录的保持地址，在Data Storage中的Chat transcript中的设置，如amazon-connect-xxx/connect/servicecenter-workshop/ChatTranscripts, 则需要输入amazon-connect-xxx。 WebsiteS3BucketName: 该S3为创建一个静态website的S3 Bucket，可以是任意值，该S3 Bucket将存储website的资源文件，如html，js，css等。 contactFlowId: 该值为导入Amazon Connect的 Contact Flow的Id，通过Amazon Connect的实例，使用Access URL进入实例管控月面，点击Routing -&amp;gt; Contact flows -&amp;gt; 点击导入的ContactFlow，如InteractiveMessaging，点击** Show additional flow information**，将ARN值中的contact-flow后的Id获得，如arn:aws:connect:ap-southeast-2:xxxxxx:instance/12345678-1234-1234-1234-123456789012/contact-flow/12345678-1234-1234-1234-123456789012 instanceId: 该值为Amazon Connect的实例Id，如上，在ARN值部分，将instance后的值获得。 transcriptPath: 该路径是指Amazon Connect实例中配置的Connect 聊天记录的路径，在Data Storage中的Chat transcript中的设置，如amazon-connect-xxx/connect/servicecenter-workshop/ChatTranscripts, 则需要输入connect/servicecenter-workshop/ChatTranscripts。    在以下区域列表中选择并部署CloudFormation：
+   Region Launch Button     us-east-1 (N.</description>
+    </item>
+    
+    <item>
+      <title>测试部署成功的ChatBot</title>
+      <link>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployconnectchatui/2.testchatbotwithchatui/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployconnectchatui/2.testchatbotwithchatui/</guid>
+      <description>测试部署成功的ChatBot 经过步骤1后，基于ChatJS的ChatBot UI已经部署完成，下面我们将对部署成功的ChatBot进行测试；
+在输入框中按照提示输入First Name, UserName后，点击 Start Chat 按钮开始机器人对答。
+按照菜单选项可以进行与机器人的交互。
+启动人工对答 在这里，将模拟两个角色，一个是作为用户，使用ChatUI；另一个是后台客服人员，当有用户转到Talk to an agent以后，将接入人工客服队列，作为客服人员登陆到Connect 后台后，可以与用户进行人工对答；
+通过Access URL登陆到Amazon Connect的实例管控后台，在Access URL地址后面访问： /ccp-v2
+在左上角状态切换为 Available后，在Chat UI中点击 Talk to an agent 按钮进行接入。接入后，即可通过两个角色在不同的交互页面进行文字交互。</description>
+    </item>
+    
   </channel>
 </rss>

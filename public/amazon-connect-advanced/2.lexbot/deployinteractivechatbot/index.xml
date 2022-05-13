@@ -28,7 +28,7 @@
       <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/2.importlexbot/</guid>
       <description>导入交互式机器人 该步骤中，我们将要导入Lex机器人；
  Note：
-在本步骤中需要导入Lex Bot，请下载   Lex Bot   interactive-message-bot_v2.zip  (6 ko)    文件，以便在步骤3中使用；
+在本步骤中需要导入Lex Bot，请下载   Lex Bot   interactive-message-bot_v2.zip  (26 ko)    文件，以便在步骤3中使用；
    在 AWS Console 中打开 Amazon Lex，点击 Get Start, 在 Actions 菜单中选择 Import
  确保你打开的 Amazon Lex Console 是 V2 版本.
    在 Import bot 页面中点击 Browse file并选中在上述步骤中下载的.zip文件，在下述设置中进行设置，并点击 Import 按钮

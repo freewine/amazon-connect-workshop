@@ -1,5 +1,5 @@
 ﻿---
-title: "2. 使用Lex创建智能聊天机器人"
+title: "2. 使用Amazon Connect 与Amazon Lex创建智能聊天机器人"
 chapter: false
 weight: 20
 tags:
