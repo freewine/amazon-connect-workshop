@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-basic/</guid>
-      <description>把当前控制台设置为中文界面 登录AWS控制台以后，缺省显示的语言为英文，可以按照下图所示的方式切换为中文。 </description>
+      <description>把AWS控制台设置为中文界面 登录AWS控制台以后，缺省显示的语言为英文，可以按照下图所示的方式切换为中文。 </description>
     </item>
     
     <item>
@@ -32,24 +32,41 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/1.deployconnect/</guid>
-      <description>Amazon Connect介绍 Amazon Connect通过方便易用的全渠道云联络中心服务，以更低的成本提供卓越的客户服务。 使用 Amazon Connect，您可以在几分钟内建立一个联络中心，并可扩展以支持数以百万计的客户。只需点击几下，您即可设置并对您的联系中心进行更改，从而使座席可以立即开始帮助客户。比传统联络中心解决方案最高节省 80% 的成本，无最低费用、长期承诺或预付许可证费用。可以灵活地采用在任何地方工作的成千上万的代理，可以轻松地纵向扩展或缩减以满足需求。
+      <description>Amazon Connect介绍 Amazon Connect通过方便易用的全渠道云联络中心服务，以更低的成本提供卓越的客户服务。
+使用 Amazon Connect，您可以在几分钟内建立一个联络中心，并可扩展以支持数以百万计的客户。只需点击几下，您即可设置好您的联络中心，从而使座席可以立即开始帮助客户。比传统联络中心解决方案最高节省 80% 的成本，无最低费用、长期承诺或预付许可证费用。使用Amazon Connect，您可以打破地域的限制，在任何地方安排成千上万的代理，轻松地扩展或缩减以满足业务需求。
 详情见官方文档：https://aws.amazon.com/cn/connect/
-开始部署Amazon Connect  验证您的Region。Amazon Connect目前已经在十个以上Region推出。请选择您要在其中部署 Amazon Connect 实例的所需Region。 导航到AWS 区域服务网页以验证特定区域的 Amazon Connect 服务可用性。  选择所需区域后，从顶部的搜索栏中搜索 Amazon Connect 服务，然后进入到Amazon Connect的控制台。 如果这是该区域中的第一个 Amazon Connect 实例，请选择Create Instance。 如果您在此区域中有实例，请选择添加实例。
- 设置身份管理（Set Identity Management）:
- 选择“Store users within Amazon Connect” 在访问URL字段设置一个唯一的实例名, 建议使用时期+ID的格式 (比如: 20220408douglas) 点击下一步     添加管理员。在添加管理员页面填写管理员信息。该管理员用于登录Amazon Connect后台。填写完毕后点击下一步   在设置通话界面，保持默认不变，即：
- 选择“允许入站呼叫” 选择“允许出站呼叫” 选择下一步     在数据存储页面，选择下一步   在审核和创建页面，审核您的设置，然后点击“创建实例”。</description>
+开始部署Amazon Connect  验证您的Region。Amazon Connect目前已经在十个以上区域推出。请选择您要在其中部署 Amazon Connect 实例的区域。 导航到AWS 区域服务网页以验证特定区域的 Amazon Connect 服务可用性。  选择所需区域后，从顶部的搜索栏中搜索 Amazon Connect 服务，然后进入到Amazon Connect服务页面。 如果这是该区域中的第一个 Amazon Connect 实例，请选择Create Instance。 如果您在此区域中有实例，请选择添加实例。
+ 设置身份管理:
+ 选择“在 Amazon Connect 中创建和管理用户”。 在访问URL字段设置一个唯一的实例名, 建议使用时期+ID的格式 (比如: 20220408douglas)。 点击下一步。     添加管理员。在添加管理员页面填写管理员信息。该管理员用于登录Amazon Connect后台。填写完毕后点击下一步   在设置通话界面，保持默认不变，即：
+ 选择“允许入站呼叫”。 选择“允许出站呼叫”。 选择下一步。     在数据存储页面，保持默认设置，选择下一步。   在审核和创建页面，审核您的设置，然后点击“创建实例”。
+  等待实例创建完成。</description>
     </item>
     
     <item>
-      <title>1.2 申请电话号码并进行验证</title>
+      <title>1.2 申请电话号码并配置联系流</title>
       <link>http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/2.claimnumber/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/2.claimnumber/</guid>
-      <description>一、申请电话号码  （接上一部分）点击“开始使用”进入到Amazon Connect的管理界面。 在欢迎使用 Amazon Connect页面，点击“开始”。(如果浏览器弹出申请麦克风权限的提示，选择“允许”。)  在申请电话号码页面，进行如下操作：  在“国家/地区”列表中选择对应的国家 在类型列表中选择“DID（直接内部拨号）” 在电话号码列表中选择您想要的电话号码。 点击下一步。 在“申请电话号码”页面，点击“Continue”。     在某些国家/地区，无法直接申请电话号码，需要提Support Case申请。详见：https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html
- 申请电话号码成功后，会进入控制面板页面，点击“查看电话号码”，即可看到申请的电话号码。  点击新创建的电话号码，即可进入到“编辑电话号码页面”。可以看到，电话号码会自动跟Sample inbound flow (first contact experience)进行关联，然后就可以拨打这个电话进行测试。具体联系流的作用，后边的试验再进行介绍。   以上步骤均使用应急账号进行Connect的配置。在正常情况下，应该使用“账户概览”页面的Access URL进行访问，并使用创建Amazon Connect实例时设置的管理员账号进行登录。  二、验证电话和Chat联络 通过前边的步骤，我们已经完成了Amazon Connect云联络中心的创建和配置。接下来就可以进行验证，验证分为两部分：电话验证和Chat验证。
-1. 验证电话联络  点击Connect管理界面右上角的电话按钮， 弹出CCP面板(呼叫控制面板)，将状态设置为“Available”状态。  使用手机拨打新申请的DID号码（您也可以申请第二个DID号码并创建新的客服用户进行测试）。您会听到一段英语欢迎语，然后依次按照以下步骤操作（通话流程在Sample inbound flow中定义）：   按1进入客服队列。 按1移动到队列头部。 按1进入队列，等待客服进行接听。  在CCP面板会接收到来电时，点击接听。 进行通话测试，测试结束后挂断电话。 点击“结束联系人”重新进入到“Available”状态。  2. 验证Chat联络   在Amazon Connect后台“控制面板”， 点击“测试聊天”，进入“测试聊天”页。
-  点击“激活联系人控制面板”，点击   点击测试设置，将联系流设置为“Sample inbound flow (first contact experience)”。   点击左侧模拟网站上的聊天图标开始以客户身份发起聊天。稍等片刻就可以收到欢迎信息，然后等待客服进行接听.</description>
+      <description>一、申请电话号码  （接上一部分）点击“开始使用”进入到Amazon Connect的管理界面。 在欢迎使用 Amazon Connect页面，点击“开始”。(如果浏览器弹出申请麦克风权限的提示，选择“允许”。)  在申请电话号码页面，进行如下操作：  在“国家/地区”列表中选择对应的国家。 在类型列表中选择“DID（直接内部拨号）”。 在电话号码列表中选择您想要的电话号码。 点击下一步。 在“申请电话号码”页面，点击“Continue”。     在某些国家/地区，无法直接申请电话号码，需要提Support Case申请。详见：https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html
+申请电话号码成功后，会进入控制面板页面，点击“查看电话号码”，即可看到申请的电话号码。  点击新创建的电话号码，即可进入到“编辑电话号码页面”。可以看到，电话号码会自动跟Sample inbound flow (first contact experience)进行关联，然后就可以拨打这个电话进行测试。关于联系流的作用，后边的试验再进行介绍。   以上步骤均使用应急账号进行Connect的配置。在正常情况下，建议使用“账户概览”页面的Access URL进行访问，并使用创建Amazon Connect实例时设置的管理员账号进行登录。 </description>
+    </item>
+    
+    <item>
+      <title>1.3 测试联络中心</title>
+      <link>http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/3.testcontact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/3.testcontact/</guid>
+      <description>试验说明 您有两种方法可以进行测试，一、使用您自己的手机或者固定电话拨打Connect号码。二、Amazon Connect本身也支持电话的外呼，如果您想避免产生手机通讯费，可以创建一个Agent用户，然后同时打开两个浏览器（比如Chrome和Firefox），并分别使用管理员账号和Agent账号进行登录。在进行通话测试的时候，同时在两个浏览器打开CCP面板，在其中一个CCP面板直接拨打Amazon Connect号码，然后在另一个CCP面板中进行接听。
+一、创建Agent用户 如果您准备使用自己的手机或者固定电话进行测试，创建Agent用户不是必须的，您可以跳过这一步。
+ 使用管理员账号登录Amazon Connect控制台，依次导航到“用户”-“用户管理”，并点击“添加新用户”。 在添加新用户界面，依次输入如下信息，名：Agent，姓：aws，登录：Agent，密码：Agent@123。安全配置文件选择“Agent”，路由配置文件选择“Basic Routing Profile”。  点击“保存”按钮。 打开另外一个浏览器，并使用新创建的Agent进行登录。  二、测试电话和聊天 通过前边的步骤，我们已经完成了Amazon Connect云联络中心的创建和配置。接下来就可以进行验证，验证分为两部分：电话验证和Chat验证。
+1. 测试电话  点击Connect控制台界面右上角的电话按钮， 弹出CCP面板(呼叫控制面板)，将状态设置为“Available”状态。  【选项1】使用手机拨打新申请的电话号码。 【选项2】按照“实验说明”部分的方法，同时在两个浏览器登录两个用户账号，使用其中一个拨打电话，另外一个进行接听。  您会听到一段英语欢迎语，然后依次按照以下步骤操作（该流程在Sample inbound flow中定义）：
+ 按1进入客服队列。 按1移动到队列头部。 按1进入队列，等待客服进行接听。  在CCP面板会接收到来电提示，点击接听。 进行通话测试，测试结束后挂断电话。 点击“结束联系人”重新进入到“Available”状态。  2. 测试聊天   在Amazon Connect后台“控制面板”， 点击“测试聊天”，进入“测试聊天”页。
+  点击“激活联系人控制面板”。   点击测试设置，将联系流设置为“Sample inbound flow (first contact experience)”。   点击模拟网站上的聊天图标开始以客户身份发起聊天。稍等片刻就可以收到欢迎信息，然后等待客服进行接听。
+  在右侧的CCP面板上，客服点击“接受聊天”。
+  在客户侧和客服侧输入信息进行聊天。
+  结束聊天。</description>
     </item>
     
     <item>
@@ -58,11 +75,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/</guid>
-      <description>Contact Flow介绍 本次实验对Contact Flow进行介绍，包括以下几个方面：
-  介绍Contact Flow库和Sample/Default Flow
+      <description>联系流（Contact Flow）介绍 本部分对联系流进行介绍，包括以下几个方面：
+  介绍联系流库和Sample/Default联系流
   新建入站联系流
   查看常用的联系块
-  编写一个完整的联系流
+  编写一个完整的入站联系流
   测试入站联系流
   </description>
     </item>
@@ -103,7 +120,7 @@ Transfer to queue flow（转移到队列流）</description>
       <guid>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/2.createbasicinboundflow/</guid>
       <description>新建一个空的入站联系流 现在，我们已经理解了不同的联系流类型，接下来，我们就开始创建一个基础的联系流。 下图是我们即将在后续步骤创建的联系流的概览。
 记住，我们使用创建联系流按钮来创建一个入站联系流。
- 选择 路由选择 -&amp;gt; 联系流 访问联系流库。 选择创建联系流 为联系流制定一个名字,比如 Intro Flow 1 点击显示其他流信息来展开流信息，并且添加描述信息. 在查看流的不同版本时，该描述可能很有用。 点击保存   </description>
+ 选择 路由选择 -&amp;gt; 联系流 访问联系流库。 选择创建联系流 为联系流制定一个名字,比如 Demo inbound flow 点击显示其他流信息来展开流信息，并且添加描述信息. 在查看流的不同版本时，该描述可能很有用。 点击保存.   </description>
     </item>
     
     <item>
@@ -138,7 +155,7 @@ Transfer to queue flow（转移到队列流）</description>
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/4.writedemocontactflow/</guid>
       <description>使用联系流编辑器编辑入站联系流 在之前的步骤中，我们已经创建了一个空的入站联系流，并且已经理解了不同的联系流类型，接下来，我们就开始编写一个完整的联系流。 我们即将创建的联系流如下图。该联系流定了客户来电时的处理步骤，以及将客户转接到代理队列。
- 首先，创建一个新的操作小时数，用于后续的联系流。   选择 路由选择 -&amp;gt; 操作小时数 点击[添加小时数] 在打开的页面中，设置名称和描述为“Work Hours” 将时区设置为“Asia/Shanghai” 删除周六、周日，保留周一至周五做为工作时间。 点击[保存]。    下载联系流文件到本地电脑。   下载链接:   Demo inbound flow.json  (4 ko)      选择之前创建的“Demo inbound flow”联系流，此时联系流为空白状态。
+ 首先，创建一个新的操作小时数，用于后续的联系流。   选择 路由选择 -&amp;gt; 操作小时数 点击[添加小时数] 在打开的页面中，设置名称和描述为“Work Hours” 将时区设置为“Asia/Shanghai” 删除周六、周日，保留周一至周五做为工作时间。 点击[保存]。    下载联系流文件到本地电脑。 下载链接:Demo inbound flow.json(4 ko)  选择之前创建的“Demo inbound flow”联系流，此时联系流为空白状态。
   点击保存按钮右边的下拉箭头，点击[导入流(beta)]   此时，会看到一个完整的联系流，解析来我们来编辑它。
   点击[设置录音和分析行为]块，打开代理和客户的通话录音，然后点击保存。   点击[设置语音]块设置与客户交互的声音，将语言设置为中文（普通话），然后点击保存。   点击[检查操作小时数]块，将指定小时数设置为Work Hours，然后点击保存。   点击右上角的[发布]按钮，发布联系流。
   </description>
@@ -150,9 +167,8 @@ Transfer to queue flow（转移到队列流）</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/5.testdemocontactflow/</guid>
-      <description>测试入站联系流 在前边的步骤中，我们已经创建了一个入站联系流，接下来我们将对这个联系流进行测试。
- 首先我们需要将此联系流绑定到之前申请的电话号码。   选择 路由 -&amp;gt; 电话号码 选择已经创建的电话号码 点击联系流/IVR的下拉框，选择“Demo inbound flow”。 点击保存。   等待大约2分钟让设置生效。 点击右上角的电话图标，打开联系控制面板(CCP)。 将代理设置为Available状态。  拨打Amazon Connect实例的电话号码，你会听到提示音，并且将您路由到对应的客服。 测试完成。  在进行电话测试的时候，你可以申请两个电话号码进行相互拨打，避免产生您自己的手机通讯费。
- </description>
+      <description>测试入站联系流 在前边的步骤中，我们已经创建了一个入站联系流，接下来我们将对这个联系流进行测试。 在进行通话测试的时候，您可以使用自己的手机或者固定电话直接拨打Connect号码，也可以同时在两个浏览器登录两个用户账号，使用其中一个拨打Connect号码,另外一个账号进行接听。详见： 测试Connect联络
+ 首先我们需要将此联系流绑定到之前申请的电话号码。   选择 路由 -&amp;gt; 电话号码 选择已经创建的电话号码 点击联系流/IVR的下拉框，选择“Demo inbound flow”。 点击保存。   等待大约2分钟让设置生效。 点击右上角的电话图标，打开联系控制面板(CCP)。 将代理设置为Available状态。  拨打Amazon Connect实例的电话号码，你会听到提示音，并且将您路由到对应的客服。 测试完成。  </description>
     </item>
     
     <item>
@@ -161,9 +177,12 @@ Transfer to queue flow（转移到队列流）</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-basic/3.metrics/</guid>
-      <description>查看指标和报告 在 Amazon Connect 中，有关联系的数据被捕获在联系记录中。 此数据可以包括联系在每个状态中花费的时间量：等待客户、排队客户、座席交互时间。
+      <description>试验目的 在 Amazon Connect 中，有关联系的数据被捕获在联系记录中。 此数据可以包括联系在每个状态中花费的时间量：等待客户、排队客户、座席交互时间。
 Amazon Connect 中大多数历史和实时指标的基础是联系记录中的数据。 创建度量报告时，报告中大多数（不是全部）度量显示的值是使用联系记录中的数据计算的。
-自启动关联联系之日起，您的实例中的联系记录可使用 24 个月。 您还可以将联系记录流式传输到 Amazon Kinesis 以更长时间地保留数据，并对其执行高级分析。</description>
+自启动关联联系之日起，您的实例中的联系记录可使用 24 个月。 您还可以将联系记录流式传输到 Amazon Kinesis 以更长时间地保留数据，并对其执行高级分析。
+本实验的目的是了解 Amazon Connect 提供的内置指标，特别关注如下几类：
+ 实时指标 历史指标 登录/注销报告  在进行本部分内容之前，请确保Amazon Connect的登录账号具有查看指标和报告的权限。你可以在“用户”-“安全配置文件”中为用户配置相关权限。 建议您使用具有“安全配置文件”中“admin”或者“CallCenterManager”权限的账户登录Amazon Connect控制台。
+</description>
     </item>
     
   </channel>

@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.92.2" />
+    <meta name="description" content="Amazon Connect Workshop">
+<meta name="author" content="AWS FSI DNB&lt;freewine@amazon.com&gt;">
+
+    <link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="../../../images/favicon.ico" type="image/x-icon" />
+
+    <title>3.2 查看历史指标 :: Amazon Connect Workshop</title>
+
+    
+    <link href="../../../css/nucleus.css?1653488202" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1653488202" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1653488202" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1653488202" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1653488202" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1653488202" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1653488202" rel="stylesheet">
+    <link href="../../../css/theme.css?1653488202" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1653488202" rel="stylesheet">
+    
+      <link href="../../../css/theme-mine.css?1653488202" rel="stylesheet">
+    
+
+    <script src="../../../js/jquery-3.3.1.min.js?1653488202"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="../../../amazon-connect-basic/3.metrics/2.historicalmetrics/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a href="../../../" title="Go home"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 40" width="40%" style="padding:5px 0px;"><defs><style>.cls-1{fill:#fff;}  .cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg></a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+<span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../../js/lunr.min.js?1653488202"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1653488202"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/gotoaws.cloudguru.run\/";
+    
+</script>
+<script type="text/javascript" src="../../../js/search.js?1653488202"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/1.introduction/" title="Workshop整体介绍" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../1.introduction/">
+          Workshop整体介绍
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect-basic/" title="Amazon Connect基础" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../../../amazon-connect-basic/">
+          Amazon Connect基础
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect-basic/1.deploy/" title="1. 部署Amazon Connect" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../amazon-connect-basic/1.deploy/">
+          1. 部署Amazon Connect
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-basic/1.deploy/1.deployconnect/" title="1.1 创建Amazon Connect实例" class="dd-item ">
+        <a href="../../../amazon-connect-basic/1.deploy/1.deployconnect/">
+        1.1 创建Amazon Connect实例
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-basic/1.deploy/2.claimnumber/" title="1.2 申请电话号码并配置联系流" class="dd-item ">
+        <a href="../../../amazon-connect-basic/1.deploy/2.claimnumber/">
+        1.2 申请电话号码并配置联系流
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-basic/1.deploy/3.testcontact/" title="1.3 测试联络中心" class="dd-item ">
+        <a href="../../../amazon-connect-basic/1.deploy/3.testcontact/">
+        1.3 测试联络中心
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect-basic/2.contactflow/" title="2. 创建联系流" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../amazon-connect-basic/2.contactflow/">
+          2. 创建联系流
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-basic/2.contactflow/1.contactflow_basic/" title="2.1 介绍联系流库和示例/默认联系流" class="dd-item ">
+        <a href="../../../amazon-connect-basic/2.contactflow/1.contactflow_basic/">
+        2.1 介绍联系流库和示例/默认联系流
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-basic/2.contactflow/2.createbasicinboundflow/" title="2.2 新建入站联系流" class="dd-item ">
+        <a href="../../../amazon-connect-basic/2.contactflow/2.createbasicinboundflow/">
+        2.2 新建入站联系流
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-basic/2.contactflow/3.reviewcontactblock/" title="2.3 查看常用的联系快" class="dd-item ">
+        <a href="../../../amazon-connect-basic/2.contactflow/3.reviewcontactblock/">
+        2.3 查看常用的联系快
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-basic/2.contactflow/4.writedemocontactflow/" title="2.4 编写一个完整的入站联系流" class="dd-item ">
+        <a href="../../../amazon-connect-basic/2.contactflow/4.writedemocontactflow/">
+        2.4 编写一个完整的入站联系流
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-basic/2.contactflow/5.testdemocontactflow/" title="2.5 测试入站联系流" class="dd-item ">
+        <a href="../../../amazon-connect-basic/2.contactflow/5.testdemocontactflow/">
+        2.5 测试入站联系流
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect-basic/3.metrics/" title="3. 查看指标和报告" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../../../amazon-connect-basic/3.metrics/">
+          3. 查看指标和报告
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-basic/3.metrics/1.realtimemetrics/" title="3.1 查看实时指标" class="dd-item ">
+        <a href="../../../amazon-connect-basic/3.metrics/1.realtimemetrics/">
+        3.1 查看实时指标
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-basic/3.metrics/2.historicalmetrics/" title="3.2 查看历史指标" class="dd-item active">
+        <a href="../../../amazon-connect-basic/3.metrics/2.historicalmetrics/">
+        3.2 查看历史指标
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect-advanced/" title="Amazon Connect进阶" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../amazon-connect-advanced/">
+          Amazon Connect进阶
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect-advanced/1.lambda/" title="1. 通过Lambda实现挂机评价" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../amazon-connect-advanced/1.lambda/">
+          1. 通过Lambda实现挂机评价
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/1.lambda/1.createiamrole/" title="创建IAM策略和角色" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/1.lambda/1.createiamrole/">
+        创建IAM策略和角色
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/1.lambda/2.createdynamodb/" title="创建DynamoDB" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/1.lambda/2.createdynamodb/">
+        创建DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/1.lambda/3.createlambda/" title="创建Lambda函数" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/1.lambda/3.createlambda/">
+        创建Lambda函数
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/1.lambda/4.integratelambda/" title="将Lambda集成到Amazon Connect" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/1.lambda/4.integratelambda/">
+        将Lambda集成到Amazon Connect
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/1.lambda/5.testlambda/" title="测试Lambda挂机评价" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/1.lambda/5.testlambda/">
+        测试Lambda挂机评价
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect-advanced/2.lexbot/" title="2. 使用Amazon Connect 与Amazon Lex创建智能聊天机器人" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../amazon-connect-advanced/2.lexbot/">
+          2. 使用Amazon Connect 与Amazon Lex创建智能聊天机器人
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/1.-introlex/" title="2.1 在Amazon Connect中添加Amazon Lex机器人" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/2.lexbot/1.-introlex/">
+        2.1 在Amazon Connect中添加Amazon Lex机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/" title="2.2 部署交互式体验机器人" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/">
+          2.2 部署交互式体验机器人
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/1.createinteractivelambda/" title="创建交互式消息Lambda" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/1.createinteractivelambda/">
+        创建交互式消息Lambda
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/2.importlexbot/" title="导入可交互式机器人并与Lambda绑定" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/2.importlexbot/">
+        导入可交互式机器人并与Lambda绑定
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/3.buildandtestlexbot/" title="Build,测试和发布 Lex Bot" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/3.buildandtestlexbot/">
+        Build,测试和发布 Lex Bot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/4.createconnectinstance/" title="创建Amazon Connect实例" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/4.createconnectinstance/">
+        创建Amazon Connect实例
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/5.importcontactflow/" title="在Amazon Connect中导入并配置Contact Flow" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/5.importcontactflow/">
+        在Amazon Connect中导入并配置Contact Flow
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/6.testchatbot/" title="测试你的Chat Bot" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/2.lexbot/deployinteractivechatbot/6.testchatbot/">
+        测试你的Chat Bot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployconnectchatui/" title="2.3 部署Connect Chat UI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../../amazon-connect-advanced/2.lexbot/deployconnectchatui/">
+          2.3 部署Connect Chat UI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployconnectchatui/1.deploycloudformation/" title="部署asyncCustomerChatUX" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/2.lexbot/deployconnectchatui/1.deploycloudformation/">
+        部署asyncCustomerChatUX
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-advanced/2.lexbot/deployconnectchatui/2.testchatbotwithchatui/" title="测试部署成功的ChatBot" class="dd-item ">
+        <a href="../../../amazon-connect-advanced/2.lexbot/deployconnectchatui/2.testchatbotwithchatui/">
+        测试部署成功的ChatBot
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/freewine/amazon-connect-workshop"><i class='fab fa-github'></i> GitHub Project</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/freewine/amazon-connect-workshop/issues"><i class='fas fa-envelope'></i> Have questions?</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <left>
+    Built with <i class="fas fa-heart"></i> by AWS China East&Central SA Team
+
+</left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/sun-biao/secworkshop/edit/master/content/Amazon%20Connect%20Basic/3.Metrics/2.HistoricalMetrics.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='../../../'>Amazon Connect Workshop</a> > <a href='../../../amazon-connect-basic/'>Amazon Connect基础</a> > <a href='../../../amazon-connect-basic/3.metrics/'>3. 查看指标和报告</a> > 3.2 查看历史指标
+          
+         
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#实验说明">实验说明</a></li>
+        <li><a href="#一创建队列指标报告">一、创建队列指标报告</a></li>
+        <li><a href="#二创建代理指标报告">二、创建代理指标报告</a></li>
+        <li><a href="#三创建电话号码指标报告">三、创建电话号码指标报告</a></li>
+        <li><a href="#四共享报告">四、共享报告</a></li>
+        <li><a href="#五计划报告">五、计划报告</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              3.2 查看历史指标
+            </h1>
+          
+
+        
+
+
+
+<h3 id="实验说明">实验说明</h3>
+<p>历史指标报告包括有关联络中心过去、已完成活动和性能的数据。 Amazon Connect包含您可以立即开始使用的内置历史报告。您还可以创建自己的自定义报告。 本部分将指导您完成有关如何创建和保存历史指标报告的步骤。</p>
+<p>有三种报告类型：</p>
+<ul>
+<li>队列 - 一组显示其联系人和代理的队列。</li>
+<li>代理 - 已登录代理的状态和指标。</li>
+<li>电话号码 - 显示其联系人和代理的一组路由配置文件。
+<img src="../../../images/1.3.Metrics/HistoricalMetricTypes.png" alt=""></li>
+</ul>
+<h3 id="一创建队列指标报告">一、创建队列指标报告</h3>
+<ol>
+<li>
+<p>在导航菜单上，依次选择“分析”-“历史指标”。</p>
+</li>
+<li>
+<p>选择“队列“ - 此报告将显示队列中的相关指标。</p>
+</li>
+<li>
+<p>要自定义报告，请从表格中选择齿轮图标。</p>
+</li>
+<li>
+<p>在“间隔 &amp; 时间范围”选项卡上，您可以更改间隔和时间范围。在本实验中，接受默认值即可。
+在“指标”选项卡中，选择要包含在报告中的指标和字段。在本实验中，接受默认值即可。</p>
+</li>
+<li>
+<p>单击“应用”。将显示队列指标表。</p>
+</li>
+<li>
+<p>保存您的报告以供将来参考，选择“保存”。为报告提供一个名称，然后选择保存。</p>
+</li>
+<li>
+<p>要查看已保存的历史指标报告，请选择“分析”、“保存的报告”，然后选择“历史指标”选项卡。
+<img src="../../../images/1.3.Metrics/Metrics-Historical-Queues.gif" alt=""></p>
+</li>
+</ol>
+<h3 id="二创建代理指标报告">二、创建代理指标报告</h3>
+<ol>
+<li>
+<p>在导航菜单上，依次选择“分析”-“历史指标”。</p>
+</li>
+<li>
+<p>选择“代理“ - 此报告将显示代理的相关指标。</p>
+</li>
+<li>
+<p>要自定义报告，请从表格中选择齿轮图标。</p>
+</li>
+<li>
+<p>在“间隔 &amp; 时间范围”选项卡上，您可以更改间隔和时间范围。在本实验中，接受默认值即可。
+在“指标”选项卡中，选择要包含在报告中的指标和字段。在本实验中，接受默认值即可。</p>
+</li>
+<li>
+<p>单击“应用”。将显示代理指标表。</p>
+</li>
+<li>
+<p>保存您的报告以供将来参考，选择“保存”。为报告提供一个名称，然后选择保存。</p>
+</li>
+<li>
+<p>要查看已保存的历史指标报告，请选择“分析”、“保存的报告”，然后选择“历史指标”选项卡。
+<img src="../../../images/1.3.Metrics/Metrics-Historical-Agents.gif" alt=""></p>
+</li>
+</ol>
+<h3 id="三创建电话号码指标报告">三、创建电话号码指标报告</h3>
+<ol>
+<li>
+<p>在导航菜单上，依次选择“分析”-“历史指标”。</p>
+</li>
+<li>
+<p>选择“电话号码“ - 此报告将显示电话号码相关的历史指标。</p>
+</li>
+<li>
+<p>要自定义报告，请从表格中选择齿轮图标。</p>
+</li>
+<li>
+<p>在“间隔 &amp; 时间范围”选项卡上，您可以更改间隔和时间范围。在本实验中，接受默认值即可。
+在“指标”选项卡中，选择要包含在报告中的指标和字段。您可以在“联系指标”和“代理指标”之间切换看看有什么不同。在本实验中，接受默认值即可。</p>
+</li>
+<li>
+<p>单击“应用”。将显示电话号码指标表。</p>
+</li>
+<li>
+<p>保存您的报告以供将来参考，选择“保存”。为报告提供一个名称，然后选择保存。</p>
+</li>
+<li>
+<p>要查看已保存的历史指标报告，请选择“分析”、“保存的报告”，然后选择“历史指标”选项卡。
+<img src="../../../images/1.3.Metrics/Metrics-Historical-PhoneNumbers.gif" alt=""></p>
+</li>
+</ol>
+<h3 id="四共享报告">四、共享报告</h3>
+<ol>
+<li>依次点击“分析”-“保存的报告”，选择“历史指标”选项卡，然后点击要共享的报告。</li>
+<li>要共享报告，请单击“保存”旁边的下拉箭头，然后选择“共享报告”</li>
+<li>点击“复制链接地址”拷贝URL地址，然后您就可以通过将链接粘贴到电子邮件或其他文档中来将 URL 发送给组织中的其他人。</li>
+<li>要将报告发布到您的组织，打开“将报告发布到组织”下面的发布开关。</li>
+<li>选择保存。</li>
+</ol>
+<h3 id="五计划报告">五、计划报告</h3>
+<ol>
+<li>在“保存的报告”、“历史指标”选项卡中，单击报告。</li>
+<li>选择页面右上角保存旁边的向下箭头，然后选择“计划”。</li>
+<li>在“循环”选项卡上，指定该报告的运行频率（例如，每周周六）和开始时间（例如，午夜开始）。 对于本实验，请接受默认值。</li>
+<li>选择创建。
+<img src="../../../images/1.3.Metrics/Metrics-Historical-Schedule.gif" alt=""></li>
+</ol>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+        
+            <a class="nav nav-prev" href="../../../amazon-connect-basic/3.metrics/1.realtimemetrics/" title="3.1 查看实时指标"> <i class="fas fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="../../../amazon-connect-advanced/" title="Amazon Connect进阶" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../../js/clipboard.min.js?1653488202"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1653488202"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1653488202"></script>
+    <script src="../../../js/jquery.sticky.js?1653488202"></script>
+    <script src="../../../js/featherlight.min.js?1653488202"></script>
+    <script src="../../../js/highlight.pack.js?1653488202"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1653488202"></script>
+    <script src="../../../js/learn.js?1653488202"></script>
+    <script src="../../../js/hugo-learn.js?1653488202"></script>
+
+    <link href="../../../mermaid/mermaid.css?1653488202" type="text/css" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.min.js?1653488202"></script>
+    <script>
+	var config = {
+        startOnLoad:true,
+        flowchart:{
+	    curve:'basis'
+        }
+      };
+        mermaid.initialize(config);
+    </script>
+    
+
+  </body>
+</html>
+

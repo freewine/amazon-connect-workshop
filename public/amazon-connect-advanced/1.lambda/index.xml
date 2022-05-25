@@ -13,7 +13,7 @@
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/1.createiamrole/</guid>
       <description>实验说明 为了使我们的 AWS Lambda 函数成功执行，AWS Lambda 需要具有适当权限的 AWS Identity and Access Management (IAM) 角色和策略。 使用本文中的以下步骤为 AWS Lambda 函数创建示例角色和策略，以访问所有 Amazon DynamoDB 表。
-一、 创建IAM策略  在AWS控制台，打开IAM控制面板。 在导航面板，选择“策略”，“创建策略”。 选择“JSON”标签，复制以下JSON代码，并将其粘贴到文本框中。 说明：如下代码赋予对Lambda和DynamoDB的完全访问权限。  { &amp;#34;Version&amp;#34;:&amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;:[ { &amp;#34;Effect&amp;#34;:&amp;#34;Allow&amp;#34;, &amp;#34;Action&amp;#34;:[ &amp;#34;lambda:*&amp;#34;, &amp;#34;dynamodb:*&amp;#34; ], &amp;#34;Resource&amp;#34;:&amp;#34;*&amp;#34; } ] } 选择“下一步：标签”。 选择“下一步：审核” 将策略命名为AmazonConnectSurveyLambdaPolicy，然后点击“创建策略”。  二、 创建IAM角色  在导航面板，依次选择“角色”，“创建角色”。 在“选择可信实体”页，选择Lambda，并点击“下一步”  在添加权限页，搜索并添加前边创建的策略****AmazonConnectSurveyLambdaPolicy**，搜索并添加AWSLambdaBasicExecutionRole 然后点击“下一步”。 角色名称命名为“AmazonConnectSurveyLambdaRole”，点击“创建角色”。  </description>
+一、 创建IAM策略  在AWS控制台，打开IAM控制面板。 在导航面板，选择“策略”，“创建策略”。 选择“JSON”标签，复制以下JSON代码，并将其粘贴到文本框中。 说明：如下代码赋予对Lambda和DynamoDB的完全访问权限。  { &amp;#34;Version&amp;#34;:&amp;#34;2012-10-17&amp;#34;, &amp;#34;Statement&amp;#34;:[ { &amp;#34;Effect&amp;#34;:&amp;#34;Allow&amp;#34;, &amp;#34;Action&amp;#34;:[ &amp;#34;lambda:*&amp;#34;, &amp;#34;dynamodb:*&amp;#34; ], &amp;#34;Resource&amp;#34;:&amp;#34;*&amp;#34; } ] } 选择“下一步：标签”。 选择“下一步：审核” 将策略命名为AmazonConnectSurveyLambdaPolicy，然后点击“创建策略”。  二、 创建IAM角色  在导航面板，依次选择“角色”，“创建角色”。 在“选择可信实体”页，选择Lambda，并点击“下一步”  在添加权限页，搜索并选中前边创建的策略AmazonConnectSurveyLambdaPolicy。 然后点击“下一步”。 角色名称命名为“AmazonConnectSurveyLambdaRole”，点击“创建角色”。  </description>
     </item>
     
     <item>
@@ -22,9 +22,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/2.createdynamodb/</guid>
-      <description>试验说明 Amazon DynamoDB 是一种快速灵活的 NoSQL 数据库服务，适用于需要任何规模的一致、个位数毫秒延迟的所有应用程序。 它是一个完全托管的云数据库，支持文档和键值存储模型。 其灵活的数据模型、可靠的性能和吞吐量容量的自动扩展，使其非常适合存储和引用来自 Amazon Connect的信息。
-在客户进行评价后，Amazon Connect通过集成Lambda江客户的评价相关信息写入DynamoDB，这些信息包括：ContactId, ContactFlowId, ContactFlowName, ContactFlowModuleType, Timestamp, Agent, SurveyScore等。 在创建DynamoDB时，以Agent作为分区键，以Timestamp作为排序键。
-创建DynamoDB表  在AWS控制台，打开DynamoDB服务，然后选择“创建表”。 在“创建表页面”，填写表名为AmazonConnectSurvey，填写Agent作为分区键，填写Timestamp作为排序键。其它保留默认设置。  点击“创建表”。 等待表创建完成，状态显示为“活跃”。  </description>
+      <description>试验说明 Amazon DynamoDB 是一种快速灵活的 NoSQL 数据库服务，适用于任何规模的有一致性、个位数毫秒延迟需求的应用程序。 它是一个完全托管的云数据库，支持文档和键值存储模型。 其灵活的数据模型、可靠的性能和吞吐量容量的自动扩展，使其非常适合存储和引用来自Amazon Connect的信息。
+在客户进行评价后，Amazon Connect通过集成Lambda将客户的评分及相关信息写入DynamoDB，这些信息包括：ContactId, ContactFlowId, ContactFlowName, ContactFlowModuleType, Timestamp, Agent, SurveyScore等。 在创建DynamoDB时，以Agent作为分区键，以Timestamp作为排序键。
+创建DynamoDB表  在AWS控制台，打开DynamoDB服务，然后选择“创建表”。 在“创建表页面”，填写表名为AmazonConnectSurvey，填写Agent作为分区键，填写Timestamp作为排序键，数据类型均选择“String”。其它保留默认设置。  其它保留默认设置，然后点击“创建表”。 等待表创建完成，状态显示为“活跃”。  </description>
     </item>
     
     <item>
@@ -33,9 +33,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/3.createlambda/</guid>
-      <description>试验说明 AWS Lambda 让您无需预置或管理服务器即可运行代码。 您只需为消耗的计算时间付费。 当您的代码未运行时，不收取任何费用。 上传您的代码，Lambda 会负责以高可用性运行和扩展您的代码所需的一切。 借助 AWS Lambda 和 Amazon Connect，您可以传递和返回自定义键值对，从而在您的联系流中实现多个集成点。
+      <description>试验说明 AWS Lambda 让您无需预置或管理服务器即可运行代码。 您只需为消耗的计算时间付费。 当您的代码未运行时，不收取任何费用。 上传您的代码，Lambda 会负责以高可用性运行和扩展您的代码所需的一切。
 在客户进行评价后，在Amazon Connect的联系流调用Lambda将评价信息写入DynamoDB。
-一、创建Lambda函数  在AWS控制台，打开AWS Lambda服务，然后选择“创建函数”。 选择从头开始创作。 填写函数名称为AmazonConnectSurveyLambda，运行时选择Node.js 14.x。 展开更改默认执行角色，选择“使用现有角色”。 在现有角色列表选择之前创建的角色“AmazonConnectSurveyLambdaRole”  点击“创建函数”。 TODO: 上传代码  </description>
+一、创建Lambda函数  在AWS控制台，打开AWS Lambda服务，然后选择“创建函数”。 选择从头开始创作。 填写函数名称为AmazonConnectSurveyLambda，运行时选择Node.js 14.x。 展开更改默认执行角色，选择“使用现有角色”。 在现有角色列表选择之前创建的角色“AmazonConnectSurveyLambdaRole”  点击“创建函数”。 等待函数创建完成后，点开新创建的函数，在“代码”标签页，替换为如下的代码。  var AWS=require(&amp;#34;aws-sdk&amp;#34;); var docClient=new AWS.DynamoDB.DocumentClient(); exports.handler=(event,context,callback)=&amp;gt; { console.log(&amp;#34;event:&amp;#34;+JSON.stringify(event)); var customerPhone=event.Details.ContactData.CustomerEndpoint.Address; //let nz_date_string = new Date().toLocaleString(&amp;#34;en-US&amp;#34;, { timeZone: &amp;#34;Asia/Shanghai&amp;#34; });  //console.log(nz_date_string);  var params={ TableName:&amp;#34;AmazonConnectSurvey&amp;#34;, Item:{ &amp;#34;Agent&amp;#34;: event.Details.ContactData.Attributes.Agent, &amp;#34;Timestamp&amp;#34;: new Date().toLocaleString(), &amp;#34;SurveyScore&amp;#34;: event.Details.ContactData.Attributes.SurveyScore, &amp;#34;CustomerPhone&amp;#34;: event.Details.ContactData.CustomerEndpoint.Address, &amp;#34;ContactId&amp;#34;: event.Details.ContactData.ContactId, &amp;#34;ContactFlowName&amp;#34;: event.Details.ContactData.Queue.Name } }; docClient.put(params,function(err,data){ if(err){ console.error(&amp;#34;Unable to add item. Error JSON:&amp;#34;, JSON.</description>
     </item>
     
     <item>
@@ -45,7 +45,8 @@
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/4.integratelambda/</guid>
       <description>试验说明 此步骤通过在Amazon Connect中注册之前创建的Lambda函数，并在联系流中调用Lambda以完成挂机后评价功能。
-一、授权Amazon Connect访问Lambda  在AWS控制台，打开Amazon Connect。 点击实例名进入账户概览。 在左侧的导航栏选择“Contact Flow” 滑动到AWS Lambda部分，选择创建的Lambda函数“AmazonConnectSurveyLambda” 点击“添加Lambda函数”   </description>
+一、授权Amazon Connect访问Lambda  在 AWS 控制台中，导航到Amazon Connect服务。 单击&amp;quot;实例别名&amp;quot;进入账户概览。 从左侧的菜单中选择&amp;quot;联系流&amp;quot;。 向下滚动到 AWS Lambda 部分。 从函数下拉菜单中，选择“AmazonConnectSurveyLambda”函数并单击“+添加 Lambda 函数”   二、导入并设置Disconnect Flow  下载联系流文件到本地电脑。 下载链接:Demo disconnect flow.json(8 ko) 导航到“联系流”界面，并点击“创建联系流”。 进入联系流编辑界面，点击右上角的下拉箭头，点击“导入流(Beta)”，导入下载的文件。  在联系流编辑界面，点击“调用AWS Lambda函数”块，在弹出的界面中选择“AmazonConnectSurveyLambda”函数，并点击保存。  点击右上角的“发布”按钮发布联系流。   三、设置Default agent whisper流  导航到“联系流”界面，点击“Default agent whisper”打开编辑页面。 拖拽左侧面板的“设置联系人属性”到画布，将“设置联系人属性”加入到联系流。 点击“设置联系人属性”，打开属性编辑面板，设置目标属性为“Agent”，点击使用属性，并将类型设置为“代理”，属性设置为“用户名”。然后点击“Save”按钮。  点击“发布”按钮。 这一步骤的作用是将接听电话的Agent的用户名设置为联系人属性，方便Lambda函数将用户名及对应的客户评价写入DynamoDB。
+  四、设置Demo inbound flow  导航到“联系流”界面，并点击“Demo inbound flow”进入编辑页面。 拖拽“设置断开流”模块到画布中，点击“设置断开流”，在弹出的界面中将“选择流”设置为“Demo disconnect flow”.</description>
     </item>
     
     <item>
@@ -54,7 +55,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/5.testlambda/</guid>
-      <description>试验说明 TODO：</description>
+      <description>试验说明 本部分试验主要对挂机后评价功能进行测试。 在进行通话测试的时候，您可以使用自己的手机或者固定电话直接拨打Connect号码，也可以同时在两个浏览器登录两个用户账号，使用其中一个拨打Connect号码,另外一个账号进行接听。详见： 测试Connect联络
+测试挂机评价流程  点击Amazon Connect控制台右上角的电话图标，打开联系控制面板(CCP)。 将代理设置为Available状态。  拨打Amazon Connect实例的电话号码，你会听到提示音，并且将您路由到对应的客服。 通话完毕后，代理首先挂断电话，然后客户就会听到邀请评价的提示音。 根据提示进行评价。 结束通话。 在AWS控制台，导航到DynamoDB服务。 点击“AmazonConnectSurvey”进入到详情页。   用户评价存入DynamoDB之后，您可以使用Glue和Athena对等服务进行数据处理、查询和分析，这部分不在本次试验的范畴内，留给您进行探索。
+</description>
     </item>
     
   </channel>

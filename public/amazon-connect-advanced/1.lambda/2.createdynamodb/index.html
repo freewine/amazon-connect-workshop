@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.92.0" />
+    <meta name="generator" content="Hugo 0.92.2" />
     <meta name="description" content="Amazon Connect Workshop">
 <meta name="author" content="AWS FSI DNB&lt;freewine@amazon.com&gt;">
 
@@ -13,20 +13,20 @@
     <title>创建DynamoDB :: Amazon Connect Workshop</title>
 
     
-    <link href="../../../css/nucleus.css?1652454193" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1652454193" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1652454193" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1652454193" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1652454193" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1652454193" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1652454193" rel="stylesheet">
-    <link href="../../../css/theme.css?1652454193" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1652454193" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1653488202" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1653488202" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1653488202" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1653488202" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1653488202" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1653488202" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1653488202" rel="stylesheet">
+    <link href="../../../css/theme.css?1653488202" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1653488202" rel="stylesheet">
     
-      <link href="../../../css/theme-mine.css?1652454193" rel="stylesheet">
+      <link href="../../../css/theme-mine.css?1653488202" rel="stylesheet">
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1652454193"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1653488202"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
 <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1652454193"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1652454193"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1653488202"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1653488202"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/gotoaws.cloudguru.run\/";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1652454193"></script>
+<script type="text/javascript" src="../../../js/search.js?1653488202"></script>
 
     
   </div>
@@ -169,9 +169,28 @@
  
   
     
-      <li data-nav-id="/amazon-connect-basic/1.deploy/2.claimnumber/" title="1.2 申请电话号码并进行验证" class="dd-item ">
+      <li data-nav-id="/amazon-connect-basic/1.deploy/2.claimnumber/" title="1.2 申请电话号码并配置联系流" class="dd-item ">
         <a href="../../../amazon-connect-basic/1.deploy/2.claimnumber/">
-        1.2 申请电话号码并进行验证
+        1.2 申请电话号码并配置联系流
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-basic/1.deploy/3.testcontact/" title="1.3 测试联络中心" class="dd-item ">
+        <a href="../../../amazon-connect-basic/1.deploy/3.testcontact/">
+        1.3 测试联络中心
         
         </a>
     </li>
@@ -354,6 +373,25 @@
       <li data-nav-id="/amazon-connect-basic/3.metrics/1.realtimemetrics/" title="3.1 查看实时指标" class="dd-item ">
         <a href="../../../amazon-connect-basic/3.metrics/1.realtimemetrics/">
         3.1 查看实时指标
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amazon-connect-basic/3.metrics/2.historicalmetrics/" title="3.2 查看历史指标" class="dd-item ">
+        <a href="../../../amazon-connect-basic/3.metrics/2.historicalmetrics/">
+        3.2 查看历史指标
         
         </a>
     </li>
@@ -953,15 +991,15 @@
 
 
 <h2 id="试验说明">试验说明</h2>
-<p>Amazon DynamoDB 是一种快速灵活的 NoSQL 数据库服务，适用于需要任何规模的一致、个位数毫秒延迟的所有应用程序。 它是一个完全托管的云数据库，支持文档和键值存储模型。 其灵活的数据模型、可靠的性能和吞吐量容量的自动扩展，使其非常适合存储和引用来自 Amazon Connect的信息。</p>
-<p>在客户进行评价后，Amazon Connect通过集成Lambda江客户的评价相关信息写入DynamoDB，这些信息包括：ContactId, ContactFlowId, ContactFlowName, ContactFlowModuleType, Timestamp, Agent, SurveyScore等。
+<p>Amazon DynamoDB 是一种快速灵活的 NoSQL 数据库服务，适用于任何规模的有一致性、个位数毫秒延迟需求的应用程序。 它是一个完全托管的云数据库，支持文档和键值存储模型。 其灵活的数据模型、可靠的性能和吞吐量容量的自动扩展，使其非常适合存储和引用来自Amazon Connect的信息。</p>
+<p>在客户进行评价后，Amazon Connect通过集成Lambda将客户的评分及相关信息写入DynamoDB，这些信息包括：ContactId, ContactFlowId, ContactFlowName, ContactFlowModuleType, Timestamp, Agent, SurveyScore等。
 在创建DynamoDB时，以Agent作为分区键，以Timestamp作为排序键。</p>
 <h2 id="创建dynamodb表">创建DynamoDB表</h2>
 <ol>
 <li>在AWS控制台，打开DynamoDB服务，然后选择“创建表”。</li>
-<li>在“创建表页面”，填写表名为<strong>AmazonConnectSurvey</strong>，填写<strong>Agent</strong>作为分区键，填写<strong>Timestamp</strong>作为排序键。其它保留默认设置。
+<li>在“创建表页面”，填写表名为<strong>AmazonConnectSurvey</strong>，填写<strong>Agent</strong>作为分区键，填写<strong>Timestamp</strong>作为排序键，数据类型均选择“String”。其它保留默认设置。
 <img src="../../../images/2.1.Survey/Create-DynamoDB.png" alt=""></li>
-<li>点击“创建表”。</li>
+<li>其它保留默认设置，然后点击“创建表”。</li>
 <li>等待表创建完成，状态显示为“活跃”。</li>
 </ol>
 
@@ -1076,22 +1114,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -1108,6 +1130,9 @@
             
         
                     
+            
+        
+                    
                         
             
             
@@ -1120,9 +1145,6 @@
                     
                     
 
-                    
-            
-        
                     
                         
             
@@ -1172,6 +1194,19 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -1187,6 +1222,41 @@
                     
                     
 
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1546,19 +1616,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1652454193"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1652454193"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1652454193"></script>
-    <script src="../../../js/jquery.sticky.js?1652454193"></script>
-    <script src="../../../js/featherlight.min.js?1652454193"></script>
-    <script src="../../../js/highlight.pack.js?1652454193"></script>
+    <script src="../../../js/clipboard.min.js?1653488202"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1653488202"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1653488202"></script>
+    <script src="../../../js/jquery.sticky.js?1653488202"></script>
+    <script src="../../../js/featherlight.min.js?1653488202"></script>
+    <script src="../../../js/highlight.pack.js?1653488202"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1652454193"></script>
-    <script src="../../../js/learn.js?1652454193"></script>
-    <script src="../../../js/hugo-learn.js?1652454193"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1653488202"></script>
+    <script src="../../../js/learn.js?1653488202"></script>
+    <script src="../../../js/hugo-learn.js?1653488202"></script>
 
-    <link href="../../../mermaid/mermaid.css?1652454193" type="text/css" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.min.js?1652454193"></script>
+    <link href="../../../mermaid/mermaid.css?1653488202" type="text/css" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.min.js?1653488202"></script>
     <script>
 	var config = {
         startOnLoad:true,

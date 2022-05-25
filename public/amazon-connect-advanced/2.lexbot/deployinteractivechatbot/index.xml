@@ -14,7 +14,7 @@
       <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/1.createinteractivelambda/</guid>
       <description>部署交互式消息的 AWS Lambda 在 Lex 中如果需要对消息使用Lambda进行处理后，再传递给Connect展示给用户，该部分消息处理的过程需要Lex结合Lambda完成。该部分创建了一个交互式访问的Lambda，供后续创建Lex Bot使用。
  Note：
-在本步骤中需要创建Lambda，请下载   interactive_message_lexv2_function   interactive-messaging-node-lexv2.zip  (5 ko)    Lambda function文件，以便在步骤3中使用；
+在本步骤中需要创建Lambda，请下载interactive_message_lexv2_functioninteractive-messaging-node-lexv2.zip(5 ko)Lambda function文件，以便在步骤3中使用；
    在 AWS Console 中打开 AWS Lambda，选择 Create function。
   在 Create Function 页面中，选择 Author from scratch 并输入需要的信息后点击 Create function 按钮。
  Function name: 输入 interactive_message_lexv2_function. Runtime: 选择 Node.js 14.x Architecture: 选择 x86_64    在 Function overview 页面， 选择 Code 并在右侧的 Upload from 中选在.</description>
@@ -28,7 +28,7 @@
       <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/2.importlexbot/</guid>
       <description>导入交互式机器人 该步骤中，我们将要导入Lex机器人；
  Note：
-在本步骤中需要导入Lex Bot，请下载   Lex Bot   interactive-message-bot_v2.zip  (26 ko)    文件，以便在步骤3中使用；
+在本步骤中需要导入Lex Bot，请下载Lex Botinteractive-message-bot_v2.zip(26 ko)文件，以便在步骤3中使用；
    在 AWS Console 中打开 Amazon Lex，点击 Get Start, 在 Actions 菜单中选择 Import
  确保你打开的 Amazon Lex Console 是 V2 版本.
    在 Import bot 页面中点击 Browse file并选中在上述步骤中下载的.zip文件，在下述设置中进行设置，并点击 Import 按钮
@@ -71,7 +71,7 @@
       <guid>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/5.importcontactflow/</guid>
       <description>在Amazon Connect中导入并配置Contact Flow 该步骤中，我们将在创建好的Amazon Connect实例管理界面中导入并配置Contact Flow。
  Note：
-在本步骤中需要导入Contact Flow，请下载   Contact Flow   InteractiveMessaging_Flow.json  (4 ko)    文件，以便在步骤4中使用；
+在本步骤中需要导入Contact Flow，请下载Contact FlowInteractiveMessaging_Flow.json(4 ko)文件，以便在步骤4中使用；
    在 AWS Console 中打开 Amazon Connect，在实例列表中点击 Access Url 进入登陆页面。
 使用之前创建Connect实例时设置的Administrator用户名及密码进行登陆。
   登陆完成后，进入Connect实例管控页面，从左侧的菜单栏中选择 Routing 选择 Contact flows 进入 Contact flows列表页面。

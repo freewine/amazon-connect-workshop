@@ -42,7 +42,7 @@ Transfer to queue flow（转移到队列流）</description>
       <guid>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/2.createbasicinboundflow/</guid>
       <description>新建一个空的入站联系流 现在，我们已经理解了不同的联系流类型，接下来，我们就开始创建一个基础的联系流。 下图是我们即将在后续步骤创建的联系流的概览。
 记住，我们使用创建联系流按钮来创建一个入站联系流。
- 选择 路由选择 -&amp;gt; 联系流 访问联系流库。 选择创建联系流 为联系流制定一个名字,比如 Intro Flow 1 点击显示其他流信息来展开流信息，并且添加描述信息. 在查看流的不同版本时，该描述可能很有用。 点击保存   </description>
+ 选择 路由选择 -&amp;gt; 联系流 访问联系流库。 选择创建联系流 为联系流制定一个名字,比如 Demo inbound flow 点击显示其他流信息来展开流信息，并且添加描述信息. 在查看流的不同版本时，该描述可能很有用。 点击保存.   </description>
     </item>
     
     <item>
@@ -77,7 +77,7 @@ Transfer to queue flow（转移到队列流）</description>
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/4.writedemocontactflow/</guid>
       <description>使用联系流编辑器编辑入站联系流 在之前的步骤中，我们已经创建了一个空的入站联系流，并且已经理解了不同的联系流类型，接下来，我们就开始编写一个完整的联系流。 我们即将创建的联系流如下图。该联系流定了客户来电时的处理步骤，以及将客户转接到代理队列。
- 首先，创建一个新的操作小时数，用于后续的联系流。   选择 路由选择 -&amp;gt; 操作小时数 点击[添加小时数] 在打开的页面中，设置名称和描述为“Work Hours” 将时区设置为“Asia/Shanghai” 删除周六、周日，保留周一至周五做为工作时间。 点击[保存]。    下载联系流文件到本地电脑。   下载链接:   Demo inbound flow.json  (4 ko)      选择之前创建的“Demo inbound flow”联系流，此时联系流为空白状态。
+ 首先，创建一个新的操作小时数，用于后续的联系流。   选择 路由选择 -&amp;gt; 操作小时数 点击[添加小时数] 在打开的页面中，设置名称和描述为“Work Hours” 将时区设置为“Asia/Shanghai” 删除周六、周日，保留周一至周五做为工作时间。 点击[保存]。    下载联系流文件到本地电脑。 下载链接:Demo inbound flow.json(4 ko)  选择之前创建的“Demo inbound flow”联系流，此时联系流为空白状态。
   点击保存按钮右边的下拉箭头，点击[导入流(beta)]   此时，会看到一个完整的联系流，解析来我们来编辑它。
   点击[设置录音和分析行为]块，打开代理和客户的通话录音，然后点击保存。   点击[设置语音]块设置与客户交互的声音，将语言设置为中文（普通话），然后点击保存。   点击[检查操作小时数]块，将指定小时数设置为Work Hours，然后点击保存。   点击右上角的[发布]按钮，发布联系流。
   </description>
@@ -89,9 +89,8 @@ Transfer to queue flow（转移到队列流）</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/5.testdemocontactflow/</guid>
-      <description>测试入站联系流 在前边的步骤中，我们已经创建了一个入站联系流，接下来我们将对这个联系流进行测试。
- 首先我们需要将此联系流绑定到之前申请的电话号码。   选择 路由 -&amp;gt; 电话号码 选择已经创建的电话号码 点击联系流/IVR的下拉框，选择“Demo inbound flow”。 点击保存。   等待大约2分钟让设置生效。 点击右上角的电话图标，打开联系控制面板(CCP)。 将代理设置为Available状态。  拨打Amazon Connect实例的电话号码，你会听到提示音，并且将您路由到对应的客服。 测试完成。  在进行电话测试的时候，你可以申请两个电话号码进行相互拨打，避免产生您自己的手机通讯费。
- </description>
+      <description>测试入站联系流 在前边的步骤中，我们已经创建了一个入站联系流，接下来我们将对这个联系流进行测试。 在进行通话测试的时候，您可以使用自己的手机或者固定电话直接拨打Connect号码，也可以同时在两个浏览器登录两个用户账号，使用其中一个拨打Connect号码,另外一个账号进行接听。详见： 测试Connect联络
+ 首先我们需要将此联系流绑定到之前申请的电话号码。   选择 路由 -&amp;gt; 电话号码 选择已经创建的电话号码 点击联系流/IVR的下拉框，选择“Demo inbound flow”。 点击保存。   等待大约2分钟让设置生效。 点击右上角的电话图标，打开联系控制面板(CCP)。 将代理设置为Available状态。  拨打Amazon Connect实例的电话号码，你会听到提示音，并且将您路由到对应的客服。 测试完成。  </description>
     </item>
     
   </channel>

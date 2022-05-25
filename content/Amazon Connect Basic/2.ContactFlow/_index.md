@@ -6,16 +6,16 @@ tags:
   - beginner
 ---
 
-## Contact Flow介绍
+## 联系流（Contact Flow）介绍
 
-本次实验对Contact Flow进行介绍，包括以下几个方面：
+本部分对联系流进行介绍，包括以下几个方面：
 
-* 介绍Contact Flow库和Sample/Default Flow
+* 介绍联系流库和Sample/Default联系流
 
 * 新建入站联系流
 
 * 查看常用的联系块
 
-* 编写一个完整的联系流
+* 编写一个完整的入站联系流
 
 * 测试入站联系流

@@ -22,6 +22,8 @@
   </url><url>
     <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/2.claimnumber/</loc>
   </url><url>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/3.testcontact/</loc>
+  </url><url>
     <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/</loc>
   </url><url>
     <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployconnectchatui/</loc>
@@ -51,6 +53,8 @@
     <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/3.metrics/</loc>
   </url><url>
     <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/3.metrics/1.realtimemetrics/</loc>
+  </url><url>
+    <loc>http://gotoaws.cloudguru.run/amazon-connect-basic/3.metrics/2.historicalmetrics/</loc>
   </url><url>
     <loc>http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/1.createinteractivelambda/</loc>
   </url><url>

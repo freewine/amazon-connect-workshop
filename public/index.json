@@ -4,28 +4,28 @@
 	"title": "Amazon Connect Workshop",
 	"tags": [],
 	"description": "",
-	"content": "Amazon Connect介绍 Amazon Connect 是一个易于使用的全渠道云联络中心，可帮助公司以更低的成本提供卓越的客户服务。 10 多年前，亚马逊的零售业务需要一个联络中心，为我们的客户提供个性化、动态和自然的体验。我们找不到满足我们需求的，所以我们建造了它。现在，我们已为所有企业提供此服务，如今，成千上万的公司使用 Amazon Connect 每天为数百万客户提供服务，座席从 10 到数万不等。\nAmazon Connect 从一开始就设计为全渠道，为您的客户和代理提供跨语音和聊天的无缝体验。这包括一组用于基于技能的路由、强大的实时和历史分析以及易于使用的直观管理工具的工具——所有这些都采用即用即付定价，这意味着 Amazon Connect 简化了联络中心的运营，提高代理效率，降低成本。您可以在几分钟内建立一个可以扩展以支持数百万客户的联络中心。\nWorkshop介绍 通过本Workshop的实验，可以帮助您了解如何快速搭建Amazon Connect云联络中心。 本Workshop分为两部分：\n  Amazon Connect基础：这部分内容包括：配置Amazon Connect实例、申请电话号码、编写联系流，并进行Voice和Chat测试。\n  Amazon Connect进阶：在本部分，我们将通过自定义Lambda实现挂机后评价，以及创建一个Lex机器人来实现智能客服，并将呼叫者路由到正确的队列。\n  "
+	"content": "Amazon Connect介绍 Amazon Connect 是一个易于使用的全渠道云联络中心，可帮助公司以更低的成本提供卓越的客户服务。 十多年前，亚马逊的零售业务需要一个联络中心为我们的客户提供个性化、动态和自然的体验。我们找不到满足我们需求的产品，所以我们构建了Amazon Connect。构建完成之后，我们对所有企业开放了此服务。如今，成千上万的公司使用 Amazon Connect服务，每天为数百万客户提供服务，客座席数量从 10 到数万不等。\nAmazon Connect 从一开始就设计支持全渠道，为您的客户和代理提供跨语音和聊天的无缝体验。Amazon Connect还提供基于技能的路由、强大的实时和历史分析，以及易于使用的管理工具——所有这些都采用即用即付的定价策略。所有这些，意味着 Amazon Connect 简化了联络中心的运营，提高代理效率，降低成本。您可以在几分钟内建立一个可以扩展以支持数百万客户的联络中心。\nWorkshop介绍 通过本Workshop的实验，可以帮助您了解如何快速搭建Amazon Connect云联络中心。 本Workshop分为两部分：\n  Amazon Connect基础：这部分介绍联络中心的基本功能，内容包括：创建并配置Amazon Connect实例、申请电话号码、编写联系流，并进行语音和聊天测试。\n  Amazon Connect进阶：本部分介绍联络中心的高级用法，我们将通过与Lambda集成实现挂机后评价，以及创建一个Lex机器人来实现智能客服，并将呼叫者路由到正确的队列。\n  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/1.introduction/",
 	"title": "Workshop整体介绍",
 	"tags": [],
 	"description": "",
-	"content": "在这一系列实验中，我们将使用 Amazon Connect 服务构建基于云的联络中心，并探索与其他 AWS 服务（如 Amazon DynamoDB、Amazon Lex 和 AWS Lambda）的集成，以构建现代且强大的联络中心。\n本Workshop旨在介绍 Amazon Connect，旨在帮助以前不了解 AWS 或 Amazon Connect 的用户。\n本实验涉及到的服务部分可以免费使用， 但是也有多项服务可能会产生一些使用费用。 请参阅定价页面以查看AWS Lambda、DynamoDB、Amazon Lex 和 Amazon Connect 中使用的服务的免费套餐使用情况和成本。\n本次Workshop分为两部分：\n Amazon Connect基础：这部分从技术上来说，您可以了解以下技术内容：   部署Amazon Connect实例 申请电话号码并设置Contact Flow 了解和编写Contact Flow 进行Voice/Chat测试 查看日志、统计数据和报告  请先完成基础部分的实验。\n  Amazon Connect进阶：这部分从技术上来说，您可以了解以下技术内容：   通过Contact Flow的设计以及Lambda的集成实现挂机后评价 Amazon Connect与Lex集成实现智能客服  这部分需要在完成基础内容以后进行操作。\n 如果您对基础部分都比较熟悉，而打算直接做进阶部分的话，则必须完成以下的基础部分（进阶部分会依赖以下的部分）：\n 申请电话号码 编写联系流  "
+	"content": "在这一系列实验中，我们将使用 Amazon Connect 服务构建基于云联络中心，并探索与其他 AWS 服务（如 AWS Lambda、Amazon DynamoDB和Amazon Lex 等）的集成，以构建现代且强大的联络中心。\n本Workshop旨在介绍 Amazon Connect，帮助以前不了解Amazon Connect 的用户掌握搭建云联络中心的技能。\n本实验涉及到的服务一部分可以免费使用， 但是也有多项服务可能会产生少量使用费用。请参阅定价页面以查看AWS Lambda、DynamoDB、Amazon Lex 和 Amazon Connect等服务的免费套餐情况和计费方式。\n本次Workshop分为两部分：\n Amazon Connect基础：在这部分您可以了解以下技术内容：   部署Amazon Connect实例 申请电话号码并设置Contact Flow 了解和编写Contact Flow 进行语音/聊天测试 查看实时/历史指标和报告   Amazon Connect进阶：从部分您可以了解以下技术内容：   通过将Contact Flow与Lambda的集成实现挂机后评价，并将客户评价写入DynamoDB Amazon Connect与Lex集成实现智能客服  一般来说，需要先完成基础部分，然后再进行进阶部分。\n\r如果您对基础部分比较熟悉，而打算直接做进阶部分的话，则必须完成以下的基础部分（进阶部分会依赖以下内容）：\n 创建Amazon Connect实例 申请电话号码 编写联系流  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/",
 	"title": "Amazon Connect基础",
 	"tags": ["beginner"],
 	"description": "",
-	"content": "把当前控制台设置为中文界面 登录AWS控制台以后，缺省显示的语言为英文，可以按照下图所示的方式切换为中文。 "
+	"content": "把AWS控制台设置为中文界面 登录AWS控制台以后，缺省显示的语言为英文，可以按照下图所示的方式切换为中文。 "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/",
 	"title": "1. 通过Lambda实现挂机评价",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "实验目的 本实验在客服通话结束后邀请客户对本次服务进行评价，通过集成Lambda将客户的评价写入DynamoDB，最后使用Glue和Athena进行数据处理和查询。\n本次实验使用到以下AWS服务：\n Amazon Connect Lambda DynamoDB Glue Athena  "
+	"content": "实验目的 在这部分，您将学习如何将 AWS Lamda 和 Amazon DynamoDB 服务与您的Amazon Connect进行集成。\nAmazon Connect 与其他 AWS 服务（如 AWS Lambda）的原生集成允许您为呼叫者创建动态、个性化的体验。\n在本实验中，我们将借助AWS Lambda 和 Amazon DynamoDB服务，实现客服通话结束后邀请客户对本次服务进行评价。\n本部分试验主要包含以下内容：\n 根据提供的示例创建 AWS Lambda 函数。 在Disconnect Flow中设计挂机评价流程。 通过在Disconnect Flow中集成Lambda将客户的评价写入DynamoDB。  本次实验使用到以下AWS服务：\n Amazon Connect Lambda DynamoDB  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/",
@@ -46,14 +46,14 @@
 	"title": "Amazon Connect进阶",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "在完成了基础部分以后，可以根据自己的业务系统的实际情况，有选择的对进阶部分进行了解。 如果您对基础部分都比较熟悉，而打算直接做进阶部分的话，则必须完成以下的基础部分（进阶部分会依赖以下的部分）：\n 部署Amazon Connect 部署云端基础架构  通过这部分的实验内容，您可以了解以下技术内容：\n 通过与Lex的集成实现智能聊天客服 通过Lambda实现挂机评价  这部分需要在完成基础内容以后进行操作，大概需要4-6小时。\n "
+	"content": "在完成了基础部分以后，可以根据自己的业务系统的实际情况，有选择的对进阶部分进行了解。 如果您对基础部分都比较熟悉，而打算直接做进阶部分的话，则必须完成以下的基础部分（进阶部分会依赖以下的部分）：\n 部署Amazon Connect 部署云端基础架构  通过这部分的实验内容，您可以了解以下技术内容：\n 通过与Lex的集成实现智能聊天客服 通过Lambda实现挂机评价  这部分需要在完成基础内容以后进行操作，大概需要4-6小时。\n\r"
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/1.deployconnect/",
 	"title": "1.1 创建Amazon Connect实例",
 	"tags": ["beginner"],
 	"description": "",
-	"content": "Amazon Connect介绍 Amazon Connect通过方便易用的全渠道云联络中心服务，以更低的成本提供卓越的客户服务。 使用 Amazon Connect，您可以在几分钟内建立一个联络中心，并可扩展以支持数以百万计的客户。只需点击几下，您即可设置并对您的联系中心进行更改，从而使座席可以立即开始帮助客户。比传统联络中心解决方案最高节省 80% 的成本，无最低费用、长期承诺或预付许可证费用。可以灵活地采用在任何地方工作的成千上万的代理，可以轻松地纵向扩展或缩减以满足需求。\n详情见官方文档：https://aws.amazon.com/cn/connect/\n开始部署Amazon Connect  验证您的Region。Amazon Connect目前已经在十个以上Region推出。请选择您要在其中部署 Amazon Connect 实例的所需Region。 导航到AWS 区域服务网页以验证特定区域的 Amazon Connect 服务可用性。  选择所需区域后，从顶部的搜索栏中搜索 Amazon Connect 服务，然后进入到Amazon Connect的控制台。 如果这是该区域中的第一个 Amazon Connect 实例，请选择Create Instance。 如果您在此区域中有实例，请选择添加实例。\n 设置身份管理（Set Identity Management）:\n 选择“Store users within Amazon Connect” 在访问URL字段设置一个唯一的实例名, 建议使用时期+ID的格式 (比如: 20220408douglas) 点击下一步     添加管理员。在添加管理员页面填写管理员信息。该管理员用于登录Amazon Connect后台。填写完毕后点击下一步   在设置通话界面，保持默认不变，即：\n 选择“允许入站呼叫” 选择“允许出站呼叫” 选择下一步     在数据存储页面，选择下一步   在审核和创建页面，审核您的设置，然后点击“创建实例”。\n  等待实例创建完成。\n  一旦实例创建完成，您就会看到“开始使用”。然后您就可以进入到下一个实验环节：申请电话号码。\n  "
+	"content": "Amazon Connect介绍 Amazon Connect通过方便易用的全渠道云联络中心服务，以更低的成本提供卓越的客户服务。\n使用 Amazon Connect，您可以在几分钟内建立一个联络中心，并可扩展以支持数以百万计的客户。只需点击几下，您即可设置好您的联络中心，从而使座席可以立即开始帮助客户。比传统联络中心解决方案最高节省 80% 的成本，无最低费用、长期承诺或预付许可证费用。使用Amazon Connect，您可以打破地域的限制，在任何地方安排成千上万的代理，轻松地扩展或缩减以满足业务需求。\n详情见官方文档：https://aws.amazon.com/cn/connect/\n开始部署Amazon Connect  验证您的Region。Amazon Connect目前已经在十个以上区域推出。请选择您要在其中部署 Amazon Connect 实例的区域。 导航到AWS 区域服务网页以验证特定区域的 Amazon Connect 服务可用性。  选择所需区域后，从顶部的搜索栏中搜索 Amazon Connect 服务，然后进入到Amazon Connect服务页面。 如果这是该区域中的第一个 Amazon Connect 实例，请选择Create Instance。 如果您在此区域中有实例，请选择添加实例。\n 设置身份管理:\n 选择“在 Amazon Connect 中创建和管理用户”。 在访问URL字段设置一个唯一的实例名, 建议使用时期+ID的格式 (比如: 20220408douglas)。 点击下一步。     添加管理员。在添加管理员页面填写管理员信息。该管理员用于登录Amazon Connect后台。填写完毕后点击下一步   在设置通话界面，保持默认不变，即：\n 选择“允许入站呼叫”。 选择“允许出站呼叫”。 选择下一步。     在数据存储页面，保持默认设置，选择下一步。   在审核和创建页面，审核您的设置，然后点击“创建实例”。\n  等待实例创建完成。\n  一旦实例创建完成，您就会看到“开始使用”。然后您就可以进入到下一个实验环节：申请电话号码。\n  点击“开始使用”，您会以应急账号登录Connect管理控制台。在正常情况下，建议使用“账户概览”页面的Access URL进行访问，并使用创建Amazon Connect实例时设置的管理员账号进行登录。 \r"
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/1.-introlex/",
@@ -64,10 +64,17 @@
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/2.claimnumber/",
-	"title": "1.2 申请电话号码并进行验证",
+	"title": "1.2 申请电话号码并配置联系流",
 	"tags": ["beginner"],
 	"description": "",
-	"content": "一、申请电话号码  （接上一部分）点击“开始使用”进入到Amazon Connect的管理界面。 在欢迎使用 Amazon Connect页面，点击“开始”。(如果浏览器弹出申请麦克风权限的提示，选择“允许”。)  在申请电话号码页面，进行如下操作：  在“国家/地区”列表中选择对应的国家 在类型列表中选择“DID（直接内部拨号）” 在电话号码列表中选择您想要的电话号码。 点击下一步。 在“申请电话号码”页面，点击“Continue”。     在某些国家/地区，无法直接申请电话号码，需要提Support Case申请。详见：https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html\n 申请电话号码成功后，会进入控制面板页面，点击“查看电话号码”，即可看到申请的电话号码。  点击新创建的电话号码，即可进入到“编辑电话号码页面”。可以看到，电话号码会自动跟Sample inbound flow (first contact experience)进行关联，然后就可以拨打这个电话进行测试。具体联系流的作用，后边的试验再进行介绍。   以上步骤均使用应急账号进行Connect的配置。在正常情况下，应该使用“账户概览”页面的Access URL进行访问，并使用创建Amazon Connect实例时设置的管理员账号进行登录。  二、验证电话和Chat联络 通过前边的步骤，我们已经完成了Amazon Connect云联络中心的创建和配置。接下来就可以进行验证，验证分为两部分：电话验证和Chat验证。\n1. 验证电话联络  点击Connect管理界面右上角的电话按钮， 弹出CCP面板(呼叫控制面板)，将状态设置为“Available”状态。  使用手机拨打新申请的DID号码（您也可以申请第二个DID号码并创建新的客服用户进行测试）。您会听到一段英语欢迎语，然后依次按照以下步骤操作（通话流程在Sample inbound flow中定义）：   按1进入客服队列。 按1移动到队列头部。 按1进入队列，等待客服进行接听。  在CCP面板会接收到来电时，点击接听。 进行通话测试，测试结束后挂断电话。 点击“结束联系人”重新进入到“Available”状态。  2. 验证Chat联络   在Amazon Connect后台“控制面板”， 点击“测试聊天”，进入“测试聊天”页。\n  点击“激活联系人控制面板”，点击   点击测试设置，将联系流设置为“Sample inbound flow (first contact experience)”。   点击左侧模拟网站上的聊天图标开始以客户身份发起聊天。稍等片刻就可以收到欢迎信息，然后等待客服进行接听.\n  在右侧的CCP面板上，客服点击“接受聊天”。\n  在客户侧和客服侧输入信息进行聊天.\n  结束聊天。\n  恭喜！ 您已经申请了电话号码，并成功进行了电话和聊天测试。\n"
+	"content": "一、申请电话号码  （接上一部分）点击“开始使用”进入到Amazon Connect的管理界面。 在欢迎使用 Amazon Connect页面，点击“开始”。(如果浏览器弹出申请麦克风权限的提示，选择“允许”。)  在申请电话号码页面，进行如下操作：  在“国家/地区”列表中选择对应的国家。 在类型列表中选择“DID（直接内部拨号）”。 在电话号码列表中选择您想要的电话号码。 点击下一步。 在“申请电话号码”页面，点击“Continue”。     在某些国家/地区，无法直接申请电话号码，需要提Support Case申请。详见：https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html\n\r申请电话号码成功后，会进入控制面板页面，点击“查看电话号码”，即可看到申请的电话号码。  点击新创建的电话号码，即可进入到“编辑电话号码页面”。可以看到，电话号码会自动跟Sample inbound flow (first contact experience)进行关联，然后就可以拨打这个电话进行测试。关于联系流的作用，后边的试验再进行介绍。   以上步骤均使用应急账号进行Connect的配置。在正常情况下，建议使用“账户概览”页面的Access URL进行访问，并使用创建Amazon Connect实例时设置的管理员账号进行登录。 \r"
+},
+{
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/1.deploy/3.testcontact/",
+	"title": "1.3 测试联络中心",
+	"tags": ["beginner"],
+	"description": "",
+	"content": "试验说明 您有两种方法可以进行测试，一、使用您自己的手机或者固定电话拨打Connect号码。二、Amazon Connect本身也支持电话的外呼，如果您想避免产生手机通讯费，可以创建一个Agent用户，然后同时打开两个浏览器（比如Chrome和Firefox），并分别使用管理员账号和Agent账号进行登录。在进行通话测试的时候，同时在两个浏览器打开CCP面板，在其中一个CCP面板直接拨打Amazon Connect号码，然后在另一个CCP面板中进行接听。\n\r一、创建Agent用户 如果您准备使用自己的手机或者固定电话进行测试，创建Agent用户不是必须的，您可以跳过这一步。\n\r 使用管理员账号登录Amazon Connect控制台，依次导航到“用户”-“用户管理”，并点击“添加新用户”。 在添加新用户界面，依次输入如下信息，名：Agent，姓：aws，登录：Agent，密码：Agent@123。安全配置文件选择“Agent”，路由配置文件选择“Basic Routing Profile”。  点击“保存”按钮。 打开另外一个浏览器，并使用新创建的Agent进行登录。  二、测试电话和聊天 通过前边的步骤，我们已经完成了Amazon Connect云联络中心的创建和配置。接下来就可以进行验证，验证分为两部分：电话验证和Chat验证。\n1. 测试电话  点击Connect控制台界面右上角的电话按钮， 弹出CCP面板(呼叫控制面板)，将状态设置为“Available”状态。  【选项1】使用手机拨打新申请的电话号码。 【选项2】按照“实验说明”部分的方法，同时在两个浏览器登录两个用户账号，使用其中一个拨打电话，另外一个进行接听。  您会听到一段英语欢迎语，然后依次按照以下步骤操作（该流程在Sample inbound flow中定义）：\n 按1进入客服队列。 按1移动到队列头部。 按1进入队列，等待客服进行接听。  在CCP面板会接收到来电提示，点击接听。 进行通话测试，测试结束后挂断电话。 点击“结束联系人”重新进入到“Available”状态。  2. 测试聊天   在Amazon Connect后台“控制面板”， 点击“测试聊天”，进入“测试聊天”页。\n  点击“激活联系人控制面板”。   点击测试设置，将联系流设置为“Sample inbound flow (first contact experience)”。   点击模拟网站上的聊天图标开始以客户身份发起聊天。稍等片刻就可以收到欢迎信息，然后等待客服进行接听。\n  在右侧的CCP面板上，客服点击“接受聊天”。\n  在客户侧和客服侧输入信息进行聊天。\n  结束聊天。\n  恭喜！ 您已经申请了电话号码，并成功进行了电话和聊天测试。\n"
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/",
@@ -88,42 +95,42 @@
 	"title": "创建IAM策略和角色",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "实验说明 为了使我们的 AWS Lambda 函数成功执行，AWS Lambda 需要具有适当权限的 AWS Identity and Access Management (IAM) 角色和策略。 使用本文中的以下步骤为 AWS Lambda 函数创建示例角色和策略，以访问所有 Amazon DynamoDB 表。\n一、 创建IAM策略  在AWS控制台，打开IAM控制面板。 在导航面板，选择“策略”，“创建策略”。 选择“JSON”标签，复制以下JSON代码，并将其粘贴到文本框中。 说明：如下代码赋予对Lambda和DynamoDB的完全访问权限。  { \u0026#34;Version\u0026#34;:\u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;:[ { \u0026#34;Effect\u0026#34;:\u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;:[ \u0026#34;lambda:*\u0026#34;, \u0026#34;dynamodb:*\u0026#34; ], \u0026#34;Resource\u0026#34;:\u0026#34;*\u0026#34; } ] } 选择“下一步：标签”。 选择“下一步：审核” 将策略命名为AmazonConnectSurveyLambdaPolicy，然后点击“创建策略”。  二、 创建IAM角色  在导航面板，依次选择“角色”，“创建角色”。 在“选择可信实体”页，选择Lambda，并点击“下一步”  在添加权限页，搜索并添加前边创建的策略****AmazonConnectSurveyLambdaPolicy**，搜索并添加AWSLambdaBasicExecutionRole 然后点击“下一步”。 角色名称命名为“AmazonConnectSurveyLambdaRole”，点击“创建角色”。  "
+	"content": "实验说明 为了使我们的 AWS Lambda 函数成功执行，AWS Lambda 需要具有适当权限的 AWS Identity and Access Management (IAM) 角色和策略。 使用本文中的以下步骤为 AWS Lambda 函数创建示例角色和策略，以访问所有 Amazon DynamoDB 表。\n一、 创建IAM策略  在AWS控制台，打开IAM控制面板。 在导航面板，选择“策略”，“创建策略”。 选择“JSON”标签，复制以下JSON代码，并将其粘贴到文本框中。 说明：如下代码赋予对Lambda和DynamoDB的完全访问权限。  { \u0026#34;Version\u0026#34;:\u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;:[ { \u0026#34;Effect\u0026#34;:\u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;:[ \u0026#34;lambda:*\u0026#34;, \u0026#34;dynamodb:*\u0026#34; ], \u0026#34;Resource\u0026#34;:\u0026#34;*\u0026#34; } ] } 选择“下一步：标签”。 选择“下一步：审核” 将策略命名为AmazonConnectSurveyLambdaPolicy，然后点击“创建策略”。  二、 创建IAM角色  在导航面板，依次选择“角色”，“创建角色”。 在“选择可信实体”页，选择Lambda，并点击“下一步”  在添加权限页，搜索并选中前边创建的策略AmazonConnectSurveyLambdaPolicy。 然后点击“下一步”。 角色名称命名为“AmazonConnectSurveyLambdaRole”，点击“创建角色”。  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/2.createdynamodb/",
 	"title": "创建DynamoDB",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "试验说明 Amazon DynamoDB 是一种快速灵活的 NoSQL 数据库服务，适用于需要任何规模的一致、个位数毫秒延迟的所有应用程序。 它是一个完全托管的云数据库，支持文档和键值存储模型。 其灵活的数据模型、可靠的性能和吞吐量容量的自动扩展，使其非常适合存储和引用来自 Amazon Connect的信息。\n在客户进行评价后，Amazon Connect通过集成Lambda江客户的评价相关信息写入DynamoDB，这些信息包括：ContactId, ContactFlowId, ContactFlowName, ContactFlowModuleType, Timestamp, Agent, SurveyScore等。 在创建DynamoDB时，以Agent作为分区键，以Timestamp作为排序键。\n创建DynamoDB表  在AWS控制台，打开DynamoDB服务，然后选择“创建表”。 在“创建表页面”，填写表名为AmazonConnectSurvey，填写Agent作为分区键，填写Timestamp作为排序键。其它保留默认设置。  点击“创建表”。 等待表创建完成，状态显示为“活跃”。  "
+	"content": "试验说明 Amazon DynamoDB 是一种快速灵活的 NoSQL 数据库服务，适用于任何规模的有一致性、个位数毫秒延迟需求的应用程序。 它是一个完全托管的云数据库，支持文档和键值存储模型。 其灵活的数据模型、可靠的性能和吞吐量容量的自动扩展，使其非常适合存储和引用来自Amazon Connect的信息。\n在客户进行评价后，Amazon Connect通过集成Lambda将客户的评分及相关信息写入DynamoDB，这些信息包括：ContactId, ContactFlowId, ContactFlowName, ContactFlowModuleType, Timestamp, Agent, SurveyScore等。 在创建DynamoDB时，以Agent作为分区键，以Timestamp作为排序键。\n创建DynamoDB表  在AWS控制台，打开DynamoDB服务，然后选择“创建表”。 在“创建表页面”，填写表名为AmazonConnectSurvey，填写Agent作为分区键，填写Timestamp作为排序键，数据类型均选择“String”。其它保留默认设置。  其它保留默认设置，然后点击“创建表”。 等待表创建完成，状态显示为“活跃”。  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/3.createlambda/",
 	"title": "创建Lambda函数",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "试验说明 AWS Lambda 让您无需预置或管理服务器即可运行代码。 您只需为消耗的计算时间付费。 当您的代码未运行时，不收取任何费用。 上传您的代码，Lambda 会负责以高可用性运行和扩展您的代码所需的一切。 借助 AWS Lambda 和 Amazon Connect，您可以传递和返回自定义键值对，从而在您的联系流中实现多个集成点。\n在客户进行评价后，在Amazon Connect的联系流调用Lambda将评价信息写入DynamoDB。\n一、创建Lambda函数  在AWS控制台，打开AWS Lambda服务，然后选择“创建函数”。 选择从头开始创作。 填写函数名称为AmazonConnectSurveyLambda，运行时选择Node.js 14.x。 展开更改默认执行角色，选择“使用现有角色”。 在现有角色列表选择之前创建的角色“AmazonConnectSurveyLambdaRole”  点击“创建函数”。 TODO: 上传代码  "
+	"content": "试验说明 AWS Lambda 让您无需预置或管理服务器即可运行代码。 您只需为消耗的计算时间付费。 当您的代码未运行时，不收取任何费用。 上传您的代码，Lambda 会负责以高可用性运行和扩展您的代码所需的一切。\n在客户进行评价后，在Amazon Connect的联系流调用Lambda将评价信息写入DynamoDB。\n一、创建Lambda函数  在AWS控制台，打开AWS Lambda服务，然后选择“创建函数”。 选择从头开始创作。 填写函数名称为AmazonConnectSurveyLambda，运行时选择Node.js 14.x。 展开更改默认执行角色，选择“使用现有角色”。 在现有角色列表选择之前创建的角色“AmazonConnectSurveyLambdaRole”  点击“创建函数”。 等待函数创建完成后，点开新创建的函数，在“代码”标签页，替换为如下的代码。  var AWS=require(\u0026#34;aws-sdk\u0026#34;); var docClient=new AWS.DynamoDB.DocumentClient(); exports.handler=(event,context,callback)=\u0026gt; { console.log(\u0026#34;event:\u0026#34;+JSON.stringify(event)); var customerPhone=event.Details.ContactData.CustomerEndpoint.Address; //let nz_date_string = new Date().toLocaleString(\u0026#34;en-US\u0026#34;, { timeZone: \u0026#34;Asia/Shanghai\u0026#34; });  //console.log(nz_date_string);  var params={ TableName:\u0026#34;AmazonConnectSurvey\u0026#34;, Item:{ \u0026#34;Agent\u0026#34;: event.Details.ContactData.Attributes.Agent, \u0026#34;Timestamp\u0026#34;: new Date().toLocaleString(), \u0026#34;SurveyScore\u0026#34;: event.Details.ContactData.Attributes.SurveyScore, \u0026#34;CustomerPhone\u0026#34;: event.Details.ContactData.CustomerEndpoint.Address, \u0026#34;ContactId\u0026#34;: event.Details.ContactData.ContactId, \u0026#34;ContactFlowName\u0026#34;: event.Details.ContactData.Queue.Name } }; docClient.put(params,function(err,data){ if(err){ console.error(\u0026#34;Unable to add item. Error JSON:\u0026#34;, JSON.stringify(err, null, 2)); context.fail(buildResponse(false)); } else { console.log(\u0026#34;Added item:\u0026#34;, JSON.stringify(data, null, 2)); callback(null,buildResponse(true)); } }); }; function buildResponse(isSuccess){ if(isSuccess){ return { Result:\u0026#34;Success\u0026#34; }; } else { console.log(\u0026#34;Lambda returned error to Connect\u0026#34;); return{Result:\u0026#34;Error\u0026#34;}; } } 点击代发上方的“Deploy”按钮发布代码。   "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/4.integratelambda/",
 	"title": "将Lambda集成到Amazon Connect",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "试验说明 此步骤通过在Amazon Connect中注册之前创建的Lambda函数，并在联系流中调用Lambda以完成挂机后评价功能。\n一、授权Amazon Connect访问Lambda  在AWS控制台，打开Amazon Connect。 点击实例名进入账户概览。 在左侧的导航栏选择“Contact Flow” 滑动到AWS Lambda部分，选择创建的Lambda函数“AmazonConnectSurveyLambda” 点击“添加Lambda函数”   "
+	"content": "试验说明 此步骤通过在Amazon Connect中注册之前创建的Lambda函数，并在联系流中调用Lambda以完成挂机后评价功能。\n一、授权Amazon Connect访问Lambda  在 AWS 控制台中，导航到Amazon Connect服务。 单击\u0026quot;实例别名\u0026quot;进入账户概览。 从左侧的菜单中选择\u0026quot;联系流\u0026quot;。 向下滚动到 AWS Lambda 部分。 从函数下拉菜单中，选择“AmazonConnectSurveyLambda”函数并单击“+添加 Lambda 函数”   二、导入并设置Disconnect Flow  下载联系流文件到本地电脑。 \r\r下载链接:\r\r\rDemo disconnect flow.json\r\r(8 ko)\r\r\r\r 导航到“联系流”界面，并点击“创建联系流”。 进入联系流编辑界面，点击右上角的下拉箭头，点击“导入流(Beta)”，导入下载的文件。  在联系流编辑界面，点击“调用AWS Lambda函数”块，在弹出的界面中选择“AmazonConnectSurveyLambda”函数，并点击保存。  点击右上角的“发布”按钮发布联系流。   三、设置Default agent whisper流  导航到“联系流”界面，点击“Default agent whisper”打开编辑页面。 拖拽左侧面板的“设置联系人属性”到画布，将“设置联系人属性”加入到联系流。 点击“设置联系人属性”，打开属性编辑面板，设置目标属性为“Agent”，点击使用属性，并将类型设置为“代理”，属性设置为“用户名”。然后点击“Save”按钮。  点击“发布”按钮。 这一步骤的作用是将接听电话的Agent的用户名设置为联系人属性，方便Lambda函数将用户名及对应的客户评价写入DynamoDB。\n\r  四、设置Demo inbound flow  导航到“联系流”界面，并点击“Demo inbound flow”进入编辑页面。 拖拽“设置断开流”模块到画布中，点击“设置断开流”，在弹出的界面中将“选择流”设置为“Demo disconnect flow”.  将设置断开流加入到“入口点”之后的流程中,然后点击“发布”按钮进行发布。   "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/1.lambda/5.testlambda/",
 	"title": "测试Lambda挂机评价",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "试验说明 TODO：\n"
+	"content": "试验说明 本部分试验主要对挂机后评价功能进行测试。 在进行通话测试的时候，您可以使用自己的手机或者固定电话直接拨打Connect号码，也可以同时在两个浏览器登录两个用户账号，使用其中一个拨打Connect号码,另外一个账号进行接听。详见： 测试Connect联络\n\r测试挂机评价流程  点击Amazon Connect控制台右上角的电话图标，打开联系控制面板(CCP)。 将代理设置为Available状态。  拨打Amazon Connect实例的电话号码，你会听到提示音，并且将您路由到对应的客服。 通话完毕后，代理首先挂断电话，然后客户就会听到邀请评价的提示音。 根据提示进行评价。 结束通话。 在AWS控制台，导航到DynamoDB服务。 点击“AmazonConnectSurvey”进入到详情页。   用户评价存入DynamoDB之后，您可以使用Glue和Athena对等服务进行数据处理、查询和分析，这部分不在本次试验的范畴内，留给您进行探索。\n\r"
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/",
 	"title": "2. 创建联系流",
 	"tags": ["beginner"],
 	"description": "",
-	"content": "Contact Flow介绍 本次实验对Contact Flow进行介绍，包括以下几个方面：\n  介绍Contact Flow库和Sample/Default Flow\n  新建入站联系流\n  查看常用的联系块\n  编写一个完整的联系流\n  测试入站联系流\n  "
+	"content": "联系流（Contact Flow）介绍 本部分对联系流进行介绍，包括以下几个方面：\n  介绍联系流库和Sample/Default联系流\n  新建入站联系流\n  查看常用的联系块\n  编写一个完整的入站联系流\n  测试入站联系流\n  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/1.contactflow_basic/",
@@ -137,7 +144,7 @@
 	"title": "2.2 新建入站联系流",
 	"tags": ["beginner"],
 	"description": "",
-	"content": "新建一个空的入站联系流 现在，我们已经理解了不同的联系流类型，接下来，我们就开始创建一个基础的联系流。 下图是我们即将在后续步骤创建的联系流的概览。\n记住，我们使用创建联系流按钮来创建一个入站联系流。\n 选择 路由选择 -\u0026gt; 联系流 访问联系流库。 选择创建联系流 为联系流制定一个名字,比如 Intro Flow 1 点击显示其他流信息来展开流信息，并且添加描述信息. 在查看流的不同版本时，该描述可能很有用。 点击保存   "
+	"content": "新建一个空的入站联系流 现在，我们已经理解了不同的联系流类型，接下来，我们就开始创建一个基础的联系流。 下图是我们即将在后续步骤创建的联系流的概览。\n记住，我们使用创建联系流按钮来创建一个入站联系流。\n 选择 路由选择 -\u0026gt; 联系流 访问联系流库。 选择创建联系流 为联系流制定一个名字,比如 Demo inbound flow 点击显示其他流信息来展开流信息，并且添加描述信息. 在查看流的不同版本时，该描述可能很有用。 点击保存.   "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/3.reviewcontactblock/",
@@ -151,42 +158,49 @@
 	"title": "2.4 编写一个完整的入站联系流",
 	"tags": ["beginner"],
 	"description": "",
-	"content": "使用联系流编辑器编辑入站联系流 在之前的步骤中，我们已经创建了一个空的入站联系流，并且已经理解了不同的联系流类型，接下来，我们就开始编写一个完整的联系流。 我们即将创建的联系流如下图。该联系流定了客户来电时的处理步骤，以及将客户转接到代理队列。\n 首先，创建一个新的操作小时数，用于后续的联系流。   选择 路由选择 -\u0026gt; 操作小时数 点击[添加小时数] 在打开的页面中，设置名称和描述为“Work Hours” 将时区设置为“Asia/Shanghai” 删除周六、周日，保留周一至周五做为工作时间。 点击[保存]。    下载联系流文件到本地电脑。   下载链接:   Demo inbound flow.json  (4 ko)      选择之前创建的“Demo inbound flow”联系流，此时联系流为空白状态。\n  点击保存按钮右边的下拉箭头，点击[导入流(beta)]   此时，会看到一个完整的联系流，解析来我们来编辑它。\n  点击[设置录音和分析行为]块，打开代理和客户的通话录音，然后点击保存。   点击[设置语音]块设置与客户交互的声音，将语言设置为中文（普通话），然后点击保存。   点击[检查操作小时数]块，将指定小时数设置为Work Hours，然后点击保存。   点击右上角的[发布]按钮，发布联系流。\n  "
+	"content": "使用联系流编辑器编辑入站联系流 在之前的步骤中，我们已经创建了一个空的入站联系流，并且已经理解了不同的联系流类型，接下来，我们就开始编写一个完整的联系流。 我们即将创建的联系流如下图。该联系流定了客户来电时的处理步骤，以及将客户转接到代理队列。\n 首先，创建一个新的操作小时数，用于后续的联系流。   选择 路由选择 -\u0026gt; 操作小时数 点击[添加小时数] 在打开的页面中，设置名称和描述为“Work Hours” 将时区设置为“Asia/Shanghai” 删除周六、周日，保留周一至周五做为工作时间。 点击[保存]。    下载联系流文件到本地电脑。 \r\r下载链接:\r\r\rDemo inbound flow.json\r\r(4 ko)\r\r\r\r  选择之前创建的“Demo inbound flow”联系流，此时联系流为空白状态。\n  点击保存按钮右边的下拉箭头，点击[导入流(beta)]   此时，会看到一个完整的联系流，解析来我们来编辑它。\n  点击[设置录音和分析行为]块，打开代理和客户的通话录音，然后点击保存。   点击[设置语音]块设置与客户交互的声音，将语言设置为中文（普通话），然后点击保存。   点击[检查操作小时数]块，将指定小时数设置为Work Hours，然后点击保存。   点击右上角的[发布]按钮，发布联系流。\n  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/2.contactflow/5.testdemocontactflow/",
 	"title": "2.5 测试入站联系流",
 	"tags": ["beginner"],
 	"description": "",
-	"content": "测试入站联系流 在前边的步骤中，我们已经创建了一个入站联系流，接下来我们将对这个联系流进行测试。\n 首先我们需要将此联系流绑定到之前申请的电话号码。   选择 路由 -\u0026gt; 电话号码 选择已经创建的电话号码 点击联系流/IVR的下拉框，选择“Demo inbound flow”。 点击保存。   等待大约2分钟让设置生效。 点击右上角的电话图标，打开联系控制面板(CCP)。 将代理设置为Available状态。  拨打Amazon Connect实例的电话号码，你会听到提示音，并且将您路由到对应的客服。 测试完成。  在进行电话测试的时候，你可以申请两个电话号码进行相互拨打，避免产生您自己的手机通讯费。\n "
+	"content": "测试入站联系流 在前边的步骤中，我们已经创建了一个入站联系流，接下来我们将对这个联系流进行测试。 在进行通话测试的时候，您可以使用自己的手机或者固定电话直接拨打Connect号码，也可以同时在两个浏览器登录两个用户账号，使用其中一个拨打Connect号码,另外一个账号进行接听。详见： 测试Connect联络\n\r 首先我们需要将此联系流绑定到之前申请的电话号码。   选择 路由 -\u0026gt; 电话号码 选择已经创建的电话号码 点击联系流/IVR的下拉框，选择“Demo inbound flow”。 点击保存。   等待大约2分钟让设置生效。 点击右上角的电话图标，打开联系控制面板(CCP)。 将代理设置为Available状态。  拨打Amazon Connect实例的电话号码，你会听到提示音，并且将您路由到对应的客服。 测试完成。  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/3.metrics/",
 	"title": "3. 查看指标和报告",
 	"tags": ["beginner"],
 	"description": "",
-	"content": "查看指标和报告 在 Amazon Connect 中，有关联系的数据被捕获在联系记录中。 此数据可以包括联系在每个状态中花费的时间量：等待客户、排队客户、座席交互时间。\nAmazon Connect 中大多数历史和实时指标的基础是联系记录中的数据。 创建度量报告时，报告中大多数（不是全部）度量显示的值是使用联系记录中的数据计算的。\n自启动关联联系之日起，您的实例中的联系记录可使用 24 个月。 您还可以将联系记录流式传输到 Amazon Kinesis 以更长时间地保留数据，并对其执行高级分析。\n"
+	"content": "试验目的 在 Amazon Connect 中，有关联系的数据被捕获在联系记录中。 此数据可以包括联系在每个状态中花费的时间量：等待客户、排队客户、座席交互时间。\nAmazon Connect 中大多数历史和实时指标的基础是联系记录中的数据。 创建度量报告时，报告中大多数（不是全部）度量显示的值是使用联系记录中的数据计算的。\n自启动关联联系之日起，您的实例中的联系记录可使用 24 个月。 您还可以将联系记录流式传输到 Amazon Kinesis 以更长时间地保留数据，并对其执行高级分析。\n本实验的目的是了解 Amazon Connect 提供的内置指标，特别关注如下几类：\n 实时指标 历史指标 登录/注销报告  在进行本部分内容之前，请确保Amazon Connect的登录账号具有查看指标和报告的权限。你可以在“用户”-“安全配置文件”中为用户配置相关权限。 建议您使用具有“安全配置文件”中“admin”或者“CallCenterManager”权限的账户登录Amazon Connect控制台。\n\r"
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/3.metrics/1.realtimemetrics/",
 	"title": "3.1 查看实时指标",
 	"tags": [],
 	"description": "",
-	"content": "在Amazon Connect上查看实时指标 "
+	"content": "实验说明 实时指标报告显示有关联络中心活动的实时或接近实时的指标信息。 在线指标实时显示当前在线的代理数量，每 15 秒更新一次。 您可以自定义报告，为每个报告指定时间范围，为每个报告选择指标，并为要从每个报告中包含或排除的数据选择过滤器。 本部分将指导您完成有关如何创建和保存实时指标报告的步骤。\n一、创建实时指标报告  在导航菜单上，依次选择“分析”-“实时指标”。 查看现有的三种报告类型：   队列 - 一组显示其联系人和代理的队列。 代理 - 已登录代理的状态和指标。 路由配置文件 - 显示其联系人和代理的一组路由配置文件。    选择队列 - 此报告将显示队列中的指标，包含联系人和客服等信息。\n  要自定义报告，请从表格中选择齿轮图标。\n  在“时间范围”选项卡上，您可以更改衔接窗口时间，在本实验中，接受默认值即可。 在“筛选条件”选项卡中，您可以选择如何对报告进行分组。在本实验中，接受默认值即可。 在“指标”选项卡中，选择要包含在报告中的指标和字段。在本实验中，您可以选择使用默认值。\n  单击“应用”。将显示队列指标表。\n  单击“新表”并选择“代理队列”。\n  重复步骤 3-7，完成后，将显示代理队列指标表。\n  单击“新表”并选择“路由配置文件”。\n  重复步骤 3-7，完成后，将显示路由配置文件指标表。\n  单击“新表”并选择“代理”。\n  重复步骤 3-7，完成后，将显示代理指标表。   二、保存报告  保存您的报告以供将来参考，选择“保存报告”。 为报告提供一个名称，然后选择保存。   三、共享报告  要共享报告，请单击“操作”旁边的下拉箭头，然后选择“共享报告”。 点击“复制链接地址”拷贝URL地址，然后您就可以通过将链接粘贴到电子邮件或其他文档中来将 URL 发送给组织中的其他人。 要将报告发布到您的组织，打开“将报告发布到组织”下面的发布开关。 选择保存。   四、查看报告  要查看已保存的实时指标报告，请选择“分析”、“保存的报告”，然后选择“实时指标”选项卡。   "
+},
+{
+	"uri": "http://gotoaws.cloudguru.run/amazon-connect-basic/3.metrics/2.historicalmetrics/",
+	"title": "3.2 查看历史指标",
+	"tags": [],
+	"description": "",
+	"content": "实验说明 历史指标报告包括有关联络中心过去、已完成活动和性能的数据。 Amazon Connect包含您可以立即开始使用的内置历史报告。您还可以创建自己的自定义报告。 本部分将指导您完成有关如何创建和保存历史指标报告的步骤。\n有三种报告类型：\n 队列 - 一组显示其联系人和代理的队列。 代理 - 已登录代理的状态和指标。 电话号码 - 显示其联系人和代理的一组路由配置文件。   一、创建队列指标报告   在导航菜单上，依次选择“分析”-“历史指标”。\n  选择“队列“ - 此报告将显示队列中的相关指标。\n  要自定义报告，请从表格中选择齿轮图标。\n  在“间隔 \u0026amp; 时间范围”选项卡上，您可以更改间隔和时间范围。在本实验中，接受默认值即可。 在“指标”选项卡中，选择要包含在报告中的指标和字段。在本实验中，接受默认值即可。\n  单击“应用”。将显示队列指标表。\n  保存您的报告以供将来参考，选择“保存”。为报告提供一个名称，然后选择保存。\n  要查看已保存的历史指标报告，请选择“分析”、“保存的报告”，然后选择“历史指标”选项卡。   二、创建代理指标报告   在导航菜单上，依次选择“分析”-“历史指标”。\n  选择“代理“ - 此报告将显示代理的相关指标。\n  要自定义报告，请从表格中选择齿轮图标。\n  在“间隔 \u0026amp; 时间范围”选项卡上，您可以更改间隔和时间范围。在本实验中，接受默认值即可。 在“指标”选项卡中，选择要包含在报告中的指标和字段。在本实验中，接受默认值即可。\n  单击“应用”。将显示代理指标表。\n  保存您的报告以供将来参考，选择“保存”。为报告提供一个名称，然后选择保存。\n  要查看已保存的历史指标报告，请选择“分析”、“保存的报告”，然后选择“历史指标”选项卡。   三、创建电话号码指标报告   在导航菜单上，依次选择“分析”-“历史指标”。\n  选择“电话号码“ - 此报告将显示电话号码相关的历史指标。\n  要自定义报告，请从表格中选择齿轮图标。\n  在“间隔 \u0026amp; 时间范围”选项卡上，您可以更改间隔和时间范围。在本实验中，接受默认值即可。 在“指标”选项卡中，选择要包含在报告中的指标和字段。您可以在“联系指标”和“代理指标”之间切换看看有什么不同。在本实验中，接受默认值即可。\n  单击“应用”。将显示电话号码指标表。\n  保存您的报告以供将来参考，选择“保存”。为报告提供一个名称，然后选择保存。\n  要查看已保存的历史指标报告，请选择“分析”、“保存的报告”，然后选择“历史指标”选项卡。   四、共享报告  依次点击“分析”-“保存的报告”，选择“历史指标”选项卡，然后点击要共享的报告。 要共享报告，请单击“保存”旁边的下拉箭头，然后选择“共享报告” 点击“复制链接地址”拷贝URL地址，然后您就可以通过将链接粘贴到电子邮件或其他文档中来将 URL 发送给组织中的其他人。 要将报告发布到您的组织，打开“将报告发布到组织”下面的发布开关。 选择保存。  五、计划报告  在“保存的报告”、“历史指标”选项卡中，单击报告。 选择页面右上角保存旁边的向下箭头，然后选择“计划”。 在“循环”选项卡上，指定该报告的运行频率（例如，每周周六）和开始时间（例如，午夜开始）。 对于本实验，请接受默认值。 选择创建。   "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/1.createinteractivelambda/",
 	"title": "创建交互式消息Lambda",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "部署交互式消息的 AWS Lambda 在 Lex 中如果需要对消息使用Lambda进行处理后，再传递给Connect展示给用户，该部分消息处理的过程需要Lex结合Lambda完成。该部分创建了一个交互式访问的Lambda，供后续创建Lex Bot使用。\n Note：\n在本步骤中需要创建Lambda，请下载   interactive_message_lexv2_function   interactive-messaging-node-lexv2.zip  (5 ko)    Lambda function文件，以便在步骤3中使用；\n   在 AWS Console 中打开 AWS Lambda，选择 Create function。\n  在 Create Function 页面中，选择 Author from scratch 并输入需要的信息后点击 Create function 按钮。\n Function name: 输入 interactive_message_lexv2_function. Runtime: 选择 Node.js 14.x Architecture: 选择 x86_64    在 Function overview 页面， 选择 Code 并在右侧的 Upload from 中选在.zip 文件。\n  在 Upload a .zip file 页面，选择 Upload 并将下载的 Lambda function zip文件，并点击 Save 按钮。\n  检查并确认Lambda创建后源码中包含的文件是否正确。\n  "
+	"content": "部署交互式消息的 AWS Lambda 在 Lex 中如果需要对消息使用Lambda进行处理后，再传递给Connect展示给用户，该部分消息处理的过程需要Lex结合Lambda完成。该部分创建了一个交互式访问的Lambda，供后续创建Lex Bot使用。\n Note：\n在本步骤中需要创建Lambda，请下载\r\r\rinteractive_message_lexv2_function\r\r\rinteractive-messaging-node-lexv2.zip\r\r(5 ko)\r\r\r\rLambda function文件，以便在步骤3中使用；\n   在 AWS Console 中打开 AWS Lambda，选择 Create function。\n  在 Create Function 页面中，选择 Author from scratch 并输入需要的信息后点击 Create function 按钮。\n Function name: 输入 interactive_message_lexv2_function. Runtime: 选择 Node.js 14.x Architecture: 选择 x86_64    在 Function overview 页面， 选择 Code 并在右侧的 Upload from 中选在.zip 文件。\n  在 Upload a .zip file 页面，选择 Upload 并将下载的 Lambda function zip文件，并点击 Save 按钮。\n  检查并确认Lambda创建后源码中包含的文件是否正确。\n  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/2.importlexbot/",
 	"title": "导入可交互式机器人并与Lambda绑定",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "导入交互式机器人 该步骤中，我们将要导入Lex机器人；\n Note：\n在本步骤中需要导入Lex Bot，请下载   Lex Bot   interactive-message-bot_v2.zip  (26 ko)    文件，以便在步骤3中使用；\n   在 AWS Console 中打开 Amazon Lex，点击 Get Start, 在 Actions 菜单中选择 Import\n 确保你打开的 Amazon Lex Console 是 V2 版本.\n   在 Import bot 页面中点击 Browse file并选中在上述步骤中下载的.zip文件，在下述设置中进行设置，并点击 Import 按钮\n Bot name：输入 InteractiveMessageBot_v2 IAM permissions: 选择 Create a role with basic Amazon Lex permissions. Children\u0026rsquo;s Online Privacy Protection Act (COPPA): 选择 No.  其他选项可保持默认。\n  检查导入状态，确保导入成功。\n  在 Bots 列表中点击创建的 InteractiveMessageBot，并点击 Intents 列表中的 InteractiveMessageIntent\n  在 InteractiveMessageIntent 编辑页面，在 Code hooks - optional 设置中，勾选 Use a Lambda function for initialization and validation 并点击 Save Intent\n  点击左上角 Back to intents list 回到Bot编辑页面，并进入 Aliases 菜单\n  点击 TestBotAlias 链接进入编辑页面，并点击 Language 中的 English(US) 进行编辑 在 Lambda function - optional 设置中，选择在之前步骤中创建的 Lambda Function，点击 Save保存设置。   "
+	"content": "导入交互式机器人 该步骤中，我们将要导入Lex机器人；\n Note：\n在本步骤中需要导入Lex Bot，请下载\r\r\rLex Bot\r\r\rinteractive-message-bot_v2.zip\r\r(26 ko)\r\r\r\r文件，以便在步骤3中使用；\n   在 AWS Console 中打开 Amazon Lex，点击 Get Start, 在 Actions 菜单中选择 Import\n 确保你打开的 Amazon Lex Console 是 V2 版本.\n   在 Import bot 页面中点击 Browse file并选中在上述步骤中下载的.zip文件，在下述设置中进行设置，并点击 Import 按钮\n Bot name：输入 InteractiveMessageBot_v2 IAM permissions: 选择 Create a role with basic Amazon Lex permissions. Children\u0026rsquo;s Online Privacy Protection Act (COPPA): 选择 No.  其他选项可保持默认。\n  检查导入状态，确保导入成功。\n  在 Bots 列表中点击创建的 InteractiveMessageBot，并点击 Intents 列表中的 InteractiveMessageIntent\n  在 InteractiveMessageIntent 编辑页面，在 Code hooks - optional 设置中，勾选 Use a Lambda function for initialization and validation 并点击 Save Intent\n  点击左上角 Back to intents list 回到Bot编辑页面，并进入 Aliases 菜单\n  点击 TestBotAlias 链接进入编辑页面，并点击 Language 中的 English(US) 进行编辑 在 Lambda function - optional 设置中，选择在之前步骤中创建的 Lambda Function，点击 Save保存设置。   "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/3.buildandtestlexbot/",
@@ -207,7 +221,7 @@
 	"title": "在Amazon Connect中导入并配置Contact Flow",
 	"tags": ["advanced"],
 	"description": "",
-	"content": "在Amazon Connect中导入并配置Contact Flow 该步骤中，我们将在创建好的Amazon Connect实例管理界面中导入并配置Contact Flow。\n Note：\n在本步骤中需要导入Contact Flow，请下载   Contact Flow   InteractiveMessaging_Flow.json  (4 ko)    文件，以便在步骤4中使用；\n   在 AWS Console 中打开 Amazon Connect，在实例列表中点击 Access Url 进入登陆页面。\n使用之前创建Connect实例时设置的Administrator用户名及密码进行登陆。\n  登陆完成后，进入Connect实例管控页面，从左侧的菜单栏中选择 Routing 选择 Contact flows 进入 Contact flows列表页面。\n  点击 Create contact flow 进入编辑页面，点击 Import flow(beta) 进入 Import 页面。\n  在 Import 页面选择下载的 InteractiveMessaging文件点击 Save 保存设置。\n  导入成功后，在导入的Contact flow页面中，点击 Get customer input 模块进行编辑，在Lex bot部分，重新选择之前导入的Lex bot，并选择对应的Alias，设置完成后点击 Save 保存设置。\n  完成设置后，点击 Publish 按钮发布 Contact flow。\n  "
+	"content": "在Amazon Connect中导入并配置Contact Flow 该步骤中，我们将在创建好的Amazon Connect实例管理界面中导入并配置Contact Flow。\n Note：\n在本步骤中需要导入Contact Flow，请下载\r\r\rContact Flow\r\r\rInteractiveMessaging_Flow.json\r\r(4 ko)\r\r\r\r文件，以便在步骤4中使用；\n   在 AWS Console 中打开 Amazon Connect，在实例列表中点击 Access Url 进入登陆页面。\n使用之前创建Connect实例时设置的Administrator用户名及密码进行登陆。\n  登陆完成后，进入Connect实例管控页面，从左侧的菜单栏中选择 Routing 选择 Contact flows 进入 Contact flows列表页面。\n  点击 Create contact flow 进入编辑页面，点击 Import flow(beta) 进入 Import 页面。\n  在 Import 页面选择下载的 InteractiveMessaging文件点击 Save 保存设置。\n  导入成功后，在导入的Contact flow页面中，点击 Get customer input 模块进行编辑，在Lex bot部分，重新选择之前导入的Lex bot，并选择对应的Alias，设置完成后点击 Save 保存设置。\n  完成设置后，点击 Publish 按钮发布 Contact flow。\n  "
 },
 {
 	"uri": "http://gotoaws.cloudguru.run/amazon-connect-advanced/2.lexbot/deployinteractivechatbot/6.testchatbot/",
