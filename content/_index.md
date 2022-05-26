@@ -17,6 +17,6 @@ Amazon Connect 从一开始就设计支持全渠道，为您的客户和代理�
 通过本Workshop的实验，可以帮助您了解如何快速搭建Amazon Connect云联络中心。
 本Workshop分为两部分：
 
-- Amazon Connect基础：这部分介绍联络中心的基本功能，内容包括：创建并配置Amazon Connect实例、申请电话号码、编写联系流，并进行语音和聊天测试。
+- Amazon Connect基础：这部分介绍Amazon Connect的基本功能，内容包括：创建并配置Amazon Connect实例、申请电话号码、编写联系流、进行语音和聊天测试，以及查看实时/历史指标和报告。
 
-- Amazon Connect进阶：本部分介绍联络中心的高级用法，我们将通过与Lambda集成实现挂机后评价，以及创建一个Lex机器人来实现智能客服，并将呼叫者路由到正确的队列。
+- Amazon Connect进阶：这部分介绍Amazon Connect的高级用法，我们将通过与Lambda集成实现挂机后评价，以及创建一个Lex机器人来实现智能客服。

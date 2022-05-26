@@ -8,7 +8,7 @@ weight: 1
 
 本Workshop旨在介绍 Amazon Connect，帮助以前不了解Amazon Connect 的用户掌握搭建云联络中心的技能。
 
- 本实验涉及到的服务一部分可以免费使用， 但是也有多项服务可能会产生少量使用费用。请参阅定价页面以查看AWS Lambda、DynamoDB、Amazon Lex 和 Amazon Connect等服务的免费套餐情况和计费方式。
+> 本实验涉及到的服务一部分可以免费使用， 但是也有多项服务可能会产生少量使用费用。请参阅定价页面以查看AWS Lambda、DynamoDB、Amazon Lex 和 Amazon Connect等服务的免费套餐情况和计费方式。
 
 本次Workshop分为两部分：
 
